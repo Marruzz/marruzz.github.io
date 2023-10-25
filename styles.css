@@ -1,0 +1,17 @@
+.Drop {
+  color: #00b7ff;
+}
+
+button:hover{
+  background-color: #00095e !important;
+  color: aqua !important;
+  transition: 499ms !important;
+}
+
+.dropdown-item:hover{
+  color: #00095e;
+  background-color: #00b7ff;
+  border-radius: 3px;
+  transition: 524ms;
+}
+
