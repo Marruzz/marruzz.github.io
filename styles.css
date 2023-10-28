@@ -3,20 +3,24 @@
   padding: 0px;
 }
 
-button:hover{
+button:hover {
   background-color: #00095e !important;
   color: aqua !important;
   transition: 499ms !important;
 }
 
-#demo button:hover{
-  opacity: 0 !important;
+#demo button:hover {
+  opacity: 50 !important;
 }
 
-.dropdown-item:hover{
+#piste button:hover {
+  opacity: 50 !important;
+}
+
+.dropdown-item:hover {
   color: #00095e;
   background-color: #00b7ff;
-  border-radius: 3px;
-  transition: 524ms;
+  border-radius: 15px;
+  transition: 600ms;
+  font-weight: bold;
 }
-
