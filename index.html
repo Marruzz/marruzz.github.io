@@ -12,8 +12,35 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .Drop {
+    color: #00b7ff;
+    padding: 0px;
+  }
+  
+  #biglietti button:hover {
+    background-color: #00095e !important;
+    color: aqua !important;
+    transition: 499ms !important;
+  }
 
-  <link rel="stylesheet" href="styles.css" !important>
+  a{
+    text-decoration: none !important;
+  }
+  
+  #piste button:hover {
+    opacity: 50 !important;
+  }
+  
+  .dropdown-item:hover {
+    color: #00095e;
+    background-color: #00b7ff;
+    border-radius: 15px;
+    transition: 600ms;
+    font-weight: bold;
+  }
+  
+  </style>
 </head>
 
 
@@ -50,8 +77,7 @@
 
 <body>
   <!--Carousel-->
-
-  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="carousel\1- piste.jpg" alt="mappa piste" class="d-block" style="width:100%; height: 30%;">
@@ -67,17 +93,17 @@
           style="width:100%; height: 30%;">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev" style="width: 5%;">
       <span class="carousel-control-prev-icon"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next" style="width: 5%;">
       <span class="carousel-control-next-icon"></span>
     </button>
   </div>
 
 
   <!--Scrollspy e Biglietti-->
-  <div id="biglietti" class="container-fluid" style="padding:100px 20px;">
+  <div id="biglietti" class="container-fluid" style="padding:100px 50px;">
     <div style="color: #00095e; font-size: 48px; font-family: Helvetica, sans-serif; margin-top: -10px;">Acquista un
       biglietto</div>
     <span style="display: block; align-self: left;">Sono aquistabili vari tipi di biglietto, dipende dall'età</span>
@@ -87,7 +113,7 @@
     <span>Bambino - 0-3 ann</span>
     <span style="display: block; float: right;">
       <form class="d-flex">
-        <button class="btn" type="button" style="color: #007bff;">Acquista - Gratis</button>
+        <button class="btn" type="button" style="color: #007bff;"><a href="https://montgenevre.com/">Acquista - Gratis</a></button>
       </form>
     </span>
     <br><br>
@@ -96,7 +122,7 @@
     <span>Ragazzino - 6-14 anni</span>
     <span style="display: block; float: right;">
       <form class="d-flex">
-        <button class="btn" type="button" style="color: #007bff;">Acquista - 25,90</button>
+        <button class="btn" type="button" style="color: #007bff;"><a href="https://montgenevre.com/">Acquista - 25,90</a></button>
       </form>
     </span>
     <br><br>
@@ -105,7 +131,7 @@
     <span>Ragazzo - 15-17 anni</span>
     <span style="display: block; float: right;">
       <form class="d-flex">
-        <button class="btn" type="button" style="color: #007bff;">Acquista - 33,00</button>
+        <button class="btn" type="button" style="color: #007bff;"><a href="https://montgenevre.com/">Acquista - 33,30</a></button>
       </form>
     </span>
     <br><br>
@@ -114,7 +140,7 @@
     <span>Adulto - 18-64 anni</span>
     <span style="display: block; float: right;">
       <form class="d-flex">
-        <button class="btn" type="button" style="color: #007bff;">Acquista - 38,00</button>
+        <button class="btn" type="button" style="color: #007bff;"><a href="https://montgenevre.com/">Acquista - 38,00</a></button>
       </form>
     </span>
     <br><br>
@@ -123,40 +149,33 @@
     <span>Anzianotti - 64+ anni</span>
     <span style="display: block; float: right;">
       <form class="d-flex">
-        <button class="btn" type="button" style="color: #007bff;">Acquista - 28,90</button>
+        <button class="btn" type="button" style="color: #007bff;"><a href="https://montgenevre.com/">Acquista - 28,90</a></button>
       </form>
     </span>
   </div>
 
 
-  <!--Scrollspy e Piste - Carousel-->
-  <div id="piste" class="container-fluid" style="padding:0px 20px; margin-bottom: 10px;">
+  <!--Scrollspy e Piste-->
+  <div id="piste" class="container-fluid" style="padding:0px 50px; margin-bottom: 10px;">
     <div style="color: #00095e; font-size: 48px; font-family: Helvetica, sans-serif; margin-top: -10px;">Le nostre piste
     </div>
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
-      <div class="carousel-inner">
-        <span class="carousel-item active">
-          <img src="/images/Piste/1.jpg" class="d-block" alt="...">
-          <span>khrdvng</span>
-        </span>
-        <span class="carousel-item">
-          <img src="/images/Piste/2.jpg" class="d-block" alt="...">
-          <span>ngrn</span>
-        </span>
-        <span class="carousel-item">
-          <img src="/images/Piste/3.jpg" class="d-block" alt="...">
-          <span>gnv</span>
-        </span>
-        <span class="carousel-item">
-          <img src="/images/Piste/4.jpg" class="d-block" alt="...">
-          <span>bthdbdhu</span>
-        </span>
-        <span class="carousel-item">
-          <img src="/images/Piste/5.jpg" class="d-block" alt="...">
-          <span>hnblndng</span>
-        </span>
-      </div>
+      <span class="videoPiste">
+        <video width="33%" controls>
+          <source src="https://lh3.googleusercontent.com/ggms/AF1QipPcnJthH7qDewijbnZloFylEX6_UNGRJMRce_Ij=m18?cpn=CxBSMw8ZXpOsoRvn" type="video/mp4">
+        </video>
+      </span>
+      <span class="videoPiste">
+        <video width="33%" controls>
+        <source src="https://lh3.googleusercontent.com/ggs/AF1QipPIk-AM4q7ChTFp4pXyixTKNNxKrWsWau4n73Or=m18?cpn=TreUlZs0_pRhXJIa" type="video/mp4">
+        </video>  
+      </span>
+      <span class="videoPiste">
+        <video width="33%" controls>
+        <source src="https://lh3.googleusercontent.com/ggs/AF1QipMx9ckA5v_Sy33ZvYU6XIrEFKUlULMucp4l8xAh=m18?cpn=dpaIGIj7B2VWaMa_" type="video/mp4">
+        </video>  
+      </span>
     </div>
+  </div>
 </body>
 
 </html>
