@@ -25,7 +25,11 @@ button:hover {
   font-weight: bold;
 }
 
-footer{
+footer {
   background-color: #00095e;
   color: aqua;
+}
+
+.card {
+  float: left;
 }
