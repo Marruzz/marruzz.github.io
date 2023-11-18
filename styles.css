@@ -3,6 +3,14 @@
   padding: 0px;
 }
 
+.dropdown-item:hover {
+  color: #00095e;
+  background-color: #00b7ff;
+  border-radius: 2px;
+  transition: 782ms;
+  font-weight: bold;
+}
+
 button:hover {
   background-color: #00095e !important;
   color: aqua !important;
@@ -13,18 +21,6 @@ button:hover {
   opacity: 50 !important;
 }
 
-#piste button:hover {
-  opacity: 50 !important;
-}
-
-.dropdown-item:hover {
-  color: #00095e;
-  background-color: #00b7ff;
-  border-radius: 2px;
-  transition: 782ms;
-  font-weight: bold;
-}
-
 footer {
   background-color: #00095e;
   color: aqua;
@@ -32,4 +28,16 @@ footer {
 
 .card {
   float: left;
+  width: 33%;
+}
+
+.backToProducts button {
+  background-color: #00095e;
+  color: aqua;
+  border-radius: 2px;
+  height: 75px;
+  width: 200px;
+  background-color: blue;
+  border-radius: 3000px;
+  text-decoration: none;
 }
