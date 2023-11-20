@@ -18,104 +18,101 @@
 
 <!--HEADER - Navbar e Link Con e Senza DropDown-->
 
-<body>
-    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #00095e;">
+<header style="font-family: Helvetica;" id="index" class="fixed-top">
+    <nav class="navbar navbar-expand-sm" style="background-color: #00095e;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html" style="color: aqua; margin-top: 5px;">
-                <img src="images\Favicon\android-chrome-192x192.png" alt="Monginevro"
+                <img src="/images/Favicon/android-chrome-192x192.png" alt="Monginevro"
                     style="height: 45px; width: 45px; margin-right: 15px; margin-top: -3px; border-radius: 5px;">Monginevro
-                Ski Park</a>
+                Ski
+                Park</a>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#biglietti" style="color: #007bff;">Biglietti</a>
+                        <a class="nav-link" href="index.html" style="color: #007bff;">Biglietti</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#piste" style="color: #007bff;">Piste</a>
+                        <a class="nav-link" href="index.html" style="color: #007bff;">Piste</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             style="color: #007bff;">Altro</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" target="_blank" href="prodotti.html">Prodotti</a></li>
-                            <li><a class="dropdown-item" target="_blank" href="novità.html">Novità</a></li>
+                            <li><a class="dropdown-item" href="#">Prodotti</a></li>
+                            <li><a class="dropdown-item" href="novità.html">Novità</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <br><br><br><br>
-    <div class="container">
+</header>
+
+<body>
+<br><br><br>
+    <div class="col m-3 md">
         <!--SCI-->
-        <span class="card">
-            <img src="https://maxiprod.b-cdn.net/media/catalog/product/cache/1/small_image/220x/9df78eab33525d08d6e5fb8d27136e95/f/i/fischer-p06823-rc4_wc_ct_m-plate_con_attacco_rc4_z14_ff-sci-sci-uomo-047910401_yel_1.jpg"
-                class="card-img-top" alt="..." style="align-content: center; width: 200px; height: 200px;">
+        <span class="card" style="width: 33%; float: left;">
+            <img src="/images/Prodotti/sci.png" class="card-img-top" alt="...">
             <span class="card-body">
                 <h5 class="card-title">Sci</h5>
-                <p class="card-text">Vuoi comprare degli sci nuovi? Clicca sul pulsante qua in basso per scegliere i
-                    tuoi preferiti</p>
-                <a href="/products/sci.html" target="_blank" class="btn btn-primary">SCEGLIERE</a>
+                <p class="card-text">Vuoi degli sci nuovi? Clicca sul bottone più in basso per scegliere i tuoi
+                    preferiti</p>
+                <a href="sci.html" class="btn btn-primary">SCEGLIERE</a>
             </span>
         </span>
         <!--CALZE da SCI-->
-        <span class="card">
-            <img src="https://www.cisalfasport.it/on/demandware.static/-/Sites-cisalfa-master/default/dw4b87239e/cisalfa/files/S4073185-BLACK-GREE/image/S4073185_BLACK_GREE.jpg?sw=530&sh=663"
-                class="card-img-top" alt="..." style="align-content: center; width: 200px; height: 200px;">
+        <span class="card" style="width: 33%; float: left;">
+            <img src="/images/prodotti/calzeDaSci.png"
+                class="card-img-top" alt="...">
             <span class="card-body">
                 <h5 class="card-title">Calze da Sci</h5>
-                <p class="card-text">Vuoi delle calze da sci nuove? Clicca sul pulsante qua in basso per scegliere
-                    quali
-                    preferisci</p>
-                <a href="/products/calzeDaSci.html" target="_blank" class="btn btn-primary">SCEGLIERE</a>
+                <p class="card-text">Vuoi delle calze da sci nuove e calde? Clicca qua sotto per segliere le tue preferite!</p>
+                <a href="#" class="btn btn-primary">SCEGLIERE</a>
             </span>
         </span>
-        <span class="card">
-            <img src="https://maxiprod.b-cdn.net/media/catalog/product/cache/1/small_image/220x/9df78eab33525d08d6e5fb8d27136e95/f/i/fischer-u06123-rc4_130_mv_boa_vac_gw-scarponi-sci-uomo-047910501_yel_1.jpg"
-                class=" card-img-top" alt="..." style="align-content: center; width: 200px; height: 200px;">
+        <span class="card" style="width: 33%; float: left;">
+            <img src="/images/prodotti/scarponiDaSci.png"
+                class=" card-img-top" alt="...">
             <span class="card-body">
                 <h5 class="card-title">Scarponi da Sci</h5>
-                <p class="card-text">Vuoi degli scarponi da sci nuovi? Clicca sul bottone più in basso per scegliere
-                    i
-                    tuoi preferiti</p>
-                <a href="/products/scarponiDaSci.html" target="_blank" class="btn btn-primary">SCEGLIERE</a>
+                <p class="card-text">Vuoi degli scarponi da sci nuovi? Clicca sul bottone più in basso per scegliere i tuoi
+                    preferiti</p>
+                <a href="#" class="btn btn-primary">SCEGLIERE</a>
             </span>
         </span>
-        <span class="card">
-            <img src="https://www.cisalfasport.it/on/demandware.static/-/Sites-cisalfa-master/default/dwcc9f93c7/cisalfa/files/S5638214-LM/image/S5638214_LM.jpg?sw=530&sh=663"
-                class="card-img-top" alt="..." style="align-content: center; width: 200px; height: 200px;">
+        <span class="card" style="width: 33%; float: left;">
+            <img src="/images/prodotti/piles.png"
+                class="card-img-top" alt="...">
             <span class=" card-body">
                 <h5 class="card-title">Piles</h5>
-                <p class="card-text">Scegli da qua sotto i pile che preferiresti acquistare tra quelli che ti
-                    verranno
-                    presentati cliccando il button qua sotto</p>
-                <a href="/products/piles.html" target="_blank" class="btn btn-primary">SCEGLIERE</a>
+                <p class="card-text">Compra qua i piles</p>
+                <a href="#" class="btn btn-primary">SCEGLIERE</a>
             </span>
         </span>
-        <span class="card">
-            <img src="https://maxiprod.b-cdn.net/media/catalog/product/cache/1/small_image/220x/9df78eab33525d08d6e5fb8d27136e95/s/p/spyder-38sa075316-monterosa_gtx_ski_jkt-abbigliamento-sci-uomo-047939901_vco_1.jpg"
-                class="card-img-top" alt="..." style="align-content: center; width: 200px; height: 200px;">
+        <span class="card" style="width: 33%; float: left;">
+            <img src="/images/prodotti/giaccheDaSci.png"
+                class="card-img-top" alt="...">
             <span class=" card-body">
                 <h5 class="card-title">Giacche Da Sci</h5>
-                <p class="card-text">Scegli da qua sotto le giacche da sci che preferisci acquistare tra quelle che
-                    ti
-                    verranno presentate</p>
-                <a href="/products/giaccheDaSci.html" target="_blank" class="btn btn-primary">SCEGLIERE</a>
+                <p class="card-text">Compra qua le giacche da sci</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </span>
         </span>
-        <span class="card">
-            <img src="https://maxiprod.b-cdn.net/media/catalog/product/cache/1/small_image/220x/9df78eab33525d08d6e5fb8d27136e95/s/p/spyder-38sa125316-dare_pant-abbigliamento-sci-uomo-047940601_blk_1.jpg"
-                class="card-img-top" alt="..." style="align-content: center; width: 200px; height: 200px;">
+        <br>
+        <span class="card" style="width: 33%; float: left;">
+            <img src="/images/prodotti/tutaDaSci.png"
+                class="card-img-top" alt="...">
             <span class=" card-body">
                 <h5 class="card-title">Tuta Da Sci</h5>
-                <p class="card-text">Scegli da qua sotto le tute da sci che preferiresti acquistare tra quelle che
-                    ti
-                    verranno presentate</p>
-                <a href="/products/tuteDaSci.html" target="_blank" class="btn btn-primary">SCEGLIERE</a>
+                <p class="card-text">Compra qua le tute da sci</p>
+                <a href="tuteDaSci.html" class="btn btn-primary">SCEGLIERE</a>
             </span>
         </span>
         </span>
     </div>
+
+
 </body>
 
 </html>
