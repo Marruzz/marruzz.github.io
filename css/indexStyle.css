@@ -1,0 +1,39 @@
+#carousel img {
+  width: 100% !important;
+  height: 30% !important;
+}
+
+#carousel button:hover {
+  background-color: #00095e !important;
+  color: aqua !important;
+  transition: 1000ms !important;
+}
+
+#biglietti img {
+  margin-left: 1%;
+  border-radius: 5px;
+  width: 4%;
+  height: 4%;
+}
+#bigliettiTesto {
+  font-size: large;
+  display: block;
+  margin-left: 1%;
+  float: right;
+}
+
+footer {
+  background-color: #00095e;
+  color: aqua;
+}
+
+.card {
+  float: center;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  min-width: 20%;
+  max-width: 100%;
+}
