@@ -17,12 +17,16 @@
 </head>
 
 <!--HEADER - Navbar e Link Con e Senza DropDown-->
-<header style="font-family: Helvetica;" id="index" class="fixed-top">
+<header id="index" class="fixed-top">
   <nav class="navbar navbar-expand-sm" style="background-color: #00095e;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" style="color: aqua; margin-top: 5px;">
-        <img id="headerImage" src="images\Favicon\android-chrome-192x192.png" alt="Monginevro">Monginevro Ski
-        Park</a>
+      <span>
+        <a class="navbar-brand" href="#">
+          <img id="headerImage" src="images\Favicon\android-chrome-192x192.png" alt="Monginevro">
+          <span>Monginevro Ski Park</span>
+        </a>
+      </span>
+
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
@@ -75,68 +79,65 @@
   </div>
 
 
-  <!--Scrollspy e Biglietti-->
+  <!--Biglietti-->
   <div id="biglietti" class="container-fluid">
-    <div style=" font-size: xx-large; margin-top: 1%;">Acquista un biglietto</div>
-    <div>Sono aquistabili vari tipi di biglietto, dipende dall'età</div>
-    <br>
+    <div id="titoli">Acquista un biglietto</div>
+    <div style="margin-top: -1%;">Sono aquistabili vari tipi di biglietto, dipende dall'età</div>
     <!--Bambini-->
-    <span><img src="images\Biglietti\enfant.jpg" alt="Bambino che scia"></span>
+    <span><img src=".\images\Biglietti\enfant.jpg" alt="Bambino che scia"></span>
     <span>0-3 anni</span>
-    <span id="bigliettiTesto" style="display: block; float: right;">
+    <span id="bigliettiTesto">
       <form class="d-flex">
-        <button class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
+        <button id="bigliettiButton" class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
             Gratis</a></button>
       </form>
     </span>
-    <br><br>
+    <br>
     <!--Junior-->
-    <span><img src="images\Biglietti\junior.jpg" alt="Junior che scia" style="height: 50px; width: 50px;"></span>
+    <span><img src=".\images\Biglietti\junior.jpg" alt="Junior che scia"></span>
     <span>6-14 anni</span>
-    <span style="display: block; float: right;">
+    <span id="bigliettiTesto">
       <form class="d-flex">
-        <button class="btn" type="button""><a href=" https://montgenevre.com/">Acquista -
-          25,90</a></button>
+        <button id="bigliettiButton" class="btn" type="button"><a href=" https://montgenevre.com/">Acquista -
+            25,90</a></button>
       </form>
     </span>
-    <br><br>
+    <br>
     <!--Jeune-->
-    <span><img src="images\Biglietti\jeune.jpg" alt="Jeune che scia" style="height: 50px; width: 50px;"
-        id="biglietti"></span>
+    <span><img src=".\images\Biglietti\jeune.jpg" alt="Jeune che scia" id="biglietti"></span>
     <span>15-17 anni</span>
-    <span style="display: block; float: right;">
+    <span id="bigliettiTesto">
       <form class="d-flex">
-        <button class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
+        <button id="bigliettiButton" class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
             33,30</a></button>
       </form>
     </span>
-    <br><br>
+    <br>
     <!--Adulte-->
-    <span><img src="images\Biglietti\adulte.jpg" alt="Adulto che scia" style="height: 50px; width: 50px;"></span>
+    <span><img src=".\images\Biglietti\adulte.jpg" alt="Adulto che scia"></span>
     <span>18-64 anni</span>
-    <span style="display: block; float: right;">
+    <span id="bigliettiTesto">
       <form class="d-flex">
-        <button class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
+        <button id="bigliettiButton" class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
             38,00</a></button>
       </form>
     </span>
-    <br><br>
+    <br>
     <!--Senior-->
-    <span><img src="images\Biglietti\senior.jpg" alt="Senior che scia" style="height: 50px; width: 50px;"></span>
+    <span><img src=".\images\Biglietti\senior.jpg" alt="Senior che scia"></span>
     <span>64+ anni</span>
-    <span style="display: block; float: right;">
+    <span id="bigliettiTesto">
       <form class="d-flex">
-        <button class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
+        <button id="bigliettiButton" class="btn" type="button"><a href="https://montgenevre.com/">Acquista -
             28,90</a></button>
       </form>
     </span>
   </div>
 
 
-  <!--Scrollspy e Piste-->
-  <div id="piste" class="container-fluid" style="padding:0px 50px; margin-bottom: 10px;">
-    <div style="color: #00095e; font-size: 48px; font-family: Helvetica, sans-serif; margin-top: -10px;">Le nostre piste
-    </div>
+  <!--Piste-->
+  <div id="piste" class="container-fluid">
+    <div id="titoli">Le nostre piste</div>
     <span class="videoPiste">
       <video controls>
         <source

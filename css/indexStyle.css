@@ -14,6 +14,11 @@
   border-radius: 5px;
   width: 4%;
   height: 4%;
+  margin-bottom: 1%;
+}
+
+#biglietti div {
+  padding: 2%;
 }
 #bigliettiTesto {
   font-size: large;
@@ -22,18 +27,29 @@
   float: right;
 }
 
-footer {
+#bigliettiButton {
+  font-size: medium;
   background-color: #00095e;
-  color: aqua;
+  text-decoration: none;
 }
 
-.card {
-  float: center;
-  width: 100%;
-  height: 100%;
+#bigliettiButton:hover {
+  font-size: large;
+  background: linear-gradient(#00095e, #00b7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  transition: 1000ms;
 }
 
 video {
   min-width: 20%;
+  width: 33%;
   max-width: 100%;
+}
+
+footer {
+  background-color: #00095e;
+  color: aqua;
 }
