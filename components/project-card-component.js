@@ -101,10 +101,9 @@ class ProjectCardComponent extends HTMLElement {
           <i class="fas fa-external-link-alt mr-1"></i>Demo Live
         </a>`;
     }
-    
-    this.innerHTML = `
-      <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-100 group">
-        <div class="relative h-48 bg-gradient-to-br ${bgGradient} overflow-hidden">
+      this.innerHTML = `
+      <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-100 group h-full flex flex-col">
+        <div class="relative h-48 bg-gradient-to-br ${bgGradient} overflow-hidden flex-shrink-0">
           <div class="absolute inset-0 bg-black/20"></div>
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-center text-white">
@@ -117,18 +116,18 @@ class ProjectCardComponent extends HTMLElement {
           </div>
           ${statusBadge}
         </div>
-        <div class="p-6">
+        <div class="p-6 flex-grow flex flex-col">
           <div class="flex items-center justify-between mb-3">
             <h3 class="text-xl font-bold text-gray-900">${title}</h3>
             ${licenseIndicator}
           </div>
-          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">
             ${description}
           </p>
           <div class="flex flex-wrap gap-1 mb-4">
             ${techBadges}
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-2 mt-auto">
             ${buttons}
           </div>
         </div>

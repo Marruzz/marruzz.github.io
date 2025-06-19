@@ -21,21 +21,21 @@ class SkillsComponent extends HTMLElement {
               soluzioni innovative
             </p>
           </div>          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 1. C# - 70% -->
+            <!-- 1. HTML5 - 65% -->
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
-                <div class="bg-gradient-to-br from-purple-600 to-blue-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <i class="fab fa-microsoft text-white text-2xl"></i>
+                <div class="bg-gradient-to-br from-orange-400 to-red-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <i class="fab fa-html5 text-white text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900">C#</h3>
+                <h3 class="text-xl font-bold text-gray-900">HTML5</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">OOP, LINQ, Async/Await</div>
+                <div class="text-sm text-gray-500 mt-1">Semantic HTML, Accessibility</div>
               </div>
               <div class="relative">
                 <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-purple-600 to-blue-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 70%"></div>
+                  <div class="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 65%"></div>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">70%</span>
+                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">65%</span>
               </div>
             </div>
 
@@ -57,25 +57,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 3. HTML5 - 65% -->
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-              <div class="text-center mb-6">
-                <div class="bg-gradient-to-br from-orange-400 to-red-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <i class="fab fa-html5 text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900">HTML5</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">Semantic HTML, Accessibility</div>
-              </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 65%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">65%</span>
-              </div>
-            </div>
-
-            <!-- 4. JavaScript - 62% -->
+            <!-- 3. JavaScript - 62% -->
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-yellow-400 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -90,6 +72,24 @@ class SkillsComponent extends HTMLElement {
                   <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 62%"></div>
                 </div>
                 <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">62%</span>
+              </div>
+            </div>
+
+            <!-- 4. Node.js - 41% -->
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+              <div class="text-center mb-6">
+                <div class="bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <i class="fab fa-node-js text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">Node.js</h3>
+                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <div class="text-sm text-gray-500 mt-1">Express, NPM, REST APIs</div>
+              </div>
+              <div class="relative">
+                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 41%"></div>
+                </div>
+                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">41%</span>
               </div>
             </div>
 
@@ -129,7 +129,25 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 7. WPF - 44% -->
+            <!-- 7. C# - 70% -->
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+              <div class="text-center mb-6">
+                <div class="bg-gradient-to-br from-purple-600 to-blue-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <i class="fab fa-microsoft text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">C#</h3>
+                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <div class="text-sm text-gray-500 mt-1">OOP, LINQ, Async/Await</div>
+              </div>
+              <div class="relative">
+                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-purple-600 to-blue-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 70%"></div>
+                </div>
+                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">70%</span>
+              </div>
+            </div>
+
+            <!-- 8. WPF - 44% -->
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-indigo-600 to-purple-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -147,39 +165,21 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 8. Node.js - 41% -->
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
-              <div class="text-center mb-6">
-                <div class="bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <i class="fab fa-node-js text-white text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900">Node.js</h3>
-                <p class="text-primary font-semibold text-lg">Livello Base</p>
-                <div class="text-sm text-gray-500 mt-1">Express, NPM, REST APIs</div>
-              </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 41%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">41%</span>
-              </div>
-            </div>
-
-            <!-- 9. .NET MAUI - 41% -->
+            <!-- 9. .NET MAUI - 74% -->
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-pink-600 to-purple-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fas fa-mobile-alt text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">.NET MAUI</h3>
-                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
                 <div class="text-sm text-gray-500 mt-1">Cross-platform, Mobile Apps</div>
               </div>
               <div class="relative">
                 <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-pink-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 41%"></div>
+                  <div class="bg-gradient-to-r from-pink-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 74%"></div>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">41%</span>
+                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">74%</span>
               </div>
             </div>
           </div>

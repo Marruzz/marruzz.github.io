@@ -1,21 +1,19 @@
 // Componente Projects come Web Component
 class ProjectsComponent extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
-      <section id="projects" class="py-20 bg-gray-50 relative overflow-hidden">
-        <div class="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
+    this.innerHTML = `      <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
+        <div class="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 dark:from-blue-500/20 dark:to-indigo-500/20 rounded-full blur-3xl"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div class="text-center mb-16 animate-fade-in">
             <span class="inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <i class="fas fa-rocket mr-2"></i>I miei lavori
-            </span>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            </span>            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
               Progetti in Evidenza
             </h2>
             <div class="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full mb-6"></div>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
               Una selezione dei miei progetti più significativi che dimostrano le
               mie competenze tecniche e creative
             </p>

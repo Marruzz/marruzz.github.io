@@ -1,8 +1,9 @@
 // Portfolio Main Script - Centralizzato e ottimizzato
-class PortfolioManager {
-  constructor() {
+class PortfolioManager {  constructor() {
     this.isLoading = true;
+    this.darkMode = this.initializeDarkMode();
     this.init();
+    this.updateMetaThemeColor(); // Imposta subito il colore corretto
   }
 
   init() {
@@ -406,6 +407,48 @@ class PortfolioManager {
       this.isLoading = false;
     }, 1200);
   }
+
+  // Inizializza la Dark Mode basandosi sulle preferenze salvate o di sistema
+  initializeDarkMode() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.classList.add('dark');
+      return true;
+    } else {
+      document.documentElement.classList.remove('dark');
+      return false;
+    }
+  }
+
+  // Toggle Dark Mode
+  toggleDarkMode() {
+    this.darkMode = !this.darkMode;
+    
+    if (this.darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+    
+    // Aggiorna il colore della barra del browser su mobile
+    this.updateMetaThemeColor();
+  }
+
+  // Aggiorna il colore della theme-color meta tag
+  updateMetaThemeColor() {
+    let metaThemeColor = document.querySelector("meta[name=theme-color]");
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement("meta");
+      metaThemeColor.name = "theme-color";
+      document.head.appendChild(metaThemeColor);
+    }
+    
+    metaThemeColor.content = this.darkMode ? "#1f2937" : "#ffffff";
+  }
 }
 
 // CSS per animazioni (viene iniettato dinamicamente)
@@ -467,3 +510,11 @@ document.body.insertAdjacentHTML('afterbegin', `
 
 // Inizializza il portfolio manager
 const portfolioManager = new PortfolioManager();
+
+// Esponi globalmente per l'accesso dai componenti
+window.portfolioManager = portfolioManager;
+
+// Gestione Dark Mode
+document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
+  portfolioManager.toggleDarkMode();
+});
