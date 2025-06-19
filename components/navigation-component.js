@@ -49,8 +49,7 @@ class NavigationComponent extends HTMLElement {
     // Aggiungi gli event listener
     this.setupEventListeners();
   }
-  
-  setupEventListeners() {
+    setupEventListeners() {
     const mobileButton = this.querySelector('#mobile-menu-button');
     const mobileMenu = this.querySelector('#mobile-menu');
     const darkModeToggle = this.querySelector('#dark-mode-toggle');
@@ -60,13 +59,39 @@ class NavigationComponent extends HTMLElement {
         mobileMenu.classList.toggle('hidden');
       });
     }
-      if (darkModeToggle) {
+    
+    if (darkModeToggle) {
       darkModeToggle.addEventListener('click', () => {
         // Trigger dark mode toggle on the portfolio manager
         if (window.portfolioManager) {
           window.portfolioManager.toggleDarkMode();
         }
-      });    }
+      });
+    }
+
+    // Smooth scroll per i link di navigazione
+    const navLinks = this.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const offset = 80; // Offset per navbar fissa
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Chiudi menu mobile se aperto
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
   }
 }
 
