@@ -3,7 +3,6 @@ class ProjectsComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section id="projects" class="py-20 bg-gray-50 relative overflow-hidden">
-        <!-- Background decorations -->
         <div class="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
 
@@ -20,8 +19,8 @@ class ProjectsComponent extends HTMLElement {
               Una selezione dei miei progetti più significativi che dimostrano le
               mie competenze tecniche e creative
             </p>
-          </div>          <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <!-- Project 1: Marroni Autoriparazioni Website -->
+          </div>          
+          <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-100 group">
               <div class="relative h-64 bg-gradient-to-br from-red-500 to-orange-600 overflow-hidden">
                 <div class="absolute inset-0 bg-black/20"></div>
@@ -67,7 +66,6 @@ class ProjectsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- Project 2: FitManager - Gestionale Palestra -->
             <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-100 group">
               <div class="relative h-64 bg-gradient-to-br from-indigo-600 to-purple-700 overflow-hidden">
                 <div class="absolute inset-0 bg-black/20"></div>
@@ -80,7 +78,6 @@ class ProjectsComponent extends HTMLElement {
                 <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
                   <i class="fab fa-angular text-white text-lg"></i>
                 </div>
-                <!-- Badge Features -->
                 <div class="absolute bottom-4 left-4 flex gap-2">
                   <span class="bg-green-500/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
                     <i class="fas fa-users mr-1"></i>Multi-user
@@ -104,7 +101,6 @@ class ProjectsComponent extends HTMLElement {
                   per clienti e staff.
                 </p>
                 
-                <!-- Features List -->
                 <div class="mb-6">
                   <h4 class="text-sm font-semibold text-gray-900 mb-3">Funzionalità Principali:</h4>
                   <div class="grid grid-cols-2 gap-2 text-xs text-gray-600">
@@ -136,7 +132,6 @@ class ProjectsComponent extends HTMLElement {
             </div>
           </div>
 
-          <!-- Progetti in Pipeline -->
           <div class="mt-16 text-center">
             <h3 class="text-2xl font-bold text-gray-900 mb-8">Prossimi Progetti</h3>
             <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -172,14 +167,14 @@ class ProjectsComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
+
     this.setupEventListeners();
   }
-  
+
   setupEventListeners() {
-    console.log('Projects component loaded');
+    console.log("Projects component loaded");
   }
 }
 
 // Registra il componente
-customElements.define('app-projects', ProjectsComponent);
+customElements.define("app-projects", ProjectsComponent);

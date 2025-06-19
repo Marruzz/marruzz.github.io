@@ -6,9 +6,10 @@
     <title>Luca Marroni - Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script-tailwind.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
     <!-- Carica tutti i componenti -->
@@ -20,28 +21,26 @@
     <script src="components/projects-component.js"></script>
     <script src="components/contact-component.js"></script>
     
-    <!-- Navigazione come Web Component -->
+
     <app-navigation></app-navigation>
     
-    <!-- Hero Section come Web Component -->
+
     <app-hero></app-hero>
     
-    <!-- About Section come Web Component -->
+
     <app-about></app-about>
-    
-    <!-- Skills Section come Web Component -->
+
     <app-skills></app-skills>
-    
-    <!-- Certifications Section come Web Component -->
+
     <app-certifications></app-certifications>
     
-    <!-- Projects Section come Web Component -->
+
     <app-projects></app-projects>
     
-    <!-- Contact Section come Web Component -->
+
     <app-contact></app-contact>
     
-    <!-- Script di inizializzazione -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Gestione del menu mobile

@@ -1,4 +1,3 @@
-// Componente Contact come Web Component
 class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -34,9 +33,8 @@ class ContactComponent extends HTMLElement {
                   <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300">
                     <i class="fas fa-envelope text-2xl"></i>
                   </div>
-                  <div>
-                    <h4 class="font-bold text-gray-900 text-lg">Email</h4>
-                    <p class="text-gray-600">luca.marroni@student.majorana.edu</p>
+                  <div>                    <h4 class="font-bold text-gray-900 text-lg">Email</h4>
+                    <p class="text-gray-600">luca.marroni@hotmail.com</p>
                     <p class="text-sm text-blue-600 font-medium">Risposta entro 24h</p>
                   </div>
                 </div>
@@ -48,7 +46,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                   <div>
                     <h4 class="font-bold text-gray-900 text-lg">Località</h4>
-                    <p class="text-gray-600">Grugliasco, Torino, Piemonte</p>
+                    <p class="text-gray-600">Torino, Piemonte</p>
                     <p class="text-sm text-green-600 font-medium">Disponibile per incontri locali</p>
                   </div>
                 </div>
@@ -72,7 +70,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                   <div>
                     <h4 class="font-bold text-gray-900 text-lg">Disponibilità</h4>
-                    <p class="text-gray-600">Lun-Ven: 15:00-19:00</p>
+                    <p class="text-gray-600">Lun-Ven: 09:00 - 18:00 </p>
                     <p class="text-sm text-orange-600 font-medium">Weekend su appuntamento</p>
                   </div>
                 </div>
@@ -82,16 +80,16 @@ class ContactComponent extends HTMLElement {
               <div class="mt-12">
                 <h4 class="text-xl font-bold text-gray-900 mb-6">Seguimi sui social</h4>
                 <div class="flex space-x-4">
-                  <a href="#" class="group bg-gray-900 text-white p-4 rounded-2xl hover:bg-gray-800 transition-all duration-300 hover:scale-110">
+                  <a href="https://github.com/Marruzz/" target="_blank"  class="group bg-gray-900 text-white p-4 rounded-2xl hover:bg-gray-800 transition-all duration-300 hover:scale-110">
                     <i class="fab fa-github text-2xl group-hover:animate-pulse"></i>
                   </a>
-                  <a href="#" class="group bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 hover:scale-110">
+                  <a href="https://www.linkedin.com/in/lucamarroni" target="_blank"  class="group bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 hover:scale-110">
                     <i class="fab fa-linkedin text-2xl group-hover:animate-pulse"></i>
                   </a>
-                  <a href="#" class="group bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:scale-110">
+                  <a href="https://www.instagram.com/luca.marroni._/" target="_blank"  class="group bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:scale-110">
                     <i class="fab fa-instagram text-2xl group-hover:animate-pulse"></i>
                   </a>
-                  <a href="#" class="group bg-red-500 text-white p-4 rounded-2xl hover:bg-red-600 transition-all duration-300 hover:scale-110">
+                  <a href="mailto:luca.marroni@hotmail.com" target="_blank" class="group bg-red-500 text-white p-4 rounded-2xl hover:bg-red-600 transition-all duration-300 hover:scale-110">
                     <i class="fas fa-envelope text-2xl group-hover:animate-pulse"></i>
                   </a>
                 </div>
@@ -120,23 +118,55 @@ class ContactComponent extends HTMLElement {
                   <div>
                     <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Messaggio</label>
                     <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"></textarea>
-                  </div>
-                  <button type="submit" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    Invia Messaggio
+                  </div>                  <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                    <span class="submit-text">
+                      <i class="fas fa-paper-plane mr-2"></i>
+                      Invia Messaggio
+                    </span>
+                    <span class="loading-text hidden">
+                      <i class="fas fa-spinner fa-spin mr-2"></i>
+                      Invio in corso...
+                    </span>
                   </button>
                 </form>
+                
+                <!-- Success Message -->
+                <div id="success-message" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+                  <div class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                    <div>
+                      <h4 class="text-green-800 font-semibold">Messaggio inviato con successo!</h4>
+                      <p class="text-green-600 text-sm">Ti risponderò il prima possibile.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Error Message -->
+                <div id="error-message" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+                  <div class="flex items-center">
+                    <i class="fas fa-exclamation-circle text-red-500 mr-3"></i>
+                    <div>
+                      <h4 class="text-red-800 font-semibold">Errore nell'invio</h4>
+                      <p class="text-red-600 text-sm">Si è verificato un errore. Riprova o contattami direttamente.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </div>      </section>
     `;
     
+    this.initEmailJS();
     this.setupEventListeners();
   }
-  
-  setupEventListeners() {
+    initEmailJS() {
+    // Initialize EmailJS with your public key
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init('83-f-lP8RuaKUIK_T'); // Sostituisci con la tua public key di EmailJS
+    }
+  }
+    setupEventListeners() {
     const form = this.querySelector('#contact-form');
     if (form) {
       form.addEventListener('submit', (e) => {
@@ -148,16 +178,81 @@ class ContactComponent extends HTMLElement {
     console.log('Contact component loaded');
   }
   
-  handleFormSubmit(e) {
+  showLoading(show) {
+    const submitBtn = this.querySelector('#submit-btn');
+    const submitText = this.querySelector('.submit-text');
+    const loadingText = this.querySelector('.loading-text');
+    
+    if (show) {
+      submitBtn.disabled = true;
+      submitText.classList.add('hidden');
+      loadingText.classList.remove('hidden');
+    } else {
+      submitBtn.disabled = false;
+      submitText.classList.remove('hidden');
+      loadingText.classList.add('hidden');
+    }
+  }
+  
+  showMessage(type, show = true) {
+    const successMessage = this.querySelector('#success-message');
+    const errorMessage = this.querySelector('#error-message');
+    
+    if (type === 'success') {
+      successMessage.classList.toggle('hidden', !show);
+      errorMessage.classList.add('hidden');
+    } else if (type === 'error') {
+      errorMessage.classList.toggle('hidden', !show);
+      successMessage.classList.add('hidden');
+    }
+  }
+    async handleFormSubmit(e) {
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const data = {
+      from_name: formData.get('name'),
+      from_email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+      to_email: 'stmp@marroniautoriparazioni.com'
+    };
     
-    // Qui puoi aggiungere la logica per inviare il form
-    console.log('Form submitted:', data);
+    // Hide any previous messages
+    this.showMessage('success', false);
+    this.showMessage('error', false);
     
-    // Mostra un messaggio di successo
-    alert('Messaggio inviato con successo! Ti risponderò al più presto.');
-    e.target.reset();
+    // Show loading state
+    this.showLoading(true);
+    
+    try {
+      // Check if EmailJS is available
+      if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS not loaded');
+      }
+      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'stmp_portfolio',    // Sostituisci con il tuo Service ID
+        'template_appkpbh',   // Sostituisci con il tuo Template ID
+        data
+      );
+      
+      console.log('Email sent successfully:', result);
+      
+      // Show success message
+      this.showMessage('success');
+      
+      // Reset form
+      e.target.reset();
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      
+      // Show error message
+      this.showMessage('error');
+    } finally {
+      // Hide loading state
+      this.showLoading(false);
+    }
   }
 }
 
