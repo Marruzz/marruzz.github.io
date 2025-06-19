@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marruzz.github.io/sitemap.xml
+
+# Crawl-delay per essere gentili con i bot
+Crawl-delay: 1
+
+# Disallow per file di sistema (se presenti)
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /tools/
+
+# Allow important files
+Allow: /components/
+Allow: /style.css
+Allow: /script.js
