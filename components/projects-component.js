@@ -28,7 +28,7 @@ class ProjectsComponent extends HTMLElement {
               bg-gradient="from-amber-600 to-yellow-700"
               tech-stack="JavaScript, Chess Engine, WebApp"
               github-url="https://github.com/Marruzz/ScacchiJS"
-              live-url="https://marruzz.github.io/ScacchiJS/"
+              live-url="https://marruzz.github.io/ScacchiJS/index.html"
               license="MIT License"
               status="MIT License"
               playable>
