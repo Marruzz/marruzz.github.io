@@ -1,4 +1,3 @@
-
 class SkillsComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -165,8 +164,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+              <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-pink-600 to-purple-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fas fa-mobile-alt text-white text-2xl"></i>
@@ -180,6 +178,24 @@ class SkillsComponent extends HTMLElement {
                   <div class="bg-gradient-to-r from-pink-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 74%"></div>
                 </div>
                 <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">74%</span>
+              </div>
+            </div>
+
+            <!-- PHP Skill Card -->
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+              <div class="text-center mb-6">
+                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <i class="fab fa-php text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">PHP</h3>
+                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <div class="text-sm text-gray-500 mt-1">OOP, Laravel, MySQL</div>
+              </div>
+              <div class="relative">
+                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 22%"></div>
+                </div>
+                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">22%</span>
               </div>
             </div>
           </div>

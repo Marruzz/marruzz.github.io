@@ -77,8 +77,8 @@ class ProjectsComponent extends HTMLElement {
               icon="fas fa-gamepad"
               bg-gradient="from-blue-500 to-cyan-600"
               tech-stack="JavaScript, Game, WebApp"
-              github-url="https://github.com/Marruzz/ConnectFour"
-              live-url="https://marruzz.github.io/ConnectFour/"
+              github-url="https://github.com/Marruzz/ForzaQuattroJS"
+              live-url="https://marruzz.github.io/ForzaQuattroJS/index.html"
               license="MIT License"
               status="MIT License"
               playable>
