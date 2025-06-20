@@ -513,3 +513,8 @@ const portfolioManager = new PortfolioManager();
 
 // Esponi globalmente per l'accesso dai componenti
 window.portfolioManager = portfolioManager;
+
+// Gestione Dark Mode
+document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
+  portfolioManager.toggleDarkMode();
+});

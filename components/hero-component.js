@@ -30,20 +30,17 @@ class HeroComponent extends HTMLElement {
                 17 anni, studente dell'ITIS E.Majorana di Grugliasco con la
                 passione per lo sviluppo web, le tecnologie moderne e
                 l'innovazione digitale. Certificato CISCO IT Essentials.
-              </p>              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <a href="#projects" class="group bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-primary/25 hover:shadow-xl transform hover:-translate-y-1">
                   <i class="fas fa-rocket mr-2 group-hover:animate-bounce"></i>
                   Scopri i miei progetti
-                </a>
-                <a href="#cv" class="group bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/25 hover:shadow-xl transform hover:-translate-y-1">
-                  <i class="fas fa-file-alt mr-2 group-hover:animate-pulse"></i>
-                  Scarica CV
                 </a>
                 <a href="#contact" class="group border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-1">
                   <i class="fas fa-envelope mr-2"></i>
                   Contattami
                 </a>
-              </div><!-- Social Links -->
+              </div>              <!-- Social Links -->
               <div class="flex justify-center lg:justify-start space-x-6">
                 <a href="https://github.com/Marruzz/" target="_blank" class="text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110">
                   <i class="fab fa-github text-2xl"></i>
