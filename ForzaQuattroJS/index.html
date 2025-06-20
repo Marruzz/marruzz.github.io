@@ -4,14 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forza Quattro in JavaScript - Marruzz</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Forza Quattro - Marruzz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'game-blue': '#3b82f6',
+                        'game-dark': '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </head>
 
-<body onload="CreoTabella()">
-    <div id="GameArea">
-        <table id="tabella"></table>
+<body class="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- Header -->
+    <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold text-white mb-2 drop-shadow-lg">
+            🔴 Forza Quattro 🟡
+        </h1>
+        <p class="text-xl text-blue-100">
+            Connetti 4 dischi per vincere!
+        </p>
+    </div>
+
+    <!-- Game Status -->
+    <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-6 text-center border border-white/30">
+        <div class="flex items-center justify-center space-x-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-lg"></div>
+                <span class="text-white font-semibold">Giocatore Rosso</span>
+            </div>
+            <div class="text-2xl font-bold text-white">VS</div>
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-lg"></div>
+                <span class="text-white font-semibold">Giocatore Giallo</span>
+            </div>
+        </div>
+        <div id="currentPlayer" class="mt-4 text-lg font-semibold text-white">
+            Turno del giocatore: <span id="playerIndicator" class="inline-flex items-center">
+                <div class="w-4 h-4 rounded-full bg-red-500 mr-2"></div>
+                Rosso
+            </span>
+        </div>
+    </div>
+
+    <!-- Game Board Container -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl">
+        <div id="gameBoard" class="bg-blue-800 rounded-xl p-4 shadow-inner">
+            <!-- La griglia di gioco verrà generata qui -->
+        </div>
+    </div>
+
+    <!-- Reset Button -->
+    <button id="resetBtn" 
+            class="mt-6 bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-8 rounded-xl border border-white/30 transition-all duration-200 hover:scale-105 backdrop-blur-sm">
+        🔄 Nuova Partita
+    </button>
+
+    <!-- Victory Modal (hidden by default) -->
+    <div id="victoryModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 text-center shadow-2xl transform scale-95 transition-transform">
+            <div class="text-6xl mb-4">🎉</div>
+            <h2 id="victoryMessage" class="text-3xl font-bold text-gray-800 mb-4">
+                Giocatore Rosso ha vinto!
+            </h2>
+            <button id="playAgainBtn" 
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                Gioca di nuovo
+            </button>
+        </div>
     </div>
 </body>
 
