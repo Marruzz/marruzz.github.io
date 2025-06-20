@@ -1,9 +1,9 @@
-// Componente CV come Web Component
+
 class CVComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section id="cv" class="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden transition-colors duration-300">
-        <!-- Background decorations -->
+        
         <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-purple-600/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent/5 to-pink-500/5 rounded-full blur-3xl"></div>
         
@@ -21,7 +21,7 @@ class CVComponent extends HTMLElement {
             </p>
           </div>
 
-          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">            <!-- CV Italiano -->
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">            
             <div class="animate-slide-right">
               <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div class="bg-gradient-to-r from-green-500 to-red-500 p-6">
@@ -70,7 +70,7 @@ class CVComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-            </div>            <!-- CV Inglese -->
+            </div>            
             <div class="animate-slide-left">
               <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div class="bg-gradient-to-r from-blue-600 to-red-600 p-6">
@@ -120,7 +120,7 @@ class CVComponent extends HTMLElement {
                 </div>
               </div>
             </div>
-          </div>          <!-- Summary Section -->
+          </div>          
           <div class="mt-20 animate-fade-in">
             <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 p-8 lg:p-12 transition-colors duration-300">              <div class="text-center mb-12">
                 <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
@@ -163,7 +163,7 @@ class CVComponent extends HTMLElement {
             </div>
           </div>
 
-          <!-- Call to Action -->
+          
           <div class="mt-16 text-center animate-fade-in">
             <div class="bg-gradient-to-r from-primary to-purple-600 rounded-3xl p-8 text-white">              <h3 class="text-2xl font-bold mb-4 text-white">
                 <i class="fas fa-handshake mr-2"></i>
@@ -187,22 +187,22 @@ class CVComponent extends HTMLElement {
   }
   
   setupEventListeners() {
-    // Aggiungi event listeners per tracking dei download
+
     const downloadLinks = this.querySelectorAll('a[download]');
     downloadLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const fileName = e.target.closest('a').getAttribute('download');
         console.log(`CV Download: ${fileName}`);
         
-        // Qui potresti aggiungere analytics se necessario
-        // gtag('event', 'download', {
-        //   event_category: 'CV',
-        //   event_label: fileName
-        // });
+
+
+
+
+
       });
     });
 
-    // Smooth scroll per i link interni
+
     const internalLinks = this.querySelectorAll('a[href^="#"]');
     internalLinks.forEach(link => {
       link.addEventListener('click', (e) => {
@@ -222,5 +222,5 @@ class CVComponent extends HTMLElement {
   }
 }
 
-// Registra il componente
+
 customElements.define('app-cv', CVComponent);

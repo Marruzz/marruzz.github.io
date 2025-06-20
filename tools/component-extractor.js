@@ -1,4 +1,4 @@
-// Script per estrarre sezioni dall'HTML esistente e creare componenti
+
 class HTMLComponentExtractor {
   constructor(htmlContent) {
     this.htmlContent = htmlContent;
@@ -18,7 +18,7 @@ class HTMLComponentExtractor {
 
   createWebComponent(componentName, html, className) {
     return `
-// ${componentName} Web Component
+
 class ${className} extends HTMLElement {
   connectedCallback() {
     this.innerHTML = \`${html.replace(/`/g, '\\`')}\`;
@@ -26,12 +26,12 @@ class ${className} extends HTMLElement {
   }
   
   setupEventListeners() {
-    // Aggiungi qui gli event listener specifici per questo componente
+
     console.log('${componentName} component loaded');
   }
 }
 
-// Registra il componente
+
 customElements.define('${componentName.toLowerCase()}', ${className});
 `;
   }
@@ -39,13 +39,13 @@ customElements.define('${componentName.toLowerCase()}', ${className});
   generateComponents() {
     const components = {};
     
-    // Estrai navigazione
+
     const nav = this.extractNavigation();
     if (nav) {
       components.navigation = this.createWebComponent('app-navigation', nav, 'NavigationComponent');
     }
     
-    // Estrai sezioni principali
+
     const sections = ['home', 'about', 'skills', 'certifications', 'projects', 'contact'];
     sections.forEach(sectionId => {
       const sectionHTML = this.extractSection(sectionId);
@@ -60,7 +60,7 @@ customElements.define('${componentName.toLowerCase()}', ${className});
   }
 }
 
-// Utilizzo dello script
+
 async function convertToComponents() {
   try {
     const response = await fetch('index.html');
@@ -69,7 +69,7 @@ async function convertToComponents() {
     const extractor = new HTMLComponentExtractor(htmlContent);
     const components = extractor.generateComponents();
     
-    // Stampa i componenti generati
+
     Object.keys(components).forEach(key => {
       console.log(`=== ${key.toUpperCase()} COMPONENT ===`);
       console.log(components[key]);
@@ -82,7 +82,7 @@ async function convertToComponents() {
   }
 }
 
-// Per salvare i file automaticamente (se hai accesso al filesystem)
+
 function downloadComponent(componentName, content) {
   const blob = new Blob([content], { type: 'text/javascript' });
   const url = URL.createObjectURL(blob);
@@ -95,7 +95,7 @@ function downloadComponent(componentName, content) {
   URL.revokeObjectURL(url);
 }
 
-// Esporta per uso esterno
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { HTMLComponentExtractor, convertToComponents };
 }

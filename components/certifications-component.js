@@ -1,4 +1,4 @@
-// Componente Certifications come Web Component
+
 class CertificationsComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -18,7 +18,7 @@ class CertificationsComponent extends HTMLElement {
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- CISCO IT Essentials -->
+            
             <div class="group bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-200 relative overflow-hidden">
               <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-600/20 rounded-full -translate-y-16 translate-x-16"></div>
               <div class="relative z-10">
@@ -42,7 +42,7 @@ class CertificationsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- ECDL/ICDL -->
+            
             <div class="group bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-green-200 relative overflow-hidden">
               <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400/20 to-emerald-600/20 rounded-full -translate-y-16 translate-x-16"></div>
               <div class="relative z-10">
@@ -65,7 +65,7 @@ class CertificationsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- Cambridge English C1 -->
+            
             <div class="group bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-purple-200 relative overflow-hidden">
               <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-600/20 rounded-full -translate-y-16 translate-x-16"></div>
               <div class="relative z-10">
@@ -89,7 +89,7 @@ class CertificationsComponent extends HTMLElement {
             </div>
           </div>
 
-          <!-- Future Goals -->
+          
           <div class="mt-16 text-center">
             <h3 class="text-2xl font-bold text-gray-900 mb-8">Prossimi Obiettivi</h3>
             <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -122,5 +122,5 @@ class CertificationsComponent extends HTMLElement {
   }
 }
 
-// Registra il componente
+
 customElements.define('app-certifications', CertificationsComponent);

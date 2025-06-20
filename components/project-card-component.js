@@ -1,7 +1,7 @@
-// Componente ProjectCard riutilizzabile
+
 class ProjectCardComponent extends HTMLElement {
   connectedCallback() {
-    // Estrae i dati dagli attributi
+
     const title = this.getAttribute('title') || '';
     const description = this.getAttribute('description') || '';
     const githubUrl = this.getAttribute('github-url') || '';
@@ -14,10 +14,10 @@ class ProjectCardComponent extends HTMLElement {
     const featured = this.hasAttribute('featured');
     const playable = this.hasAttribute('playable');
     
-    // Crea array delle tecnologie
+
     const technologies = techStack ? techStack.split(',').map(tech => tech.trim()) : [];
     
-    // Genera i badge delle tecnologie
+
     const techBadges = technologies.map(tech => {
       const colorMap = {
         'JavaScript': 'bg-yellow-100 text-yellow-800',
@@ -38,7 +38,7 @@ class ProjectCardComponent extends HTMLElement {
       return `<span class="${colorClass} text-xs px-2 py-1 rounded-full font-semibold">${tech}</span>`;
     }).join('');
     
-    // Status badge
+
     let statusBadge = '';
     if (status) {
       const statusMap = {
@@ -68,7 +68,7 @@ class ProjectCardComponent extends HTMLElement {
       }
     }
     
-    // License/Status indicator
+
     let licenseIndicator = '';
     if (license) {
       const licenseMap = {
@@ -86,7 +86,7 @@ class ProjectCardComponent extends HTMLElement {
         </div>`;
     }
     
-    // Genera i pulsanti
+
     let buttons = '';
     if (githubUrl) {
       buttons += `
@@ -148,5 +148,5 @@ class ProjectCardComponent extends HTMLElement {
   }
 }
 
-// Registra il componente
+
 customElements.define('project-card', ProjectCardComponent);

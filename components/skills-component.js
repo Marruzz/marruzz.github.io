@@ -1,9 +1,9 @@
-// Componente Skills come Web Component
+
 class SkillsComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section id="skills" class="py-20 bg-gray-50 relative overflow-hidden">
-        <!-- Background decorations -->
+        
         <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-accent/10 to-pink-500/10 rounded-full blur-3xl"></div>
 
@@ -21,7 +21,7 @@ class SkillsComponent extends HTMLElement {
               soluzioni innovative
             </p>
           </div>          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 1. HTML5 - 65% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-orange-400 to-red-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -39,7 +39,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 2. CSS3 - 67% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -57,7 +57,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 3. JavaScript - 62% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-yellow-400 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -75,7 +75,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 4. Node.js - 41% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -93,7 +93,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 5. Angular - 56% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-red-500 to-pink-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -111,7 +111,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 6. Python - 48% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-blue-600 to-indigo-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -129,7 +129,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 7. C# - 70% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-purple-600 to-blue-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -147,7 +147,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 8. WPF - 44% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-indigo-600 to-purple-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -165,7 +165,7 @@ class SkillsComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- 9. .NET MAUI - 74% -->
+            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-pink-600 to-purple-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -184,7 +184,7 @@ class SkillsComponent extends HTMLElement {
             </div>
           </div>
 
-          <!-- Additional Skills -->
+          
           <div class="mt-16">
             <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">
               Altri Strumenti & Tecnologie
@@ -230,7 +230,7 @@ class SkillsComponent extends HTMLElement {
   }
   
   setupEventListeners() {
-    // Anima le barre di progresso quando il componente entra nella viewport
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -249,5 +249,5 @@ class SkillsComponent extends HTMLElement {
   }
 }
 
-// Registra il componente
+
 customElements.define('app-skills', SkillsComponent);

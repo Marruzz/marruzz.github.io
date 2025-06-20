@@ -1,4 +1,4 @@
-// Componente About come Web Component
+
 class AboutComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -15,7 +15,7 @@ class AboutComponent extends HTMLElement {
           </div>
 
           <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <!-- Text Content -->
+            
             <div class="animate-slide-right">
               <h3 class="text-3xl font-bold text-gray-900 mb-6 gradient-text">
                 Studente, Developer & Innovatore
@@ -39,7 +39,7 @@ class AboutComponent extends HTMLElement {
                 conoscenze con altri giovani sviluppatori.
               </p>
 
-              <!-- Key Points -->
+              
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div class="flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 p-4 rounded-xl border border-primary/20">
                   <div class="bg-primary text-white p-3 rounded-full mr-4">
@@ -80,9 +80,9 @@ class AboutComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- Visual Content -->
+            
             <div class="animate-slide-left">
-              <!-- Languages Card -->
+              
               <div class="bg-gradient-to-br from-primary/5 to-purple-600/5 p-8 rounded-3xl border border-primary/10 shadow-xl mb-8">
                 <div class="text-center mb-6">
                   <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -116,7 +116,7 @@ class AboutComponent extends HTMLElement {
                 </div>
               </div>
 
-              <!-- Interests -->
+              
               <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
                 <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
                   <i class="fas fa-heart text-red-500 mr-2"></i>
@@ -145,5 +145,5 @@ class AboutComponent extends HTMLElement {
   }
 }
 
-// Registra il componente
+
 customElements.define('app-about', AboutComponent);

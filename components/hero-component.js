@@ -1,8 +1,8 @@
-// Componente Hero come Web Component
+
 class HeroComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `      <section id="home" class="pt-16 min-h-screen flex items-center relative overflow-hidden">
-        <!-- Background with animated particles -->
+        
         <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900 transition-colors duration-300">
           <div class="particle w-2 h-2 top-20 left-20" style="animation-delay: 0s"></div>
           <div class="particle w-1 h-1 top-40 right-32" style="animation-delay: 1s"></div>
@@ -13,7 +13,7 @@ class HeroComponent extends HTMLElement {
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Text Content -->
+            
             <div class="text-center lg:text-left animate-fade-in">
               <div class="mb-6">
                 <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -40,7 +40,7 @@ class HeroComponent extends HTMLElement {
                   <i class="fas fa-envelope mr-2"></i>
                   Contattami
                 </a>
-              </div>              <!-- Social Links -->
+              </div>              
               <div class="flex justify-center lg:justify-start space-x-6">
                 <a href="https://github.com/Marruzz/" target="_blank" class="text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110">
                   <i class="fab fa-github text-2xl"></i>
@@ -57,15 +57,15 @@ class HeroComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- Profile Image and Stats -->
+            
             <div class="text-center animate-slide-left">
               <div class="relative inline-block">
                 <div class="w-80 h-80 mx-auto mb-8 relative">
-                  <!-- Glowing background -->
+                  
                   <div class="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse-slow opacity-20"></div>
-                  <!-- Profile image -->
+                  
                   <img src="https://placehold.co/400x400/png?text=Luca+Marroni" alt="Luca Marroni" class="w-full h-full rounded-full object-cover border-8 border-white shadow-2xl relative z-10 animate-float" />
-                  <!-- Floating elements -->
+                  
                   <div class="absolute -top-4 -right-4 bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
                     <i class="fas fa-code text-lg"></i>
                   </div>
@@ -74,7 +74,7 @@ class HeroComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <!-- Quick Stats -->
+              
               <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">                <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300">
                   <div class="text-2xl font-bold text-primary">17</div>
                   <div class="text-sm text-gray-600 dark:text-gray-400">Anni</div>
@@ -90,7 +90,7 @@ class HeroComponent extends HTMLElement {
               </div>
             </div>
           </div>
-        </div>        <!-- Scroll indicator -->
+        </div>        
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#about" class="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors">
             <i class="fas fa-chevron-down text-2xl"></i>
@@ -103,10 +103,10 @@ class HeroComponent extends HTMLElement {
   }
   
   setupEventListeners() {
-    // Aggiorna le animazioni se necessario
+
     console.log('Hero component loaded');
   }
 }
 
-// Registra il componente
+
 customElements.define('app-hero', HeroComponent);

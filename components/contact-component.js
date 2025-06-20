@@ -1,7 +1,7 @@
 class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `      <section id="contact" class="py-20 bg-white dark:bg-gray-800 relative overflow-hidden transition-colors duration-300">
-        <!-- Background decorations -->
+        
         <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-purple-600/10 dark:from-primary/20 dark:to-purple-600/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-accent/10 to-pink-500/10 dark:from-accent/20 dark:to-pink-500/20 rounded-full blur-3xl"></div>
 
@@ -18,11 +18,11 @@ class ContactComponent extends HTMLElement {
               a nuove opportunità e sfide creative. Non esitare a scrivermi!
             </p>
           </div>          <div class="grid lg:grid-cols-2 gap-16 items-start">
-            <!-- Contact Information -->
+            
             <div class="animate-slide-right h-full flex flex-col">              <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 transition-colors duration-300">
                 Informazioni di Contatto
               </h3><div class="space-y-6 flex-grow">
-                <!-- Email -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 hover:shadow-lg transition-all duration-300 h-28">
                   <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <i class="fas fa-envelope text-2xl"></i>
@@ -34,7 +34,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                 </div>
 
-                <!-- Location -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300 h-28">
                   <div class="bg-gradient-to-br from-green-500 to-emerald-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <i class="fas fa-map-marker-alt text-2xl"></i>
@@ -46,7 +46,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                 </div>
 
-                <!-- Phone -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100 hover:shadow-lg transition-all duration-300 h-28">
                   <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <i class="fas fa-phone text-2xl"></i>
@@ -58,7 +58,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                 </div>
 
-                <!-- Schedule -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl border border-orange-100 hover:shadow-lg transition-all duration-300 h-28">
                   <div class="bg-gradient-to-br from-orange-500 to-yellow-500 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <i class="fas fa-clock text-2xl"></i>
@@ -71,7 +71,7 @@ class ContactComponent extends HTMLElement {
                 </div>
               </div>
 
-              <!-- Social Links -->              <div class="mt-12">
+                            <div class="mt-12">
                 <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Seguimi sui social</h4>
                 <div class="flex space-x-4">
                   <a href="https://github.com/Marruzz/" target="_blank"  class="group bg-gray-900 text-white p-4 rounded-2xl hover:bg-gray-800 transition-all duration-300 hover:scale-110">
@@ -88,7 +88,7 @@ class ContactComponent extends HTMLElement {
                   </a>
                 </div>
               </div>
-            </div>            <!-- Contact Form -->            <div class="animate-slide-left h-full">
+            </div>                        <div class="animate-slide-left h-full">
               <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-600 h-full flex flex-col transition-colors duration-300">
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Invia un messaggio</h3>
                 <form class="space-y-4 flex-grow flex flex-col" id="contact-form">                  <div class="grid md:grid-cols-2 gap-4">
@@ -114,7 +114,7 @@ class ContactComponent extends HTMLElement {
                       Invia Messaggio
                     </button>
                     
-                    <!-- Info Message -->
+                    
                     <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-xl">
                       <div class="flex items-center">
                         <i class="fas fa-info-circle text-blue-500 mr-3"></i>
@@ -155,28 +155,28 @@ class ContactComponent extends HTMLElement {
     const subject = formData.get('subject');
     const message = formData.get('message');
     
-    // Validazione campi
+
     if (!name || !email || !subject || !message) {
       alert('Tutti i campi sono obbligatori!');
       return;
     }
     
-    // Validazione email
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       alert('Inserisci un indirizzo email valido!');
       return;
     }
     
-    // Crea il mailto link
+
     const mailtoLink = `mailto:luca.marroni@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
     )}`;
     
-    // Apri il client email
+
     window.location.href = mailtoLink;
   }
 }
 
-// Registra il componente
+
 customElements.define('app-contact', ContactComponent);

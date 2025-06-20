@@ -2,7 +2,7 @@ class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section id="contact" class="py-20 bg-white relative overflow-hidden">
-        <!-- Background decorations -->
+        
         <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-accent/10 to-pink-500/10 rounded-full blur-3xl"></div>
 
@@ -22,13 +22,13 @@ class ContactComponent extends HTMLElement {
           </div>
 
           <div class="grid lg:grid-cols-2 gap-16">
-            <!-- Contact Information -->
+            
             <div class="animate-slide-right">
               <h3 class="text-3xl font-bold text-gray-900 mb-8">
                 Informazioni di Contatto
               </h3>
               <div class="space-y-6">
-                <!-- Email -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 hover:shadow-lg transition-all duration-300">
                   <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300">
                     <i class="fas fa-envelope text-2xl"></i>
@@ -40,7 +40,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                 </div>
 
-                <!-- Location -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300">
                   <div class="bg-gradient-to-br from-green-500 to-emerald-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300">
                     <i class="fas fa-map-marker-alt text-2xl"></i>
@@ -52,7 +52,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                 </div>
 
-                <!-- Phone -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100 hover:shadow-lg transition-all duration-300">
                   <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300">
                     <i class="fas fa-phone text-2xl"></i>
@@ -64,7 +64,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                 </div>
 
-                <!-- Schedule -->
+                
                 <div class="group flex items-center p-6 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl border border-orange-100 hover:shadow-lg transition-all duration-300">
                   <div class="bg-gradient-to-br from-orange-500 to-yellow-500 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300">
                     <i class="fas fa-clock text-2xl"></i>
@@ -77,7 +77,7 @@ class ContactComponent extends HTMLElement {
                 </div>
               </div>
 
-              <!-- Social Links -->
+              
               <div class="mt-12">
                 <h4 class="text-xl font-bold text-gray-900 mb-6">Seguimi sui social</h4>
                 <div class="flex space-x-4">
@@ -97,7 +97,7 @@ class ContactComponent extends HTMLElement {
               </div>
             </div>
 
-            <!-- Contact Form -->
+            
             <div class="animate-slide-left">
               <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl shadow-xl border border-gray-100">
                 <h3 class="text-2xl font-bold text-gray-900 mb-6">Invia un messaggio</h3>
@@ -126,7 +126,7 @@ class ContactComponent extends HTMLElement {
                   </button>
                 </form>
                 
-                <!-- Info Message -->
+                
                 <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                   <div class="flex items-center">
                     <i class="fas fa-info-circle text-blue-500 mr-3"></i>
@@ -165,28 +165,28 @@ class ContactComponent extends HTMLElement {
     const subject = formData.get('subject');
     const message = formData.get('message');
     
-    // Validazione campi
+
     if (!name || !email || !subject || !message) {
       alert('Tutti i campi sono obbligatori!');
       return;
     }
     
-    // Validazione email
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       alert('Inserisci un indirizzo email valido!');
       return;
     }
     
-    // Crea il mailto link
+
     const mailtoLink = `mailto:luca.marroni@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
     )}`;
     
-    // Apri il client email
+
     window.location.href = mailtoLink;
   }
 }
 
-// Registra il componente
+
 customElements.define('app-contact', ContactComponent);

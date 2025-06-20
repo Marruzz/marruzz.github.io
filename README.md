@@ -167,14 +167,8 @@ customElements.define('app-nuovo', NuovoComponent);
 ### 🎨 **Personalizzare i Colori**
 
 ```css
-/* style.css */
 :root {
-  --primary: #3B82F6;    /* Blu principale */
-  --secondary: #1E40AF;   /* Blu scuro */
-  --accent: #F59E0B;      /* Giallo accento */
-  --success: #10B981;     /* Verde successo */
-  --danger: #EF4444;      /* Rosso errore */
-}
+  --primary: #3B82F6;      --secondary: #1E40AF;     --accent: #F59E0B;        --success: #10B981;       --danger: #EF4444;      }
 ```
 
 ## 📱 Sezioni

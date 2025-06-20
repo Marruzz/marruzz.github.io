@@ -1,4 +1,4 @@
-// Portfolio Main Script - Centralizzato e ottimizzato
+
 class PortfolioManager {  constructor() {
     this.isLoading = true;
     this.darkMode = this.initializeDarkMode();
@@ -7,7 +7,7 @@ class PortfolioManager {  constructor() {
   }
 
   init() {
-    // Aspetta che tutti i componenti siano caricati
+
     document.addEventListener('DOMContentLoaded', () => {
       this.setupMobileMenu();
       this.setupSmoothScrolling();
@@ -22,9 +22,9 @@ class PortfolioManager {  constructor() {
     });
   }
 
-  // Gestione menu mobile
+
   setupMobileMenu() {
-    // Usa setTimeout per assicurarsi che i componenti siano renderizzati
+
     setTimeout(() => {
       const mobileMenuButton = document.getElementById("mobile-menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -37,7 +37,7 @@ class PortfolioManager {  constructor() {
     }, 100);
   }
 
-  // Smooth scrolling migliorato
+
   setupSmoothScrolling() {
     setTimeout(() => {
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -45,7 +45,7 @@ class PortfolioManager {  constructor() {
           e.preventDefault();
           const target = document.querySelector(anchor.getAttribute("href"));
           if (target) {
-            // Offset per navbar fissa
+
             const offset = 80;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
             
@@ -54,13 +54,13 @@ class PortfolioManager {  constructor() {
               behavior: "smooth",
             });
             
-            // Chiudi menu mobile se aperto
+
             const mobileMenu = document.getElementById("mobile-menu");
             if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
               mobileMenu.classList.add("hidden");
             }
             
-            // Aggiorna URL senza scorrere
+
             history.pushState(null, null, anchor.getAttribute("href"));
           }
         });
@@ -68,7 +68,7 @@ class PortfolioManager {  constructor() {
     }, 100);
   }
 
-  // Gestione form potenziata
+
   setupFormHandling() {
     setTimeout(() => {
       const contactForm = document.getElementById("contact-form");
@@ -76,7 +76,7 @@ class PortfolioManager {  constructor() {
         contactForm.addEventListener("submit", (e) => this.handleFormSubmission(e));
       }
       
-      // Newsletter footer
+
       const newsletterBtn = document.querySelector("footer button");
       if (newsletterBtn) {
         newsletterBtn.addEventListener("click", (e) => this.handleNewsletterSignup(e));
@@ -96,21 +96,21 @@ class PortfolioManager {  constructor() {
       privacy: formData.get("privacy")
     };
 
-    // Validazione avanzata
+
     const validation = this.validateFormData(data);
     if (!validation.isValid) {
       this.showNotification(validation.message, "error");
       return;
     }
 
-    // Mostra loading
+
     const submitBtn = e.target.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Invio in corso...';
     submitBtn.disabled = true;
 
     try {
-      // Simula invio (sostituisci con il tuo endpoint)
+
       await this.simulateFormSubmission(data);
       this.showNotification("🎉 Messaggio inviato con successo! Ti risponderò presto.", "success");
       e.target.reset();
@@ -163,9 +163,9 @@ class PortfolioManager {  constructor() {
     }
   }
 
-  // Sistema di notifiche avanzato
+
   showNotification(message, type = "info", duration = 5000) {
-    // Rimuovi notifiche esistenti
+
     document.querySelectorAll(".notification").forEach(n => n.remove());
 
     const notification = document.createElement("div");
@@ -198,19 +198,19 @@ class PortfolioManager {  constructor() {
 
     document.body.appendChild(notification);
 
-    // Animazione di entrata
+
     requestAnimationFrame(() => {
       notification.classList.remove("translate-x-full");
     });
 
-    // Auto-rimozione
+
     setTimeout(() => {
       notification.classList.add("translate-x-full");
       setTimeout(() => notification.remove(), 500);
     }, duration);
   }
 
-  // Effetti scroll avanzati
+
   setupScrollEffects() {
     let lastScrollTop = 0;
     let ticking = false;
@@ -221,7 +221,7 @@ class PortfolioManager {  constructor() {
       
       const scrollTop = window.pageYOffset;
 
-      // Aggiungi/rimuovi ombra e sfondo
+
       if (scrollTop > 100) {
         nav.classList.add("shadow-2xl", "bg-white/95", "backdrop-blur-lg");
         nav.classList.remove("bg-white/90");
@@ -230,7 +230,7 @@ class PortfolioManager {  constructor() {
         nav.classList.add("bg-white/90");
       }
 
-      // Nascondi/mostra navbar
+
       if (scrollTop > lastScrollTop && scrollTop > 200) {
         nav.style.transform = "translateY(-100%)";
       } else {
@@ -249,7 +249,7 @@ class PortfolioManager {  constructor() {
     });
   }
 
-  // Intersection Observer per animazioni
+
   setupIntersectionObserver() {
     const observerOptions = {
       threshold: 0.1,
@@ -262,19 +262,19 @@ class PortfolioManager {  constructor() {
           entry.target.style.opacity = "1";
           entry.target.style.transform = "translateY(0)";
           
-          // Animazione skill bars
+
           this.animateSkillBars(entry.target);
           
-          // Animazione contatori
+
           this.animateCounters(entry.target);
           
-          // Rimuovi observer per performance
+
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    // Osserva elementi dopo un breve delay
+
     setTimeout(() => {
       document.querySelectorAll(
         ".animate-slide-up, .animate-slide-left, .animate-slide-right, .skill-card, .project-card"
@@ -320,7 +320,7 @@ class PortfolioManager {  constructor() {
     });
   }
 
-  // Sistema particelle ottimizzato
+
   setupParticleSystem() {
     let particleCount = 0;
     const maxParticles = 8;
@@ -356,7 +356,7 @@ class PortfolioManager {  constructor() {
       }
     };
 
-    // Crea particelle solo se la sezione hero è visibile
+
     const heroObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -372,16 +372,16 @@ class PortfolioManager {  constructor() {
     }, 1000);
   }
 
-  // Ottimizzazioni prestazioni
+
   setupPerformanceOptimizations() {
-    // Lazy loading per immagini
+
     if ('loading' in HTMLImageElement.prototype) {
       document.querySelectorAll('img[data-src]').forEach(img => {
         img.src = img.dataset.src;
       });
     }
 
-    // Preconnect a domini esterni
+
     const preconnectDomains = [
       'https://fonts.googleapis.com',
       'https://cdnjs.cloudflare.com',
@@ -396,7 +396,7 @@ class PortfolioManager {  constructor() {
     });
   }
 
-  // Nascondi loader
+
   hideLoader() {
     setTimeout(() => {
       const loader = document.querySelector('.portfolio-loader');
@@ -408,7 +408,7 @@ class PortfolioManager {  constructor() {
     }, 1200);
   }
 
-  // Inizializza la Dark Mode basandosi sulle preferenze salvate o di sistema
+
   initializeDarkMode() {
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -422,7 +422,7 @@ class PortfolioManager {  constructor() {
     }
   }
 
-  // Toggle Dark Mode
+
   toggleDarkMode() {
     this.darkMode = !this.darkMode;
     
@@ -434,11 +434,11 @@ class PortfolioManager {  constructor() {
       localStorage.setItem('theme', 'light');
     }
     
-    // Aggiorna il colore della barra del browser su mobile
+
     this.updateMetaThemeColor();
   }
 
-  // Aggiorna il colore della theme-color meta tag
+
   updateMetaThemeColor() {
     let metaThemeColor = document.querySelector("meta[name=theme-color]");
     if (!metaThemeColor) {
@@ -451,7 +451,7 @@ class PortfolioManager {  constructor() {
   }
 }
 
-// CSS per animazioni (viene iniettato dinamicamente)
+
 const dynamicStyles = `
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -492,12 +492,12 @@ const dynamicStyles = `
   }
 `;
 
-// Inietta stili dinamici
+
 const styleSheet = document.createElement('style');
 styleSheet.textContent = dynamicStyles;
 document.head.appendChild(styleSheet);
 
-// Mostra loader iniziale
+
 document.body.insertAdjacentHTML('afterbegin', `
   <div class="portfolio-loader">
     <div class="loader-content">
@@ -508,13 +508,13 @@ document.body.insertAdjacentHTML('afterbegin', `
   </div>
 `);
 
-// Inizializza il portfolio manager
+
 const portfolioManager = new PortfolioManager();
 
-// Esponi globalmente per l'accesso dai componenti
+
 window.portfolioManager = portfolioManager;
 
-// Gestione Dark Mode
+
 document.getElementById('dark-mode-toggle')?.addEventListener('click', () => {
   portfolioManager.toggleDarkMode();
 });

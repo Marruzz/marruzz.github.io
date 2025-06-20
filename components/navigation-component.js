@@ -1,4 +1,4 @@
-// Componente Navigazione come Web Component
+
 class NavigationComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -19,7 +19,7 @@ class NavigationComponent extends HTMLElement {
               </div>
             </div>
             <div class="flex items-center space-x-4">
-              <!-- Dark Mode Toggle -->
+              
               <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
                 <i class="fas fa-moon dark:hidden text-lg"></i>
                 <i class="fas fa-sun hidden dark:block text-lg"></i>
@@ -32,7 +32,7 @@ class NavigationComponent extends HTMLElement {
             </div>
           </div>
         </div>
-        <!-- Mobile menu -->
+        
         <div id="mobile-menu" class="md:hidden hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 transition-colors duration-300">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#home" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Home</a>
@@ -46,7 +46,7 @@ class NavigationComponent extends HTMLElement {
       </nav>
     `;
     
-    // Aggiungi gli event listener
+
     this.setupEventListeners();
   }
   
@@ -62,7 +62,7 @@ class NavigationComponent extends HTMLElement {
     }
       if (darkModeToggle) {
       darkModeToggle.addEventListener('click', () => {
-        // Trigger dark mode toggle on the portfolio manager
+
         if (window.portfolioManager) {
           window.portfolioManager.toggleDarkMode();
         }
@@ -70,5 +70,5 @@ class NavigationComponent extends HTMLElement {
   }
 }
 
-// Registra il componente
+
 customElements.define('app-navigation', NavigationComponent);
