@@ -20,15 +20,14 @@ class ProjectsComponent extends HTMLElement {
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            
-            <project-card
+              <project-card
               title="ScacchiJS"
               description="Webapp completa per giocare a scacchi online. Include motore di gioco, validazione delle mosse, cronometro, modalità PvP e analisi partite con notazione algebrica."
               icon="fas fa-chess"
               bg-gradient="from-amber-600 to-yellow-700"
               tech-stack="JavaScript, Chess Engine, WebApp"
               github-url="https://github.com/Marruzz/ScacchiJS"
-              live-url="https://marruzz.github.io/ScacchiJS/index.html"
+              live-url="https://marruzz.github.io/ScacchiJS/scacchi.html"
               license="MIT License"
               status="MIT License"
               playable>

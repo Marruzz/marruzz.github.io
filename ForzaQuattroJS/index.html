@@ -58,13 +58,20 @@
         <div id="gameBoard" class="bg-blue-800 rounded-xl p-4 shadow-inner">
             <!-- La griglia di gioco verrà generata qui -->
         </div>
+    </div>    <!-- Buttons Container -->
+    <div class="flex gap-4 mt-6">
+        <!-- Reset Button -->
+        <button id="resetBtn" 
+                class="bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-8 rounded-xl border border-white/30 transition-all duration-200 hover:scale-105 backdrop-blur-sm">
+            🔄 Nuova Partita
+        </button>
+        
+        <!-- Back to Portfolio Button -->
+        <button onclick="window.open('https://marruzz.github.io/', '_blank')" 
+                class="bg-purple-600/80 hover:bg-purple-700/80 text-white font-bold py-3 px-8 rounded-xl border border-purple-500/30 transition-all duration-200 hover:scale-105 backdrop-blur-sm">
+            🏠 Torna al Portfolio
+        </button>
     </div>
-
-    <!-- Reset Button -->
-    <button id="resetBtn" 
-            class="mt-6 bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-8 rounded-xl border border-white/30 transition-all duration-200 hover:scale-105 backdrop-blur-sm">
-        🔄 Nuova Partita
-    </button>
 
     <!-- Victory Modal (hidden by default) -->
     <div id="victoryModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
