@@ -1,0 +1,60 @@
+/* ===== BASE STYLES ===== */
+/* Stili base per tipografia, layout generale e reset */
+
+body {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Cursori specifici per elementi interattivi */
+a, button, input[type="button"], input[type="submit"], [role="button"], .cursor-pointer {
+  cursor: pointer !important;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="tel"], input[type="url"], textarea {
+  cursor: text !important;
+}
+
+/* Assicura che tutti gli altri elementi abbiano il cursore normale */
+div, p, span, h1, h2, h3, h4, h5, h6, section, article, main, header, footer, nav {
+  cursor: default !important;
+}
+
+/* Transizioni base */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Ottimizzazioni performance */
+.project-card, .skill-card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Media queries per riduzione movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .particle {
+    display: none;
+  }
+}
+
+/* Variabili CSS per temi */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --text-primary: #f8fafc;
+  }
+}

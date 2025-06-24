@@ -19,9 +19,9 @@ class SkillsComponent extends HTMLElement {
               Tecnologie e linguaggi con cui lavoro quotidianamente per creare
               soluzioni innovative
             </p>
-          </div>          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </div>          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
             
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-1">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-orange-400 to-red-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fab fa-html5 text-white text-2xl"></i>

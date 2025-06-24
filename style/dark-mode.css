@@ -1,0 +1,199 @@
+/* ===== DARK MODE ===== */
+/* Tutti gli stili per il tema scuro */
+
+/* Transizioni smooth per tutti gli elementi */
+*, *::before, *::after {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode body e root */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #0f172a;
+  background-image: 
+    radial-gradient(at 47% 33%, hsl(224.41, 71.09%, 8.24%) 0, transparent 59%), 
+    radial-gradient(at 82% 65%, hsl(218.18, 39.02%, 11.18%) 0, transparent 55%);
+  color: #f8fafc;
+}
+
+/* Migliori contrasti per la dark mode */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.dark p, .dark span, .dark div {
+  color: #e2e8f0;
+}
+
+.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-gray-400 {
+  color: #64748b !important;
+}
+
+/* Dark mode cards migliorati */
+.dark .skill-card,
+.dark .project-card,
+.dark .contact-card {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 1px solid #475569;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.dark .skill-card:hover,
+.dark .project-card:hover,
+.dark .contact-card:hover {
+  background: linear-gradient(135deg, #334155 0%, #475569 100%);
+  border-color: #64748b;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Dark mode glass effect migliorato */
+.dark .glass-effect {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode navigation */
+.dark nav {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+/* Dark mode buttons */
+.dark button {
+  color: #f1f5f9;
+}
+
+.dark button:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+/* Dark mode inputs e forms */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  color: #f1f5f9;
+  caret-color: #6366f1;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: #6366f1;
+  background-color: #1e293b;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  outline: none;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8;
+  opacity: 0.8;
+}
+
+/* Dark mode particelle migliorato */
+.dark .particle {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) !important;
+  opacity: 0.6;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+/* Dark mode toggle button migliorato */
+.dark #dark-mode-toggle {
+  background-color: #374151;
+  color: #fbbf24;
+  border: 1px solid #6b7280;
+}
+
+.dark #dark-mode-toggle:hover {
+  background-color: #4b5563;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Miglioramenti per gradient text in dark mode */
+.dark .gradient-text {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 50%, #f9a8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Override per elementi che potrebbero non rispettare il dark mode */
+.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #0f172a !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #1e293b !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #374151 !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #4b5563 !important;
+}
+
+/* Dark mode per componenti personalizzati */
+.dark [class*="bg-gradient-to"] {
+  opacity: 0.9;
+}
+
+.dark .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Miglior contrasto per i testi sui background colorati in dark mode */
+.dark .bg-blue-600,
+.dark .bg-purple-600,
+.dark .bg-indigo-600,
+.dark .bg-green-600,
+.dark .bg-red-600,
+.dark .bg-yellow-600,
+.dark .bg-pink-600,
+.dark .bg-orange-600 {
+  color: #ffffff !important;
+}
+
+.dark .bg-blue-600 h1,
+.dark .bg-blue-600 h2,
+.dark .bg-blue-600 h3,
+.dark .bg-purple-600 h1,
+.dark .bg-purple-600 h2,
+.dark .bg-purple-600 h3,
+.dark .bg-indigo-600 h1,
+.dark .bg-indigo-600 h2,
+.dark .bg-indigo-600 h3 {
+  color: #ffffff !important;
+}

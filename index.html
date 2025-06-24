@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>    <meta charset="UTF-8" />
+
+<head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luca Marroni - Developer Portfolio</title>
-    
-    
-    <meta name="description" content="Portfolio di Luca Marroni, sviluppatore software specializzato in JavaScript, Angular, .NET MAUI e soluzioni web moderne. Scopri i miei progetti innovativi.">
-    <meta name="keywords" content="Luca Marroni, developer, JavaScript, Angular, .NET MAUI, web development, portfolio, programmer">
+
+
+    <meta name="description"
+        content="Portfolio di Luca Marroni, sviluppatore software specializzato in JavaScript, Angular, .NET MAUI e soluzioni web moderne. Scopri i miei progetti innovativi.">
+    <meta name="keywords"
+        content="Luca Marroni, developer, JavaScript, Angular, .NET MAUI, web development, portfolio, programmer">
     <meta name="author" content="Luca Marroni">
-    
-    
+
+
     <meta property="og:title" content="Luca Marroni - Developer Portfolio">
-    <meta property="og:description" content="Scopri i miei progetti: dalle web app interattive come ScacchiJS alle applicazioni mobile cross-platform con .NET MAUI">
+    <meta property="og:description"
+        content="Scopri i miei progetti: dalle web app interattive come ScacchiJS alle applicazioni mobile cross-platform con .NET MAUI">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marruzz.github.io/">
     <meta property="og:locale" content="it_IT">
-    
-    
+
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Luca Marroni - Developer Portfolio">
-    <meta name="twitter:description" content="Portfolio di uno sviluppatore software specializzato in tecnologie moderne">
-      
+    <meta name="twitter:description"
+        content="Portfolio di uno sviluppatore software specializzato in tecnologie moderne">
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script-tailwind.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="effects.css" />
+
+    <!-- CSS Modulari -->
+    <link rel="stylesheet" href="style/base.css" />
+    <link rel="stylesheet" href="style/components.css" />
+    <link rel="stylesheet" href="style/effects.css" />
+    <link rel="stylesheet" href="style/scrollbar.css" />
+    <link rel="stylesheet" href="style/dark-mode.css" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
 </head>
-<body class="bg-gray-50 text-gray-800 transition-colors duration-300">      <script src="components/navigation-component.js"></script>
+
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300">
+    <script src="components/navigation-component.js"></script>
     <script src="components/hero-component.js"></script>
     <script src="components/about-component.js"></script>
     <script src="components/skills-component.js"></script>
@@ -41,27 +57,17 @@
     <script src="components/pcto-component.js"></script>
     <script src="components/cv-component.js"></script>
     <script src="components/contact-component.js"></script>
-    
-
     <app-navigation></app-navigation>
-    
-
     <app-hero></app-hero>
-    
-
     <app-about></app-about>
-
     <app-skills></app-skills>
-
     <app-certifications></app-certifications>
-        <app-projects></app-projects>
-    
+    <app-projects></app-projects>
     <app-pcto></app-pcto>
+    <app-cv></app-cv>    <app-contact></app-contact>
     
-    <app-cv></app-cv>
-    
-    <app-contact></app-contact>
     <script src="script.js"></script>
-    <script src="advanced-effects.js"></script>
+    <script src="animations.js"></script>
 </body>
+
 </html>
