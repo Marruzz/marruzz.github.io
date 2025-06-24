@@ -31,8 +31,7 @@ tailwind.config = {
         "float": "float 3s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite alternate",
         "float-gentle": "floatGentle 6s ease-in-out infinite",
-        "gradient-shift": "gradientShift 4s ease-in-out infinite",
-        "loading": "loading 1.5s infinite",
+        "gradient-shift": "gradientShift 4s ease-in-out infinite",        "loading": "loading 1.5s infinite",
         "blink": "blink 1s infinite",
       },
       keyframes: {
@@ -86,8 +85,7 @@ tailwind.config = {
         blink: {
           "0%, 50%": { opacity: "1" },
           "51%, 100%": { opacity: "0" },
-        },
-        glow: {
+        },        glow: {
           "0%": {
             boxShadow: "0 0 5px #6366F1, 0 0 10px #6366F1, 0 0 15px #6366F1",
           },

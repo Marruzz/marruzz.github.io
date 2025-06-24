@@ -16,10 +16,29 @@ class PortfolioManager {  constructor() {
       this.setupIntersectionObserver();
       this.setupParticleSystem();
       this.setupPerformanceOptimizations();
+      this.setupDarkModeToggle();
       
       console.log('✅ Portfolio inizializzato con successo!');
       this.hideLoader();
     });
+  }
+
+  // Setup del toggle dark mode migliorato
+  setupDarkModeToggle() {
+    setTimeout(() => {
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+          this.toggleDarkMode();
+          
+          // Animazione di feedback
+          darkModeToggle.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            darkModeToggle.style.transform = 'scale(1)';
+          }, 150);
+        });
+      }
+    }, 100);
   }
 
 
@@ -421,21 +440,47 @@ class PortfolioManager {  constructor() {
       return false;
     }
   }
-
-
   toggleDarkMode() {
+    // Aggiungi classe per animazione smooth
+    document.documentElement.classList.add('theme-transition');
+    
     this.darkMode = !this.darkMode;
     
     if (this.darkMode) {
       document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
     
-
+    // Aggiorna il colore del tema meta
     this.updateMetaThemeColor();
+    
+    // Aggiorna tutti i componenti che hanno stato interno
+    this.updateComponentsTheme();
+    
+    // Emit evento personalizzato per i componenti
+    document.dispatchEvent(new CustomEvent('themeChanged', { 
+      detail: { darkMode: this.darkMode } 
+    }));
+    
+    // Rimuovi classe animazione dopo il cambio
+    setTimeout(() => {
+      document.documentElement.classList.remove('theme-transition');
+    }, 400);
+  }
+
+  updateComponentsTheme() {
+    // Forza il re-render dei componenti che potrebbero avere cache
+    const components = document.querySelectorAll('app-navigation, app-hero, app-about, app-skills, app-certifications, app-projects, app-pcto, app-cv, app-contact');
+    components.forEach(component => {
+      if (component.updateTheme && typeof component.updateTheme === 'function') {
+        component.updateTheme(this.darkMode);
+      }
+    });
   }
 
 
