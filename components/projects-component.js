@@ -17,9 +17,8 @@ class ProjectsComponent extends HTMLElement {
               Una selezione dei miei progetti più significativi che dimostrano le
               mie competenze tecniche e creative
             </p>
-          </div>
-          
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          </div>          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto stagger-group">
               <project-card
               title="ScacchiJS"
               description="Webapp completa per giocare a scacchi online. Include motore di gioco, validazione delle mosse, cronometro, modalità PvP e analisi partite con notazione algebrica."
@@ -30,7 +29,8 @@ class ProjectsComponent extends HTMLElement {
               live-url="https://marruzz.github.io/ScacchiJS/scacchi.html"
               license="MIT License"
               status="MIT License"
-              playable>
+              playable
+              class="animate-zoom-in animate-stagger-1">
             </project-card>
 
             
@@ -42,7 +42,8 @@ class ProjectsComponent extends HTMLElement {
               tech-stack="Angular, TypeScript, Charts"
               github-url="https://github.com/Marruzz/AngularInvestmentCalculatorApp"
               license="Angular"
-              status="Angular">
+              status="Angular"
+              class="animate-zoom-in animate-stagger-2">
             </project-card>
 
             

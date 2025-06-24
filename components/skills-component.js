@@ -36,10 +36,8 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">65%</span>
               </div>
-            </div>
-
-            
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+            </div>            
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-2">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-blue-400 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fab fa-css3-alt text-white text-2xl"></i>
@@ -57,7 +55,7 @@ class SkillsComponent extends HTMLElement {
             </div>
 
             
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-3">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-yellow-400 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fab fa-js-square text-white text-2xl"></i>
@@ -75,7 +73,7 @@ class SkillsComponent extends HTMLElement {
             </div>
 
             
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-4">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fab fa-node-js text-white text-2xl"></i>
@@ -93,7 +91,7 @@ class SkillsComponent extends HTMLElement {
             </div>
 
             
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-5">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-red-500 to-pink-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fab fa-angular text-white text-2xl"></i>
@@ -111,7 +109,7 @@ class SkillsComponent extends HTMLElement {
             </div>
 
             
-            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+            <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-6">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-blue-600 to-indigo-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <i class="fab fa-python text-white text-2xl"></i>

@@ -12,26 +12,25 @@ class HeroComponent extends HTMLElement {
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
-            
+          <div class="grid lg:grid-cols-2 gap-12 items-center">            
             <div class="text-center lg:text-left animate-fade-in">
-              <div class="mb-6">
-                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <div class="mb-6 animate-slide-down">
+                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 pulse-animation">
                   👋 Benvenuto nel mio portfolio
                 </span>
-              </div>              <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors duration-300">
+              </div>              <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors duration-300 animate-slide-up">
                 Ciao, sono
                 <span class="gradient-text typing-cursor">Luca Marroni</span>
               </h1>
-              <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 font-medium transition-colors duration-300">
+              <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 font-medium transition-colors duration-300 animate-slide-up animate-stagger-1">
                 Developer Full-Stack & Studente
               </p>
-              <p class="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl lg:max-w-none leading-relaxed transition-colors duration-300">
+              <p class="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl lg:max-w-none leading-relaxed transition-colors duration-300 animate-fade-in animate-stagger-2">
                 17 anni, studente dell'ITIS E.Majorana di Grugliasco con la
                 passione per lo sviluppo web, le tecnologie moderne e
                 l'innovazione digitale. Certificato CISCO IT Essentials.
               </p>
-              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-slide-up animate-stagger-3">
                 <a href="#projects" class="group bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-primary/25 hover:shadow-xl transform hover:-translate-y-1">
                   <i class="fas fa-rocket mr-2 group-hover:animate-bounce"></i>
                   Scopri i miei progetti

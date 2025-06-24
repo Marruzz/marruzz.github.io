@@ -37,11 +37,9 @@ class AboutComponent extends HTMLElement {
                 Mi piace creare soluzioni innovative che possano risolvere
                 problemi reali, collaborare in team e condividere le mie
                 conoscenze con altri giovani sviluppatori.
-              </p>
-
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div class="flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 p-4 rounded-xl border border-primary/20">
+              </p>              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 stagger-group">
+                <div class="flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 p-4 rounded-xl border border-primary/20 animate-slide-left animate-stagger-1 hover-lift">
                   <div class="bg-primary text-white p-3 rounded-full mr-4">
                     <i class="fas fa-graduation-cap"></i>
                   </div>
