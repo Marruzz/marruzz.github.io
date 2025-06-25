@@ -91,7 +91,7 @@ class ContactComponent extends HTMLElement {
             </div>                        <div class="animate-slide-left h-full">
               <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-600 h-full flex flex-col transition-colors duration-300">
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Invia un messaggio</h3>
-                <form class="space-y-4 flex-grow flex flex-col" id="contact-form">                  <div class="grid md:grid-cols-2 gap-4">
+                <form class="space-y-4 flex-grow flex flex-col" id="contact-form" action="https://formspree.io/f/mnnvovdk" method="POST">                  <div class="grid md:grid-cols-2 gap-4">
                     <div>
                       <label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">Nome</label>
                       <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
@@ -110,17 +110,18 @@ class ContactComponent extends HTMLElement {
                     <textarea id="message" name="message" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none flex-grow min-h-32"></textarea>
                   </div>
                   <div class="mt-auto pt-4">
-                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">                      <i class="fas fa-paper-plane mr-2"></i>
-                      Invia Messaggio
+                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                      <i class="fas fa-paper-plane mr-2"></i>
+                      <span class="button-text">Invia Messaggio</span>
                     </button>
                     
-                    
-                    <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-xl">
+                    <!-- Status message -->
+                    <div id="form-status" class="mt-4 p-3 rounded-xl hidden">
                       <div class="flex items-center">
-                        <i class="fas fa-info-circle text-blue-500 mr-3"></i>
+                        <i class="status-icon mr-3"></i>
                         <div>
-                          <h4 class="text-blue-800 font-semibold text-sm">Come contattarmi</h4>
-                          <p class="text-blue-600 text-xs">Il form aprirà il tuo client email predefinito per inviare il messaggio.</p>
+                          <h4 class="status-title font-semibold text-sm"></h4>
+                          <p class="status-message text-xs"></p>
                         </div>
                       </div>
                     </div>
@@ -140,7 +141,6 @@ class ContactComponent extends HTMLElement {
     const form = this.querySelector('#contact-form');
     if (form) {
       form.addEventListener('submit', (e) => {
-        e.preventDefault();
         this.handleFormSubmit(e);
       });
     }
@@ -148,33 +148,69 @@ class ContactComponent extends HTMLElement {
     console.log('✅ Contact component loaded');
   }
   
-  handleFormSubmit(e) {
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
+  async handleFormSubmit(e) {
+    e.preventDefault();
     
-
-    if (!name || !email || !subject || !message) {
-      alert('Tutti i campi sono obbligatori!');
-      return;
+    const form = e.target;
+    const submitBtn = this.querySelector('#submit-btn');
+    const buttonText = submitBtn.querySelector('.button-text');
+    const statusDiv = this.querySelector('#form-status');
+    const statusIcon = statusDiv.querySelector('.status-icon');
+    const statusTitle = statusDiv.querySelector('.status-title');
+    const statusMessage = statusDiv.querySelector('.status-message');
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    buttonText.textContent = 'Invio in corso...';
+    statusDiv.classList.add('hidden');
+    
+    try {
+      const formData = new FormData(form);
+      
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Success
+        form.reset();
+        statusDiv.className = 'mt-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl';
+        statusIcon.className = 'fas fa-check-circle text-green-500 mr-3';
+        statusTitle.className = 'text-green-800 dark:text-green-200 font-semibold text-sm';
+        statusTitle.textContent = 'Messaggio inviato!';
+        statusMessage.className = 'text-green-600 dark:text-green-300 text-xs';
+        statusMessage.textContent = 'Ti risponderò il prima possibile. Grazie per avermi contattato!';
+        buttonText.textContent = 'Messaggio Inviato';
+        
+        // Reset button after 3 seconds
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          buttonText.textContent = 'Invia Messaggio';
+        }, 3000);
+        
+      } else {
+        throw new Error('Errore nell\'invio del messaggio');
+      }
+      
+    } catch (error) {
+      // Error
+      console.error('Error:', error);
+      statusDiv.className = 'mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl';
+      statusIcon.className = 'fas fa-exclamation-triangle text-red-500 mr-3';
+      statusTitle.className = 'text-red-800 dark:text-red-200 font-semibold text-sm';
+      statusTitle.textContent = 'Errore nell\'invio';
+      statusMessage.className = 'text-red-600 dark:text-red-300 text-xs';
+      statusMessage.textContent = 'Si è verificato un errore. Riprova o contattami direttamente via email.';
+      
+      submitBtn.disabled = false;
+      buttonText.textContent = 'Riprova';
     }
     
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Inserisci un indirizzo email valido!');
-      return;
-    }
-    
-
-    const mailtoLink = `mailto:luca.marroni@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
-    )}`;
-    
-
-    window.location.href = mailtoLink;
+    statusDiv.classList.remove('hidden');
   }
 }
 
