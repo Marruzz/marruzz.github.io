@@ -380,6 +380,55 @@ html.theme-transition *:after {
   transition: box-shadow 0.3s ease;
 }
 
+/* Dark Mode Specific Effects */
+.dark .glow-animation {
+  animation: darkGlow 2s ease-in-out infinite alternate;
+}
+
+.dark .hover-glow:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.6), 0 0 60px rgba(139, 92, 246, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Dark mode keyframes */
+@keyframes darkGlow {
+  from {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.4),
+                0 0 10px rgba(99, 102, 241, 0.3),
+                0 0 15px rgba(99, 102, 241, 0.2);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.8),
+                0 0 20px rgba(99, 102, 241, 0.6),
+                0 0 30px rgba(99, 102, 241, 0.4);
+  }
+}
+
+/* Dark mode particle effects */
+.dark .particle {
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6), 
+              0 0 24px rgba(139, 92, 246, 0.4),
+              0 0 36px rgba(236, 72, 153, 0.2);
+}
+
+/* Dark mode gradient text enhanced */
+.dark .gradient-text {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 30%, #f9a8d4 60%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: darkGradientShift 6s ease-in-out infinite;
+  filter: brightness(1.2);
+}
+
+@keyframes darkGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .animate-slide-up,

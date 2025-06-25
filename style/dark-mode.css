@@ -1,5 +1,5 @@
 /* ===== DARK MODE ===== */
-/* Tutti gli stili per il tema scuro */
+/* Tutti gli stili per il tema scuro con colori migliorati */
 
 /* Transizioni smooth per tutti gli elementi */
 *, *::before, *::after {
@@ -15,17 +15,20 @@
 }
 
 .dark body {
-  background-color: #0f172a;
+  background-color: #0a0f1c;
   background-image: 
-    radial-gradient(at 47% 33%, hsl(224.41, 71.09%, 8.24%) 0, transparent 59%), 
-    radial-gradient(at 82% 65%, hsl(218.18, 39.02%, 11.18%) 0, transparent 55%);
+    radial-gradient(at 47% 33%, hsl(220, 91%, 3%) 0, transparent 59%), 
+    radial-gradient(at 82% 65%, hsl(215, 45%, 7%) 0, transparent 55%),
+    radial-gradient(at 25% 75%, hsl(240, 30%, 5%) 0, transparent 35%);
   color: #f8fafc;
+  min-height: 100vh;
 }
 
 /* Migliori contrasti per la dark mode */
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
   color: #f1f5f9;
   font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .dark p, .dark span, .dark div {
@@ -44,13 +47,26 @@
   color: #64748b !important;
 }
 
+.dark .text-gray-300 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+
 /* Dark mode cards migliorati */
 .dark .skill-card,
 .dark .project-card,
 .dark .contact-card {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border: 1px solid #475569;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .dark .skill-card:hover,
@@ -58,33 +74,48 @@
 .dark .contact-card:hover {
   background: linear-gradient(135deg, #334155 0%, #475569 100%);
   border-color: #64748b;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
   transform: translateY(-8px) scale(1.02);
 }
 
 /* Dark mode glass effect migliorato */
 .dark .glass-effect {
-  background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(71, 85, 105, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(30, 41, 59, 0.9);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 /* Dark mode navigation */
 .dark nav {
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+  background: rgba(10, 15, 28, 0.95);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Dark mode buttons */
 .dark button {
   color: #f1f5f9;
+  background-color: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(71, 85, 105, 0.5);
 }
 
 .dark button:hover {
-  background-color: #334155;
+  background-color: rgba(51, 65, 85, 0.8);
   color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .bg-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+  color: #ffffff !important;
+}
+
+.dark .bg-primary:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4) !important;
 }
 
 /* Dark mode inputs e forms */
@@ -102,7 +133,7 @@
 .dark select:focus {
   border-color: #6366f1;
   background-color: #1e293b;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
   outline: none;
 }
 
@@ -115,21 +146,22 @@
 /* Dark mode particelle migliorato */
 .dark .particle {
   background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) !important;
-  opacity: 0.6;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+  opacity: 0.7;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5), 0 0 24px rgba(139, 92, 246, 0.3);
 }
 
-/* Dark mode toggle button migliorato */
-.dark #dark-mode-toggle {
-  background-color: #374151;
-  color: #fbbf24;
-  border: 1px solid #6b7280;
+/* Dark mode preferences button */
+.dark #preferences-toggle {
+  background-color: rgba(30, 41, 59, 0.7);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
-.dark #dark-mode-toggle:hover {
-  background-color: #4b5563;
+.dark #preferences-toggle:hover {
+  background-color: rgba(51, 65, 85, 0.8);
+  color: #c4b5fd;
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 /* Miglioramenti per gradient text in dark mode */
@@ -138,40 +170,76 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: brightness(1.1);
 }
 
 /* Override per elementi che potrebbero non rispettare il dark mode */
 .dark .bg-white {
   background-color: #1e293b !important;
+  color: #f1f5f9 !important;
 }
 
 .dark .bg-gray-50 {
-  background-color: #0f172a !important;
+  background-color: #0a0f1c !important;
+  color: #f8fafc !important;
 }
 
 .dark .bg-gray-100 {
   background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .bg-gray-200 {
+  background-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .bg-gray-800 {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .bg-gray-900 {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+.dark .border-gray-100 {
+  border-color: #334155 !important;
 }
 
 .dark .border-gray-200 {
-  border-color: #374151 !important;
+  border-color: #475569 !important;
 }
 
 .dark .border-gray-300 {
-  border-color: #4b5563 !important;
+  border-color: #64748b !important;
+}
+
+.dark .border-gray-700 {
+  border-color: #475569 !important;
+}
+
+.dark .border-gray-800 {
+  border-color: #334155 !important;
 }
 
 /* Dark mode per componenti personalizzati */
 .dark [class*="bg-gradient-to"] {
-  opacity: 0.9;
+  opacity: 0.95;
+  filter: brightness(1.1);
 }
 
 .dark .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3) !important;
 }
 
 .dark .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Miglior contrasto per i testi sui background colorati in dark mode */
@@ -184,6 +252,7 @@
 .dark .bg-pink-600,
 .dark .bg-orange-600 {
   color: #ffffff !important;
+  font-weight: 500;
 }
 
 .dark .bg-blue-600 h1,
@@ -196,4 +265,90 @@
 .dark .bg-indigo-600 h2,
 .dark .bg-indigo-600 h3 {
   color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode per il modal delle preferenze */
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.95) !important;
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Dark mode per toggles e form elements */
+.dark .peer-checked\:bg-primary {
+  background-color: #6366f1 !important;
+}
+
+.dark .peer-focus\:ring-primary\/25 {
+  --tw-ring-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+.dark .peer-focus\:ring-primary\/50 {
+  --tw-ring-color: rgba(99, 102, 241, 0.5) !important;
+}
+
+/* Dark mode hover states migliorati */
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgba(51, 65, 85, 0.5) !important;
+}
+
+.dark .hover\:bg-gray-800:hover {
+  background-color: rgba(71, 85, 105, 0.5) !important;
+}
+
+.dark .hover\:text-gray-700:hover {
+  color: #f1f5f9 !important;
+}
+
+.dark .hover\:text-gray-800:hover {
+  color: #f8fafc !important;
+}
+
+.dark .hover\:text-primary:hover {
+  color: #a5b4fc !important;
+}
+
+/* Scrollbar dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #475569, #64748b);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #64748b, #94a3b8);
+}
+
+/* Dark mode per slider */
+.dark .slider {
+  background: #334155 !important;
+}
+
+.dark .slider::-webkit-slider-thumb {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Animazioni specifiche per dark mode */
+.dark .animate-pulse {
+  animation: darkPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes darkPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
