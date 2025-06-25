@@ -21,9 +21,8 @@ class NavigationComponent extends HTMLElement {
             </div>
             <div class="flex items-center space-x-4">
               
-              <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
-                <i class="fas fa-moon dark:hidden text-lg"></i>
-                <i class="fas fa-sun hidden dark:block text-lg"></i>
+              <button id="preferences-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300" title="Apri Preferenze">
+                <i class="fas fa-sun text-lg"></i>
               </button>
               <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 hover:text-primary p-2 rounded-lg transition-colors">
@@ -55,20 +54,22 @@ class NavigationComponent extends HTMLElement {
   setupEventListeners() {
     const mobileButton = this.querySelector('#mobile-menu-button');
     const mobileMenu = this.querySelector('#mobile-menu');
-    const darkModeToggle = this.querySelector('#dark-mode-toggle');
+    const preferencesToggle = this.querySelector('#preferences-toggle');
     
     if (mobileButton && mobileMenu) {
       mobileButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     }
-      if (darkModeToggle) {
-      darkModeToggle.addEventListener('click', () => {
-
-        if (window.portfolioManager) {
-          window.portfolioManager.toggleDarkMode();
+    
+    if (preferencesToggle) {
+      preferencesToggle.addEventListener('click', () => {
+        const preferencesModal = document.querySelector('preferences-modal');
+        if (preferencesModal) {
+          preferencesModal.openModal();
         }
-      });    }
+      });
+    }
   }
 }
 

@@ -1,4 +1,3 @@
-
 class PreferencesModal extends HTMLElement {
   constructor() {
     super();
@@ -41,7 +40,7 @@ class PreferencesModal extends HTMLElement {
               
               <div class="flex items-center justify-between">
                 <div>
-                  <label for="dark-mode-toggle" class="text-sm font-medium text-gray-900 dark:text-white">
+                  <label for="modal-dark-mode-toggle" class="text-sm font-medium text-gray-900 dark:text-white">
                     Modalità Scura
                   </label>
                   <p class="text-xs text-gray-500 dark:text-gray-400">
@@ -49,7 +48,7 @@ class PreferencesModal extends HTMLElement {
                   </p>
                 </div>
                 <label class="relative inline-flex items-center cursor-pointer">
-                  <input id="dark-mode-toggle" type="checkbox" class="sr-only peer">
+                  <input id="modal-dark-mode-toggle" type="checkbox" class="sr-only peer">
                   <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/25 dark:peer-focus:ring-primary/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                 </label>
               </div>
@@ -215,6 +214,9 @@ class PreferencesModal extends HTMLElement {
 
     this.initializeEventListeners();
     this.loadCurrentPreferences();
+    
+    // Applica le preferenze salvate al caricamento
+    this.applyPreferences();
   }
 
   // Carica le preferenze da localStorage
@@ -285,12 +287,8 @@ class PreferencesModal extends HTMLElement {
 
   // Aggiorna l'icona del toggle nella navbar
   updateNavbarIcon(isDark) {
-    const navIcon = document.querySelector('#dark-mode-toggle i');
-    if (navIcon) {
-      navIcon.className = isDark ? 
-        'fas fa-moon text-lg hover:rotate-12 transition-transform duration-300 text-yellow-600 dark:text-yellow-400' : 
-        'fas fa-sun text-lg hover:rotate-12 transition-transform duration-300 text-yellow-600 dark:text-yellow-400';
-    }
+    // Non più necessario aggiornare l'icona navbar dato che ora abbiamo il pulsante preferenze
+    // L'icona del tema scuro sarà gestita solo nel modal delle preferenze
   }
 
   // Aggiorna gli stili CSS dinamici
@@ -361,7 +359,7 @@ class PreferencesModal extends HTMLElement {
     if (!modal) return;
 
     // Toggles
-    modal.querySelector('#dark-mode-toggle').checked = this.preferences.darkMode;
+    modal.querySelector('#modal-dark-mode-toggle').checked = this.preferences.darkMode;
     modal.querySelector('#animations-toggle').checked = this.preferences.animations;
     modal.querySelector('#particles-toggle').checked = this.preferences.particles;
     modal.querySelector('#high-contrast-toggle').checked = this.preferences.highContrast;
@@ -439,7 +437,7 @@ class PreferencesModal extends HTMLElement {
     const modal = this.querySelector('#preferences-modal');
     
     const newPreferences = {
-      darkMode: modal.querySelector('#dark-mode-toggle').checked,
+      darkMode: modal.querySelector('#modal-dark-mode-toggle').checked,
       animations: modal.querySelector('#animations-toggle').checked,
       particles: modal.querySelector('#particles-toggle').checked,
       highContrast: modal.querySelector('#high-contrast-toggle').checked,
@@ -558,3 +556,19 @@ class PreferencesModal extends HTMLElement {
 
 // Definisci il custom element
 customElements.define('preferences-modal', PreferencesModal);
+
+// Funzione globale per aprire il modal delle preferenze
+window.openPreferencesModal = function() {
+  const preferencesModal = document.querySelector('preferences-modal');
+  if (preferencesModal) {
+    preferencesModal.openModal();
+  }
+};
+
+// Inizializza le preferenze quando il DOM è caricato
+document.addEventListener('DOMContentLoaded', function() {
+  const preferencesModal = document.querySelector('preferences-modal');
+  if (preferencesModal && preferencesModal.preferences) {
+    preferencesModal.applyPreferences();
+  }
+});
