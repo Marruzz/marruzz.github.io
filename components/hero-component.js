@@ -63,7 +63,7 @@ class HeroComponent extends HTMLElement {
                   
                   <div class="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse-slow opacity-20"></div>
                   
-                  <img src="https://placehold.co/400x400/png?text=Luca+Marroni" alt="Luca Marroni" class="w-full h-full rounded-full object-cover border-8 border-white shadow-2xl relative z-10 animate-float" />
+                  <img src="./assets/images/luca-marroni-profile.png" alt="Luca Marroni - Developer Full-Stack" class="w-full h-full rounded-full object-cover border-8 border-white shadow-2xl relative z-10 animate-float" />
                   
                   <div class="absolute -top-4 -right-4 bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
                     <i class="fas fa-code text-lg"></i>

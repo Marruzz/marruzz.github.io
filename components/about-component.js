@@ -27,16 +27,15 @@ class AboutComponent extends HTMLElement {
                 dell'informatica, delle telecomunicazioni e dell'elettronica.
               </p>
               <p class="text-gray-600 mb-6 leading-relaxed text-lg">
-                La mia passione per la programmazione è iniziata alle scuole medie
-                e da allora non ho mai smesso di esplorare nuove tecnologie. Sono
-                certificato <strong>CISCO IT Essentials</strong> e lavoro
-                costantemente su progetti personali per migliorare le mie
-                competenze.
+                La mia passione per la programmazione è iniziata alle scuole medie quando ho scoperto HTML e CSS creando la mia prima pagina web. 
+                Ricordo ancora l'emozione di vedere il mio primo "Hello World" funzionare! Da quel momento, ogni linguaggio di programmazione 
+                è diventato una nuova avventura da esplorare. Sono certificato <strong>CISCO IT Essentials</strong> e dedico ogni giorno del tempo 
+                a nuovi progetti e tecnologie.
               </p>
               <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-                Mi piace creare soluzioni innovative che possano risolvere
-                problemi reali, collaborare in team e condividere le mie
-                conoscenze con altri giovani sviluppatori.
+                Quello che mi motiva di più è trasformare idee in codice funzionante. Amo le sfide tecniche complesse, come creare un engine 
+                scacchistico da zero o sviluppare app multipiattaforma. Credo fortemente nel potere della tecnologia per migliorare la vita 
+                delle persone e nel valore della collaborazione e condivisione della conoscenza nella community developer.
               </p>              
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 stagger-group">
                 <div class="flex items-center bg-gradient-to-r from-primary/10 to-purple-600/10 p-4 rounded-xl border border-primary/20 animate-slide-left animate-stagger-1 hover-lift">
