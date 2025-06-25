@@ -391,10 +391,77 @@ textarea:focus {
 /* Modal Animation */
 #preferences-modal {
   animation: modalFadeIn 0.3s ease-out;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  padding: 1rem !important;
+  box-sizing: border-box !important;
+  z-index: 9999 !important;
+}
+
+/* ================================ */
+/* MODAL IMPROVEMENTS */
+/* ================================ */
+
+/* Better modal backdrop */
+#preferences-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Improve modal content positioning */
+#preferences-modal > div {
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Modal content scrolling */
+#preferences-modal .max-h-\[70vh\] {
+  max-height: 70vh !important;
+  overflow-y: auto !important;
+}
+
+/* Fix for modal positioning */
+#preferences-modal {
+  pointer-events: auto !important;
+}
+
+#preferences-modal > div {
+  pointer-events: auto !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Smooth scroll inside modal */
+#preferences-modal .max-h-\[70vh\] {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
+}
+
+#preferences-modal .max-h-\[70vh\]::-webkit-scrollbar {
+  width: 6px;
+}
+
+#preferences-modal .max-h-\[70vh\]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#preferences-modal .max-h-\[70vh\]::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 3px;
+}
+
+#preferences-modal .max-h-\[70vh\]::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
 }
 
 #preferences-modal.hidden {
   animation: modalFadeOut 0.3s ease-in;
+  display: none !important;
 }
 
 @keyframes modalFadeIn {
@@ -421,6 +488,13 @@ textarea:focus {
 
 #preferences-modal > div {
   animation: modalSlideIn 0.3s ease-out;
+  position: relative !important;
+  max-height: calc(100vh - 2rem) !important;
+  max-width: 42rem !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
 }
 
 #preferences-modal.hidden > div {
@@ -569,13 +643,26 @@ nav[role="navigation"]:before {
 /* ================================ */
 
 @media (max-width: 768px) {
+  #preferences-modal {
+    padding: 1rem;
+  }
+  
   #preferences-modal > div {
-    margin: 1rem;
+    margin: 0;
     max-height: calc(100vh - 2rem);
+    width: 100%;
+    max-width: none;
   }
   
   .preference-option {
     margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-height: 600px) {
+  #preferences-modal > div {
+    max-height: calc(100vh - 1rem);
+    margin: 0.5rem 0;
   }
 }
 

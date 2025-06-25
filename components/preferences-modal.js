@@ -13,7 +13,7 @@ class PreferencesModal extends HTMLElement {
     this.innerHTML = `
       <!-- Preferences Modal -->
       <div id="preferences-modal" 
-           class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] hidden items-center justify-center p-4 overflow-y-auto"
+           class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] hidden"
            role="dialog"
            aria-modal="true"
            aria-labelledby="preferences-title"
@@ -425,6 +425,18 @@ class PreferencesModal extends HTMLElement {
   initializeEventListeners() {
     const modal = this.querySelector('#preferences-modal');
     
+    // Add event listener for preferences toggle button
+    setTimeout(() => {
+      const preferencesToggle = document.querySelector('#preferences-toggle');
+      if (preferencesToggle && !preferencesToggle.hasAttribute('data-listener-added')) {
+        preferencesToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.openModal();
+        });
+        preferencesToggle.setAttribute('data-listener-added', 'true');
+      }
+    }, 100);
+    
     // Theme selection
     modal.querySelectorAll('input[name="theme"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
@@ -601,3 +613,17 @@ class PreferencesModal extends HTMLElement {
 
 // Definisci il custom element
 customElements.define('preferences-modal', PreferencesModal);
+
+// Global preferences modal initialization
+document.addEventListener('DOMContentLoaded', () => {
+  // Ensure preferences modal opens when button is clicked
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#preferences-toggle')) {
+      e.preventDefault();
+      const preferencesModal = document.querySelector('app-preferences-modal');
+      if (preferencesModal && preferencesModal.openModal) {
+        preferencesModal.openModal();
+      }
+    }
+  });
+});
