@@ -239,22 +239,8 @@ class CVComponent extends HTMLElement {
     });
 
 
-    const internalLinks = this.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    console.log('CV component loaded');
+    // The smooth scrolling is now handled by the global utility
+    // All internal links will automatically use the custom smooth scroll
   }
 }
 

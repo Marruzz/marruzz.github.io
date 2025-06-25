@@ -485,8 +485,6 @@ class PCTOComponent extends HTMLElement {
         }
       });
     });
-
-    console.log('PCTO component loaded');
   }
 }
 

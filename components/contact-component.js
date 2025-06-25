@@ -181,8 +181,6 @@ class ContactComponent extends HTMLElement {
         this.handleFormSubmit(e);
       });
     }
-
-    console.log('✅ Contact component loaded');
   }
 
   async handleFormSubmit(e) {

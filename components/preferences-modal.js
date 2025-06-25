@@ -247,7 +247,6 @@ class PreferencesModal extends HTMLElement {
       localStorage.setItem('userPreferences', JSON.stringify(preferences));
       this.preferences = preferences;
       this.applyPreferences();
-      console.log('Preferenze salvate:', preferences);
     } catch (error) {
       console.error('Errore nel salvataggio delle preferenze:', error);
     }

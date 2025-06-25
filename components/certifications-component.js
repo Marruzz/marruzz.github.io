@@ -134,12 +134,6 @@ class CertificationsComponent extends HTMLElement {
     </div>
 </section>
     `;
-    
-    this.setupEventListeners();
-  }
-  
-  setupEventListeners() {
-    console.log('Certifications component loaded');
   }
 }
 

@@ -97,13 +97,6 @@ class HeroComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
-    this.setupEventListeners();
-  }
-  
-  setupEventListeners() {
-
-    console.log('Hero component loaded');
   }
 }
 

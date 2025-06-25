@@ -259,7 +259,6 @@ class SkillsComponent extends HTMLElement {
     });
     
     observer.observe(this);
-    console.log('Skills component loaded');
   }
 }
 
