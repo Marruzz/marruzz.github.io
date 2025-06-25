@@ -91,7 +91,7 @@ class ContactComponent extends HTMLElement {
             </div>                        <div class="animate-slide-left h-full">
               <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-600 h-full flex flex-col transition-colors duration-300">
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Invia un messaggio</h3>
-                <form class="space-y-4 flex-grow flex flex-col" id="contact-form">                  <div class="grid md:grid-cols-2 gap-4">
+                <form class="space-y-4 flex-grow flex flex-col" id="contact-form" action="https://formspree.io/f/mnnvovdk" method="POST">                  <div class="grid md:grid-cols-2 gap-4">
                     <div>
                       <label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">Nome</label>
                       <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
