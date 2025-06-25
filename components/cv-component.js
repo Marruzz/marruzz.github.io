@@ -54,9 +54,11 @@ class CVComponent extends HTMLElement {
                     </div>
                   </div>
                   
-                  <div class="space-y-4">                    <a href="CV/Luca Marroni - CV Ita.pdf" 
+                  <div class="space-y-4">                    
+                  <a href="CV/Luca Marroni - CV Ita.pdf" 
                        target="_blank" 
-                       class="w-full bg-gradient-to-r from-green-500 to-red-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-red-500 hover:to-green-500 transform hover:scale-105 flex items-center justify-center group">
+                        class="w-full bg-gradient-to-r from-green-500 to-red-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-red-500 hover:to-green-500 transform hover:scale-105 flex items-center justify-center group">
+
                       <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
                       Visualizza CV
                     </a>
@@ -105,14 +107,14 @@ class CVComponent extends HTMLElement {
                   
                   <div class="space-y-4">                    <a href="CV/LucaMarroni_CV_Eng.pdf" 
                        target="_blank" 
-                       class="w-full bg-gradient-to-r from-blue-600 to-red-600 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-red-600 hover:to-blue-600 transform hover:scale-105 flex items-center justify-center group">
+                       class="cv-download-btn w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-purple-600 hover:to-blue-600 transform hover:scale-105 flex items-center justify-center group">
                       <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
                       View CV
                     </a>
                     
                     <a href="CV/LucaMarroni_CV_Eng.pdf" 
                        download="Luca_Marroni_CV_English.pdf"
-                       class="w-full border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 flex items-center justify-center group">
+                       class="cv-download-btn w-full border-2 border-blue-600 text-blue-600 py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white flex items-center justify-center group">
                       <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
                       Download PDF
                     </a>
@@ -182,10 +184,10 @@ class CVComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
+
     this.setupEventListeners();
   }
-  
+
   setupEventListeners() {
 
     const downloadLinks = this.querySelectorAll('a[download]');
@@ -193,7 +195,7 @@ class CVComponent extends HTMLElement {
       link.addEventListener('click', (e) => {
         const fileName = e.target.closest('a').getAttribute('download');
         console.log(`CV Download: ${fileName}`);
-        
+
 
 
 
