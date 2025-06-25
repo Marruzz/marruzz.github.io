@@ -535,8 +535,19 @@ class PreferencesModal extends HTMLElement {
   // Apre il modal
   openModal() {
     const modal = this.querySelector('#preferences-modal');
-    modal.classList.remove('hidden');
+    
+    // Force reset positioning
     modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.zIndex = '9999';
+    
+    modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
     
     // Focus sul primo elemento interattivo

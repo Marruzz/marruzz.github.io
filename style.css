@@ -644,14 +644,14 @@ nav[role="navigation"]:before {
 
 @media (max-width: 768px) {
   #preferences-modal {
-    padding: 1rem;
+    padding: 0.5rem !important;
   }
   
   #preferences-modal > div {
-    margin: 0;
-    max-height: calc(100vh - 2rem);
-    width: 100%;
-    max-width: none;
+    margin: 0 !important;
+    max-height: calc(100vh - 1rem) !important;
+    width: 100% !important;
+    max-width: none !important;
   }
   
   .preference-option {
@@ -660,9 +660,17 @@ nav[role="navigation"]:before {
 }
 
 @media (max-height: 600px) {
+  #preferences-modal {
+    padding: 0.25rem !important;
+  }
+  
   #preferences-modal > div {
-    max-height: calc(100vh - 1rem);
-    margin: 0.5rem 0;
+    max-height: calc(100vh - 0.5rem) !important;
+    margin: 0 !important;
+  }
+  
+  #preferences-modal .max-h-\[70vh\] {
+    max-height: 50vh !important;
   }
 }
 
