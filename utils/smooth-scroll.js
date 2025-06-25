@@ -79,11 +79,29 @@ class SmoothScrollUtility {
 // Create global instance
 window.smoothScrollUtil = new SmoothScrollUtility();
 
-// Initialize for document when loaded
+// Initialize for document when loaded, with a delay to ensure components are loaded
+function initializeSmoothScroll() {
+  if (window.smoothScrollUtil) {
+    window.smoothScrollUtil.initializeForContainer();
+    console.log('Global smooth scroll utility initialized');
+  }
+}
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    window.smoothScrollUtil.initializeForContainer();
+    // Wait a bit for components to be fully loaded
+    setTimeout(initializeSmoothScroll, 100);
   });
 } else {
-  window.smoothScrollUtil.initializeForContainer();
+  setTimeout(initializeSmoothScroll, 100);
 }
+
+// Re-initialize when new components are added
+function reinitializeSmoothScroll() {
+  if (window.smoothScrollUtil) {
+    window.smoothScrollUtil.initializeForContainer();
+  }
+}
+
+// Export for manual re-initialization if needed
+window.reinitializeSmoothScroll = reinitializeSmoothScroll;

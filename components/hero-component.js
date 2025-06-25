@@ -13,12 +13,8 @@ class HeroComponent extends HTMLElement {
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div class="grid lg:grid-cols-2 gap-12 items-center">            
-            <div class="text-center lg:text-left animate-fade-in">
-              <div class="mb-6 animate-slide-down">
-                <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 pulse-animation">
-                  👋 Benvenuto nel mio portfolio
-                </span>
-              </div>              <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors duration-300 animate-slide-up">
+            <div class="text-center lg:text-left animate-fade-in">             
+              <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors duration-300 animate-slide-up">
                 Ciao, sono
                 <span class="gradient-text typing-cursor">Luca Marroni</span>
               </h1>

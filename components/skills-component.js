@@ -27,14 +27,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-html5 text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">HTML5</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <p class="text-primary font-semibold text-lg">2+ anni di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">Semantic HTML, Accessibility</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 65%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">65%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di strutture semantiche complesse, ottimizzazione per SEO e accessibilità. Usato in tutti i miei progetti web.</p>
               </div>
             </div>            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-2">
@@ -43,14 +40,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-css3-alt text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">CSS3</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <p class="text-primary font-semibold text-lg">2+ anni di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">Flexbox, Grid, Animations</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 67%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">67%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Creazione di layout responsive complessi, animazioni CSS avanzate e sistemi di design coerenti. Competenza con Tailwind CSS.</p>
               </div>
             </div>
 
@@ -61,14 +55,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-js-square text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">JavaScript</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <p class="text-primary font-semibold text-lg">2+ anni di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">ES6+, DOM, Async/Await</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 62%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">62%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni web interattive, manipolazione del DOM, API REST e Web Components. Usato in ScacchiJS e progetti portfolio.</p>
               </div>
             </div>
 
@@ -79,14 +70,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-node-js text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Node.js</h3>
-                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <p class="text-primary font-semibold text-lg">1 anno di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">Express, NPM, REST APIs</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 41%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">41%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di API REST, gestione pacchetti NPM e configurazione di server per applicazioni web. Utilizzato per backend di progetti personali.</p>
               </div>
             </div>
 
@@ -97,14 +85,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-angular text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Angular</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <p class="text-primary font-semibold text-lg">1+ anno di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">Components, Services, RxJS</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-red-500 to-pink-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 56%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">56%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni SPA complesse con architettura a componenti, gestione stato e servizi. Usato in Investment Calculator e LuxtorAngular.</p>
               </div>
             </div>
 
@@ -115,14 +100,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-python text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Python</h3>
-                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <p class="text-primary font-semibold text-lg">1 anno di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">OOP, Libraries, Automation</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-blue-600 to-indigo-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 48%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">48%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Programmazione orientata agli oggetti, utilizzo di librerie per data analysis e automazione di task ripetitivi. Usato per progetti scolastici.</p>
               </div>
             </div>
 
@@ -133,14 +115,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-microsoft text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">C#</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <p class="text-primary font-semibold text-lg">2+ anni di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">OOP, LINQ, Async/Await</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-purple-600 to-blue-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 70%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">70%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni desktop e mobile con .NET ecosystem. Competenza in programmazione asincrona e pattern MVVM. Linguaggio principale per progetti scolastici.</p>
               </div>
             </div>
 
@@ -151,14 +130,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fas fa-desktop text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">WPF</h3>
-                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <p class="text-primary font-semibold text-lg">1 anno di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">XAML, MVVM, Data Binding</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-indigo-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 44%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">44%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni desktop Windows con interfacce moderne. Competenza in pattern MVVM e data binding per UI responsive.</p>
               </div>
             </div>
 
@@ -168,14 +144,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fas fa-mobile-alt text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">.NET MAUI</h3>
-                <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
+                <p class="text-primary font-semibold text-lg">2+ anni di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">Cross-platform, Mobile Apps</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-pink-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 74%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">74%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni mobile cross-platform per Android e iOS. Competenza avanzata dimostrata nel progetto MajoContinentalMAUI per la gestione alberghiera.</p>
               </div>
             </div>
 
@@ -186,14 +159,11 @@ class SkillsComponent extends HTMLElement {
                   <i class="fab fa-php text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">PHP</h3>
-                <p class="text-primary font-semibold text-lg">Livello Base</p>
+                <p class="text-primary font-semibold text-lg">6 mesi di esperienza</p>
                 <div class="text-sm text-gray-500 mt-1">OOP, Laravel, MySQL</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-indigo-500 to-purple-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 22%"></div>
-                </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">22%</span>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni web server-side con PHP moderno, gestione database MySQL e prime esperienze con framework Laravel.</p>
               </div>
             </div>
           </div>
@@ -240,25 +210,9 @@ class SkillsComponent extends HTMLElement {
       </section>
     `;
     
-    this.setupEventListeners();
-  }
-  
-  setupEventListeners() {
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const progressBars = this.querySelectorAll('.skill-card .bg-gradient-to-r');
-          progressBars.forEach(bar => {
-            bar.style.animation = 'none';
-            bar.offsetHeight; // trigger reflow
-            bar.style.animation = null;
-          });
-        }
-      });
-    });
     
-    observer.observe(this);
+    // Non più necessario gestire le animazioni delle progress bar
+    console.log('Skills component loaded successfully');
   }
 }
 

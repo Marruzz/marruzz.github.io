@@ -58,35 +58,14 @@ class PortfolioManager {  constructor() {
 
 
   setupSmoothScrolling() {
+    // The smooth scrolling is now handled by the global utility
+    // This method is kept for compatibility but functionality is delegated
     setTimeout(() => {
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = document.querySelector(anchor.getAttribute("href"));
-          if (target) {
-
-            const offset = 80;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: "smooth",
-            });
-            
-
-            const mobileMenu = document.getElementById("mobile-menu");
-            if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-              mobileMenu.classList.add("hidden");
-            }
-            
-
-            history.pushState(null, null, anchor.getAttribute("href"));
-          }
-        });
-      });
+      if (window.reinitializeSmoothScroll) {
+        window.reinitializeSmoothScroll();
+      }
     }, 100);
   }
-
 
   setupFormHandling() {
     setTimeout(() => {

@@ -413,11 +413,11 @@ class PCTOComponent extends HTMLElement {
                     del lavoro sempre più definita.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="document.getElementById('cv').scrollIntoView({behavior: 'smooth'})"
+                    <button onclick="window.smoothScrollUtil?.scrollTo(document.getElementById('cv')) || document.getElementById('cv').scrollIntoView({behavior: 'smooth'})"
                         class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">
                         <i class="fas fa-file-pdf mr-2"></i>Visualizza CV Completo
                     </button>
-                    <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
+                    <button onclick="window.smoothScrollUtil?.scrollTo(document.getElementById('projects')) || document.getElementById('projects').scrollIntoView({behavior: 'smooth'})"
                         class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
                         <i class="fas fa-code mr-2"></i>Scopri i Progetti
                     </button>
@@ -467,24 +467,13 @@ class PCTOComponent extends HTMLElement {
       });
     });
 
-    // Smooth scroll per i link interni
-    const internalLinks = this.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          const offset = 80;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+    // The smooth scrolling is now handled by the global utility
+    // Re-initialize smooth scroll for this component's links
+    if (window.reinitializeSmoothScroll) {
+      window.reinitializeSmoothScroll();
+    }
+    
+    console.log('PCTO component loaded');
   }
 }
 

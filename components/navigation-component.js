@@ -12,8 +12,9 @@ class NavigationComponent extends HTMLElement {
               <div class="ml-10 flex items-baseline space-x-4">
                 <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Home</a>
                 <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Chi Sono</a>
-                <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Competenze</a>                <a href="#certifications" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Certificazioni</a>
                 <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Progetti</a>
+                <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Competenze</a>                
+                <a href="#certifications" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Certificazioni</a>
                 <a href="#pcto" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">PCTO</a>
                 <a href="#cv" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">CV</a>
                 <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Contatti</a>
@@ -37,8 +38,9 @@ class NavigationComponent extends HTMLElement {
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#home" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Home</a>
             <a href="#about" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Chi Sono</a>
-            <a href="#skills" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Competenze</a>            <a href="#certifications" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Certificazioni</a>
             <a href="#projects" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Progetti</a>
+            <a href="#skills" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Competenze</a>            
+            <a href="#certifications" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Certificazioni</a>
             <a href="#pcto" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">PCTO</a>
             <a href="#cv" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">CV</a>
             <a href="#contact" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Contatti</a>

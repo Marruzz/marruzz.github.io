@@ -61,19 +61,6 @@ class ContactComponent extends HTMLElement {
                     </div>
 
 
-                    <div
-                        class="group flex items-center p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border border-purple-100 hover:shadow-lg transition-all duration-300 h-28">
-                        <div
-                            class="bg-gradient-to-br from-purple-500 to-pink-600 text-white p-4 rounded-2xl mr-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                            <i class="fas fa-phone text-2xl"></i>
-                        </div>
-                        <div class="flex-grow">
-                            <h4 class="font-bold text-gray-900 text-lg">Telefono</h4>
-                            <p class="text-gray-600">+39 3XX XXX XXXX</p>
-                            <p class="text-sm text-purple-600 font-medium">WhatsApp disponibile</p>
-                        </div>
-                    </div>
-
 
                     <div
                         class="group flex items-center p-6 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl border border-orange-100 hover:shadow-lg transition-all duration-300 h-28">

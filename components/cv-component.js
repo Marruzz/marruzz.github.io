@@ -1,4 +1,3 @@
-
 class CVComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -62,7 +61,7 @@ class CVComponent extends HTMLElement {
                                     <div class="flex items-center text-gray-600 dark:text-gray-100">
                                         <i class="fas fa-calendar text-primary mr-3"></i>
                                         <span class="dark:text-gray-100"><strong class="dark:text-white">Ultimo
-                                                aggiornamento:</strong> Dicembre 2024</span>
+                                                aggiornamento:</strong> Giugno 2025</span>
                                     </div>
                                 </div>
 
@@ -117,7 +116,7 @@ class CVComponent extends HTMLElement {
                                     <div class="flex items-center text-gray-600 dark:text-gray-100">
                                         <i class="fas fa-calendar text-primary mr-3"></i>
                                         <span class="dark:text-gray-100"><strong class="dark:text-white">Last updated:</strong>
-                                            December 2024</span>
+                                            June 2025</span>
                                     </div>
                                 </div>
 
@@ -223,24 +222,18 @@ class CVComponent extends HTMLElement {
   }
   
   setupEventListeners() {
-
     const downloadLinks = this.querySelectorAll('a[download]');
     downloadLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const fileName = e.target.closest('a').getAttribute('download');
         console.log(`CV Download: ${fileName}`);
-        
-
-
-
-
-
       });
     });
 
-
-    // The smooth scrolling is now handled by the global utility
-    // All internal links will automatically use the custom smooth scroll
+    // Re-initialize smooth scroll for this component's links
+    if (window.reinitializeSmoothScroll) {
+      window.reinitializeSmoothScroll();
+    }
   }
 }
 
