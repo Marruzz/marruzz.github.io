@@ -1,4 +1,7 @@
+/* ===== SCROLLBAR ===== */
+/* Stili personalizzati per la scrollbar */
 
+/* Scrollbar Light Mode */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -16,6 +19,7 @@
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
 }
 
+/* Scrollbar Dark Mode */
 .dark ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

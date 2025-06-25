@@ -28,16 +28,22 @@ class PedoneBianco extends Pedina {
 
         const yDiff = newPosition.y - this.posizione.y;
         const xDiff = Math.abs(newPosition.x - this.posizione.x);
+
+        // Cattura in diagonale (solo se c'è un pezzo nemico)
         if (yDiff === 1 && xDiff === 1) {
             let targetPiece = getPieceAtPosition(newPosition);
             return targetPiece != null && targetPiece.color == 'nero';
         }
+        
+        // Movimento in avanti (solo se la casella è libera)
         if (xDiff === 0) {
+            // Controlla che la casella di destinazione sia libera
             if (!checkOccupato(newPosition)) {
                 return false;
             }
             
             if (this.firstMove && (yDiff === 1 || yDiff === 2)) {
+                // Per il movimento di due caselle, verifica che anche la casella intermedia sia libera
                 if (yDiff === 2) {
                     const intermediatePosition = {x: this.posizione.x, y: this.posizione.y + 1};
                     if (!checkOccupato(intermediatePosition)) {
@@ -64,16 +70,22 @@ class PedoneNero extends Pedina {
 
         const yDiff = newPosition.y - this.posizione.y;
         const xDiff = Math.abs(newPosition.x - this.posizione.x);
+
+        // Cattura in diagonale (solo se c'è un pezzo nemico)
         if (yDiff === -1 && xDiff === 1) {
             let targetPiece = getPieceAtPosition(newPosition);
             return targetPiece != null && targetPiece.color == 'bianco';
         }
+        
+        // Movimento in avanti (solo se la casella è libera)
         if (xDiff === 0) {
+            // Controlla che la casella di destinazione sia libera
             if (!checkOccupato(newPosition)) {
                 return false;
             }
             
             if (this.firstMove && (yDiff === -1 || yDiff === -2)) {
+                // Per il movimento di due caselle, verifica che anche la casella intermedia sia libera
                 if (yDiff === -2) {
                     const intermediatePosition = {x: this.posizione.x, y: this.posizione.y - 1};
                     if (!checkOccupato(intermediatePosition)) {

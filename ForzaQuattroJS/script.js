@@ -4,6 +4,8 @@ const matrice = Array.from({ length: 6 }, () => Array(7).fill(null));
 
 function CreoTabella() {
   const gameBoard = document.getElementById("gameBoard");
+  
+  // Crea la griglia 6x7
   for (let i = 0; i < 6; i++) {
     const row = document.createElement("div");
     row.className = "flex justify-center space-x-2 mb-2";
@@ -13,6 +15,8 @@ function CreoTabella() {
       cell.id = `cell-${i}-${j}`;
       cell.className = "w-16 h-16 bg-white rounded-full border-4 border-blue-600 cursor-pointer hover:bg-blue-50 transition-all duration-200 hover:scale-105 flex items-center justify-center shadow-lg";
       cell.addEventListener("click", handleCellClick);
+      
+      // Aggiunge l'effetto hover per la colonna
       cell.addEventListener("mouseenter", () => highlightColumn(j, true));
       cell.addEventListener("mouseleave", () => highlightColumn(j, false));
       
@@ -21,6 +25,8 @@ function CreoTabella() {
     
     gameBoard.appendChild(row);
   }
+  
+  // Aggiungi event listeners per i pulsanti
   document.getElementById("resetBtn").addEventListener("click", resetGame);
   document.getElementById("playAgainBtn").addEventListener("click", resetGame);
   
@@ -87,6 +93,7 @@ function handleCellClick(event) {
 
     console.log(matrice);
   } else {
+    // Animazione per colonna piena
     animateFullColumn(y);
   }
 }
@@ -155,8 +162,12 @@ function contaInDirezione(riga, colonna, deltaRiga, deltaColonna) {
 
 function aggiungiDisco(riga, colonna, colore, valore) {
   const cell = document.getElementById(`cell-${riga}-${colonna}`);
+  
+  // Rimuovi le classi di hover
   cell.classList.remove("bg-white", "bg-blue-50", "bg-blue-100", "hover:bg-blue-50", "cursor-pointer", "hover:scale-105");
   cell.removeEventListener("click", handleCellClick);
+  
+  // Aggiungi il disco con animazione
   const disco = document.createElement("div");
   disco.className = `w-12 h-12 rounded-full border-4 border-white shadow-lg transform scale-0 transition-transform duration-300`;
   
@@ -168,6 +179,8 @@ function aggiungiDisco(riga, colonna, colore, valore) {
   
   cell.appendChild(disco);
   matrice[riga][colonna] = valore;
+  
+  // Animazione di entrata
   setTimeout(() => {
     disco.classList.remove("scale-0");
     disco.classList.add("scale-100");
@@ -183,6 +196,8 @@ function showVictoryModal(isRedPlayer) {
   
   modal.classList.remove("hidden");
   modal.classList.add("flex");
+  
+  // Animazione di entrata
   setTimeout(() => {
     modal.querySelector("div").classList.remove("scale-95");
     modal.querySelector("div").classList.add("scale-100");
@@ -205,11 +220,14 @@ function showDrawModal() {
 }
 
 function resetGame() {
+  // Nascondi il modal
   const modal = document.getElementById("victoryModal");
   modal.classList.add("hidden");
   modal.classList.remove("flex");
   modal.querySelector("div").classList.remove("scale-100");
   modal.querySelector("div").classList.add("scale-95");
+  
+  // Reset della matrice e UI
   resetMatrice();
 }
 
@@ -219,7 +237,11 @@ function resetMatrice() {
       matrice[i][j] = null;
       const cell = document.getElementById(`cell-${i}-${j}`);
       cell.innerHTML = "";
+      
+      // Ripristina le classi originali
       cell.className = "w-16 h-16 bg-white rounded-full border-4 border-blue-600 cursor-pointer hover:bg-blue-50 transition-all duration-200 hover:scale-105 flex items-center justify-center shadow-lg";
+      
+      // Riattacca gli event listeners
       cell.addEventListener("click", handleCellClick);
       cell.addEventListener("mouseenter", () => highlightColumn(j, true));
       cell.addEventListener("mouseleave", () => highlightColumn(j, false));

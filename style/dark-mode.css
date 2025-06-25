@@ -1,4 +1,7 @@
+/* ===== DARK MODE ===== */
+/* Tutti gli stili per il tema scuro */
 
+/* Transizioni smooth per tutti gli elementi */
 *, *::before, *::after {
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
               color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
@@ -6,6 +9,7 @@
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark mode body e root */
 .dark {
   color-scheme: dark;
 }
@@ -18,6 +22,7 @@
   color: #f8fafc;
 }
 
+/* Migliori contrasti per la dark mode */
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
   color: #f1f5f9;
   font-weight: 600;
@@ -39,6 +44,7 @@
   color: #64748b !important;
 }
 
+/* Dark mode cards migliorati */
 .dark .skill-card,
 .dark .project-card,
 .dark .contact-card {
@@ -56,6 +62,7 @@
   transform: translateY(-8px) scale(1.02);
 }
 
+/* Dark mode glass effect migliorato */
 .dark .glass-effect {
   background: rgba(30, 41, 59, 0.85);
   backdrop-filter: blur(25px);
@@ -63,12 +70,14 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
+/* Dark mode navigation */
 .dark nav {
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(71, 85, 105, 0.3);
 }
 
+/* Dark mode buttons */
 .dark button {
   color: #f1f5f9;
 }
@@ -78,6 +87,7 @@
   color: #ffffff;
 }
 
+/* Dark mode inputs e forms */
 .dark input,
 .dark textarea,
 .dark select {
@@ -102,12 +112,14 @@
   opacity: 0.8;
 }
 
+/* Dark mode particelle migliorato */
 .dark .particle {
   background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) !important;
   opacity: 0.6;
   box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
 }
 
+/* Dark mode toggle button migliorato */
 .dark #dark-mode-toggle {
   background-color: #374151;
   color: #fbbf24;
@@ -120,6 +132,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Miglioramenti per gradient text in dark mode */
 .dark .gradient-text {
   background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 50%, #f9a8d4 100%);
   -webkit-background-clip: text;
@@ -127,6 +140,7 @@
   background-clip: text;
 }
 
+/* Override per elementi che potrebbero non rispettare il dark mode */
 .dark .bg-white {
   background-color: #1e293b !important;
 }
@@ -147,6 +161,7 @@
   border-color: #4b5563 !important;
 }
 
+/* Dark mode per componenti personalizzati */
 .dark [class*="bg-gradient-to"] {
   opacity: 0.9;
 }
@@ -159,6 +174,7 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Miglior contrasto per i testi sui background colorati in dark mode */
 .dark .bg-blue-600,
 .dark .bg-purple-600,
 .dark .bg-indigo-600,

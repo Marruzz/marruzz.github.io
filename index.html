@@ -1,40 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luca Marroni - Portfolio Developer Full-Stack | Studente ITIS Majorana</title>
-    <meta name="description"
-        content="Portfolio di Luca Marroni, 17 anni, Developer Full-Stack e studente dell'ITIS E.Majorana di Grugliasco. Specializzato in sviluppo web moderno, certificato CISCO IT Essentials." />
-    <meta name="keywords"
-        content="Luca Marroni, Developer, Full-Stack, Portfolio, JavaScript, Python, Web Development, ITIS Majorana, CISCO" />
-    <meta name="author" content="Luca Marroni" />
-
-    <meta property="og:title" content="Luca Marroni - Portfolio Developer Full-Stack" />
-    <meta property="og:description"
-        content="Portfolio di Luca Marroni, 17 anni, Developer Full-Stack e studente dell'ITIS E.Majorana di Grugliasco." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://marruzz.github.io/" />
-    <meta property="og:image" content="https://marruzz.github.io/assets/images/luca-marroni.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Luca Marroni - Portfolio Developer Full-Stack" />
-    <meta name="twitter:description"
-        content="Portfolio di Luca Marroni, 17 anni, Developer Full-Stack e studente dell'ITIS E.Majorana di Grugliasco." />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" href="/favicon.ico" />
-
+    <title>Luca Marroni - Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script-tailwind.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style/navbar.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-    
-    <!-- Component Scripts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Carica tutti i componenti -->
     <script src="components/navigation-component.js"></script>
     <script src="components/hero-component.js"></script>
     <script src="components/about-component.js"></script>
@@ -44,94 +21,72 @@
     <script src="components/project-card-component.js"></script>
     <script src="components/contact-component.js"></script>
     <script src="components/pcto-component.js"></script>
-    <script src="components/cv-component.js"></script>
-    <script src="components/preferences-modal.js"></script>
-</head>
-
-<body class="bg-gray-50 text-gray-800" role="document">
+    
+    
+    <!-- Navigazione come Web Component -->
     <app-navigation></app-navigation>
+    
+    <!-- Hero Section come Web Component -->
     <app-hero></app-hero>
+    
+    <!-- About Section come Web Component -->
     <app-about></app-about>
+    
+    <!-- Skills Section come Web Component -->
     <app-skills></app-skills>
+    
+    <!-- Certifications Section come Web Component -->
     <app-certifications></app-certifications>
+    
     <app-pcto></app-pcto>
+    <!-- Projects Section come Web Component -->
     <app-projects></app-projects>
-    <app-cv></app-cv>
+    
+    <!-- Contact Section come Web Component -->
     <app-contact></app-contact>
-    <preferences-modal></preferences-modal>
-
-</body>
+    
+    <!-- Script di inizializzazione -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const loadingIndicator = document.getElementById('loading-indicator');
-            if (loadingIndicator) {
-                setTimeout(() => {
-                    loadingIndicator.style.opacity = '0';
-                    setTimeout(() => loadingIndicator.remove(), 300);
-                }, 500);
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestione del menu mobile
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-
+            
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
-                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
                     mobileMenu.classList.toggle('hidden');
-                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                    const announcement = !isExpanded ? 'Menu aperto' : 'Menu chiuso';
-                    announceToScreenReader(announcement);
                 });
-            }
-            const preferencesButton = document.getElementById('preferences-toggle');
-            const preferencesModal = document.querySelector('preferences-modal');
-
-            if (preferencesButton && preferencesModal) {
-                preferencesButton.addEventListener('click', () => {
-                    preferencesModal.openModal();
-                });
-                preferencesModal.applyPreferences();
             }
             
-            // Forza sempre la modalità chiara
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('darkMode', 'false');
+            // Smooth scrolling per i link di navigazione
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
                         target.scrollIntoView({
-                            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                            behavior: 'smooth',
                             block: 'start'
                         });
-                        target.focus({ preventScroll: true });
+                        
+                        // Chiudi il menu mobile se aperto
                         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');
-                            mobileMenuButton.setAttribute('aria-expanded', 'false');
                         }
                     }
                 });
             });
+            
+            // Inizializza gli script esistenti se presenti
             if (typeof initializePortfolio === 'function') {
                 initializePortfolio();
             }
-
-            console.log('Portfolio con componenti e accessibilità caricato con successo!');
+            
+            console.log('Portfolio con componenti caricato con successo!');
         });
-        function announceToScreenReader(message) {
-            const announcement = document.createElement('div');
-            announcement.setAttribute('aria-live', 'polite');
-            announcement.setAttribute('aria-atomic', 'true');
-            announcement.className = 'sr-only';
-            announcement.textContent = message;
-            document.body.appendChild(announcement);
-
-            setTimeout(() => {
-                document.body.removeChild(announcement);
-            }, 1000);
-        }
     </script>
-
+    
+    <!-- Carica lo script originale se necessario -->
+    <script src="script.js"></script>
+</body>
 </html>

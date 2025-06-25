@@ -13,10 +13,10 @@ class ProjectCardComponent extends HTMLElement {
     const license = this.getAttribute('license') || '';
     const featured = this.hasAttribute('featured');
     const playable = this.hasAttribute('playable');
-
+    
 
     const technologies = techStack ? techStack.split(',').map(tech => tech.trim()) : [];
-
+    
 
     const techBadges = technologies.map(tech => {
       const colorMap = {
@@ -33,11 +33,11 @@ class ProjectCardComponent extends HTMLElement {
         'Mobile': 'bg-green-100 text-green-800',
         'Game': 'bg-pink-100 text-pink-800'
       };
-
+      
       const colorClass = colorMap[tech] || 'bg-gray-100 text-gray-800';
       return `<span class="${colorClass} text-xs px-2 py-1 rounded-full font-semibold">${tech}</span>`;
     }).join('');
-
+    
 
     let statusBadge = '';
     if (status) {
@@ -48,9 +48,9 @@ class ProjectCardComponent extends HTMLElement {
         'MAUI': { bg: 'bg-purple-500/20', text: 'text-white', icon: 'fas fa-mobile-alt', color: 'text-purple-600' },
         'Starred': { bg: 'bg-yellow-500/20', text: 'text-white', icon: 'fas fa-star', color: 'text-yellow-600' }
       };
-
+      
       const statusInfo = statusMap[status] || { bg: 'bg-blue-500/20', text: 'text-white', icon: 'fas fa-info', color: 'text-blue-600' };
-
+      
       if (playable) {
         statusBadge = `
           <div class="absolute bottom-4 left-4">
@@ -67,7 +67,7 @@ class ProjectCardComponent extends HTMLElement {
           </div>`;
       }
     }
-
+    
 
     let licenseIndicator = '';
     if (license) {
@@ -77,7 +77,7 @@ class ProjectCardComponent extends HTMLElement {
         'Private': { color: 'text-gray-600', dotColor: 'bg-gray-500' },
         'MAUI': { color: 'text-blue-600', dotColor: 'bg-blue-500' }
       };
-
+      
       const licenseInfo = licenseMap[license] || { color: 'text-blue-600', dotColor: 'bg-blue-500' };
       licenseIndicator = `
         <div class="flex space-x-2">
@@ -85,7 +85,7 @@ class ProjectCardComponent extends HTMLElement {
           <span class="text-sm ${licenseInfo.color} font-semibold">${license}</span>
         </div>`;
     }
-
+    
 
     let buttons = '';
     if (githubUrl) {
@@ -94,14 +94,14 @@ class ProjectCardComponent extends HTMLElement {
           <i class="fab fa-github mr-1"></i>GitHub
         </a>`;
     }
-
+    
     if (liveUrl) {
       buttons += `
         <a href="${liveUrl}" target="_blank" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-2 px-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-all duration-300">
           <i class="fas fa-external-link-alt mr-1"></i>Demo Live
         </a>`;
     }
-    this.innerHTML = `
+      this.innerHTML = `
       <div class="project-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-100 group h-full flex flex-col">
         <div class="relative h-48 bg-gradient-to-br ${bgGradient} overflow-hidden flex-shrink-0">
           <div class="absolute inset-0 bg-black/20"></div>
@@ -134,7 +134,7 @@ class ProjectCardComponent extends HTMLElement {
       </div>
     `;
   }
-
+  
   getMainTechIcon(tech) {
     const iconMap = {
       'JavaScript': 'fab fa-js-square',
@@ -143,7 +143,7 @@ class ProjectCardComponent extends HTMLElement {
       '.NET MAUI': 'fas fa-mobile-alt',
       'C#': 'fas fa-code'
     };
-
+    
     return iconMap[tech] || 'fab fa-js-square';
   }
 }

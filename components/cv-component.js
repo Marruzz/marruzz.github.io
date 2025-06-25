@@ -2,20 +2,20 @@
 class CVComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section id="cv" class="py-20 bg-gradient-to-br from-gray-50 to-white transition-colors duration-300">
+      <section id="cv" class="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden transition-colors duration-300">
         
         <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-purple-600/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent/5 to-pink-500/5 rounded-full blur-3xl"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div class="text-center mb-16 ">
+          <div class="text-center mb-16 animate-fade-in">
             <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <i class="fas fa-file-alt mr-2"></i>Curriculum Vitae
             </span>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 transition-colors duration-300">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
               Il Mio CV
             </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full"></div>            <p class="text-xl text-gray-600 transition-colors duration-300">
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full"></div>            <p class="text-xl text-gray-600 dark:text-gray-100 mt-6 max-w-3xl mx-auto transition-colors duration-300">
               Scarica o visualizza il mio curriculum vitae completo per conoscere 
               nel dettaglio la mia formazione, competenze ed esperienze.
             </p>
@@ -23,8 +23,8 @@ class CVComponent extends HTMLElement {
 
           <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">            
             <div class="animate-slide-right">
-              <div class="bg-white shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
+              <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-gradient-to-r from-green-500 to-red-500 p-6">
                   <div class="flex items-center justify-between">
                     <div class="flex items-center">
                       <img src="https://flagcdn.com/w40/it.png" alt="Italiano" class="w-10 h-7 rounded mr-4" />
@@ -50,26 +50,20 @@ class CVComponent extends HTMLElement {
                     </div>
                     <div class="flex items-center text-gray-600 dark:text-gray-100">
                       <i class="fas fa-calendar text-primary mr-3"></i>
-                      <span class="dark:text-gray-100"><strong class="aggiornamento:</strong> Dicembre 2024</span>
+                      <span class="dark:text-gray-100"><strong class="dark:text-white">Ultimo aggiornamento:</strong> Dicembre 2024</span>
                     </div>
                   </div>
                   
-                  <div class="space-y-4">                    
-                  <a href="CV/Luca Marroni - CV Ita.pdf" 
+                  <div class="space-y-4">                    <a href="CV/Luca Marroni - CV Ita.pdf" 
                        target="_blank" 
-
-                        class="w-full bg-gradient-to-r from-green-500 to-red-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-red-500 hover:to-green-500 transform hover:scale-105 flex items-center justify-center group">
-
-
+                       class="cv-download-btn cv-view-btn w-full text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
                       <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
                       Visualizza CV
                     </a>
                     
                     <a href="CV/Luca Marroni - CV Ita.pdf" 
                        download="Luca_Marroni_CV_Italiano.pdf"
-
-                       class="w-full border-2 border-green-600 text-green-600 font-semibold transition-all duration-300 hover:bg-green-600 hover:text-white items-center justify-center group">
-
+                       class="cv-download-btn cv-download-outline w-full border-primary text-primary py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center group">
                       <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
                       Scarica PDF
                     </a>
@@ -78,7 +72,7 @@ class CVComponent extends HTMLElement {
               </div>
             </div>            
             <div class="animate-slide-left">
-              <div class="bg-white shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div class="bg-gradient-to-r from-blue-600 to-red-600 p-6">
                   <div class="flex items-center justify-between">
                     <div class="flex items-center">
@@ -127,12 +121,12 @@ class CVComponent extends HTMLElement {
               </div>
             </div>
           </div>          
-          <div class="mt-20 ">
-            <div class="bg-white shadow-xl border border-gray-100 transition-colors duration-300">              <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 transition-colors duration-300">
+          <div class="mt-20 animate-fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 p-8 lg:p-12 transition-colors duration-300">              <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
                   <i class="fas fa-star text-yellow-500 mr-2"></i>
                   Punti Salienti del CV
-                </h3>                <p class="text-gray-600 transition-colors duration-300">
+                </h3>                <p class="text-gray-600 dark:text-gray-100 text-lg transition-colors duration-300">
                   I miei principali risultati e competenze in sintesi
                 </p>
               </div>
@@ -141,36 +135,36 @@ class CVComponent extends HTMLElement {
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-primary/10 to-purple-600/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-graduation-cap text-primary text-2xl"></i>
-                  </div>                  <h4 class="font-bold text-gray-900 transition-colors duration-300">Formazione</h4>
-                  <p class="text-gray-600 text-sm transition-colors duration-300">ITIS E.Majorana<br>Informatica & Telecomunicazioni</p>
+                  </div>                  <h4 class="font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Formazione</h4>
+                  <p class="text-gray-600 dark:text-gray-100 text-sm transition-colors duration-300">ITIS E.Majorana<br>Informatica & Telecomunicazioni</p>
                 </div>
 
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-accent/10 to-orange-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-certificate text-accent text-2xl"></i>
-                  </div>                  <h4 class="font-bold text-gray-900 transition-colors duration-300">Certificazioni</h4>
-                  <p class="text-gray-600 text-sm transition-colors duration-300">CISCO IT Essentials<br>Competenze Tecniche</p>
+                  </div>                  <h4 class="font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Certificazioni</h4>
+                  <p class="text-gray-600 dark:text-gray-100 text-sm transition-colors duration-300">CISCO IT Essentials<br>Competenze Tecniche</p>
                 </div>
 
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-code text-green-500 text-2xl"></i>
-                  </div>                  <h4 class="font-bold text-gray-900 transition-colors duration-300">Competenze</h4>
-                  <p class="text-gray-600 text-sm transition-colors duration-300">JavaScript, Angular<br>.NET MAUI, Python</p>
+                  </div>                  <h4 class="font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Competenze</h4>
+                  <p class="text-gray-600 dark:text-gray-100 text-sm transition-colors duration-300">JavaScript, Angular<br>.NET MAUI, Python</p>
                 </div>
 
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-project-diagram text-blue-500 text-2xl"></i>
-                  </div>                  <h4 class="font-bold text-gray-900 transition-colors duration-300">Progetti</h4>
-                  <p class="text-gray-600 text-sm transition-colors duration-300">Portfolio Diversificato<br>Soluzioni Innovative</p>
+                  </div>                  <h4 class="font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Progetti</h4>
+                  <p class="text-gray-600 dark:text-gray-100 text-sm transition-colors duration-300">Portfolio Diversificato<br>Soluzioni Innovative</p>
                 </div>
               </div>
             </div>
           </div>
 
           
-          <div class="mt-16 text-center ">
+          <div class="mt-16 text-center animate-fade-in">
             <div class="bg-gradient-to-r from-primary to-purple-600 rounded-3xl p-8 text-white">              <h3 class="text-2xl font-bold mb-4 text-white">
                 <i class="fas fa-handshake mr-2"></i>
                 Interessato a collaborare?
@@ -188,16 +182,22 @@ class CVComponent extends HTMLElement {
         </div>
       </section>
     `;
-
+    
     this.setupEventListeners();
   }
-
+  
   setupEventListeners() {
 
     const downloadLinks = this.querySelectorAll('a[download]');
     downloadLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const fileName = e.target.closest('a').getAttribute('download');
+        console.log(`CV Download: ${fileName}`);
+        
+
+
+
+
 
       });
     });
@@ -217,6 +217,8 @@ class CVComponent extends HTMLElement {
         }
       });
     });
+
+    console.log('CV component loaded');
   }
 }
 

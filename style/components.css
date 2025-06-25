@@ -1,4 +1,7 @@
+/* ===== COMPONENTS ===== */
+/* Stili per componenti riutilizzabili: cards, glass effect, ecc. */
 
+/* Glass Effect */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -6,6 +9,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Skill Cards */
 .skill-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -33,6 +37,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Project Cards */
 .project-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -62,12 +67,14 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
+/* Contact Cards */
 .contact-card {
   height: 112px;
   display: flex;
   align-items: center;
 }
 
+/* Loading Component */
 .loading {
   position: relative;
   overflow: hidden;
@@ -84,11 +91,13 @@
   animation: loading 1.5s infinite;
 }
 
+/* Input Focus Effects */
 input:focus, textarea:focus {
   transform: scale(1.02);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
+/* Mobile Responsive Components */
 @media (max-width: 768px) {
   .project-card:hover {
     transform: translateY(-8px) scale(1.01);
