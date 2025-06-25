@@ -133,10 +133,10 @@ class ContactComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
+
     this.setupEventListeners();
   }
-  
+
   setupEventListeners() {
     const form = this.querySelector('#contact-form');
     if (form) {
@@ -144,13 +144,13 @@ class ContactComponent extends HTMLElement {
         this.handleFormSubmit(e);
       });
     }
-    
+
     console.log('✅ Contact component loaded');
   }
-  
+
   async handleFormSubmit(e) {
     e.preventDefault();
-    
+
     const form = e.target;
     const submitBtn = this.querySelector('#submit-btn');
     const buttonText = submitBtn.querySelector('.button-text');
@@ -158,15 +158,15 @@ class ContactComponent extends HTMLElement {
     const statusIcon = statusDiv.querySelector('.status-icon');
     const statusTitle = statusDiv.querySelector('.status-title');
     const statusMessage = statusDiv.querySelector('.status-message');
-    
+
     // Disable button and show loading
     submitBtn.disabled = true;
     buttonText.textContent = 'Invio in corso...';
     statusDiv.classList.add('hidden');
-    
+
     try {
       const formData = new FormData(form);
-      
+
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
@@ -174,7 +174,7 @@ class ContactComponent extends HTMLElement {
           'Accept': 'application/json'
         }
       });
-      
+
       if (response.ok) {
         // Success
         form.reset();
@@ -185,17 +185,17 @@ class ContactComponent extends HTMLElement {
         statusMessage.className = 'text-green-600 dark:text-green-300 text-xs';
         statusMessage.textContent = 'Ti risponderò il prima possibile. Grazie per avermi contattato!';
         buttonText.textContent = 'Messaggio Inviato';
-        
+
         // Reset button after 3 seconds
         setTimeout(() => {
           submitBtn.disabled = false;
           buttonText.textContent = 'Invia Messaggio';
         }, 3000);
-        
+
       } else {
         throw new Error('Errore nell\'invio del messaggio');
       }
-      
+
     } catch (error) {
       // Error
       console.error('Error:', error);
@@ -205,11 +205,11 @@ class ContactComponent extends HTMLElement {
       statusTitle.textContent = 'Errore nell\'invio';
       statusMessage.className = 'text-red-600 dark:text-red-300 text-xs';
       statusMessage.textContent = 'Si è verificato un errore. Riprova o contattami direttamente via email.';
-      
+
       submitBtn.disabled = false;
       buttonText.textContent = 'Riprova';
     }
-    
+
     statusDiv.classList.remove('hidden');
   }
 }
