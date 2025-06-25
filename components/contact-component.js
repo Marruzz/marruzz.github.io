@@ -110,17 +110,32 @@ class ContactComponent extends HTMLElement {
                     <textarea id="message" name="message" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none flex-grow min-h-32"></textarea>
                   </div>
                   <div class="mt-auto pt-4">
-                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">                      <i class="fas fa-paper-plane mr-2"></i>
-                      Invia Messaggio
+                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">                      <span class="submit-text">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Invia Messaggio
+                      </span>
+                      <span class="loading-text hidden">
+                        <i class="fas fa-spinner fa-spin mr-2"></i>
+                        Invio in corso...
+                      </span>
                     </button>
                     
+                    <div id="form-message" class="mt-4 p-3 rounded-xl hidden">
+                      <div class="flex items-center">
+                        <i class="fas fa-check-circle mr-3"></i>
+                        <div>
+                          <h4 class="font-semibold text-sm">Messaggio inviato!</h4>
+                          <p class="text-xs">Ti risponderò il prima possibile.</p>
+                        </div>
+                      </div>
+                    </div>
                     
-                    <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-xl">
+                    <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl">
                       <div class="flex items-center">
                         <i class="fas fa-info-circle text-blue-500 mr-3"></i>
                         <div>
-                          <h4 class="text-blue-800 font-semibold text-sm">Come contattarmi</h4>
-                          <p class="text-blue-600 text-xs">Il form aprirà il tuo client email predefinito per inviare il messaggio.</p>
+                          <h4 class="text-blue-800 dark:text-blue-300 font-semibold text-sm">Contatto diretto</h4>
+                          <p class="text-blue-600 dark:text-blue-400 text-xs">Il form invia direttamente il messaggio alla mia email.</p>
                         </div>
                       </div>
                     </div>
@@ -148,33 +163,90 @@ class ContactComponent extends HTMLElement {
     console.log('✅ Contact component loaded');
   }
   
-  handleFormSubmit(e) {
-    const formData = new FormData(e.target);
+  async handleFormSubmit(e) {
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitBtn = this.querySelector('#submit-btn');
+    const submitText = submitBtn.querySelector('.submit-text');
+    const loadingText = submitBtn.querySelector('.loading-text');
+    const messageDiv = this.querySelector('#form-message');
+    
+    // Validate form
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
     
-
     if (!name || !email || !subject || !message) {
-      alert('Tutti i campi sono obbligatori!');
+      this.showMessage('Tutti i campi sono obbligatori!', 'error');
       return;
     }
     
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert('Inserisci un indirizzo email valido!');
+      this.showMessage('Inserisci un indirizzo email valido!', 'error');
       return;
     }
     
-
-    const mailtoLink = `mailto:luca.marroni@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
-    )}`;
+    // Show loading state
+    submitBtn.disabled = true;
+    submitText.classList.add('hidden');
+    loadingText.classList.remove('hidden');
     
-
-    window.location.href = mailtoLink;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        this.showMessage('Messaggio inviato con successo! Ti risponderò il prima possibile.', 'success');
+        form.reset();
+      } else {
+        throw new Error('Errore nell\'invio del messaggio');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      this.showMessage('Si è verificato un errore. Riprova più tardi o contattami direttamente via email.', 'error');
+    } finally {
+      // Reset button state
+      submitBtn.disabled = false;
+      submitText.classList.remove('hidden');
+      loadingText.classList.add('hidden');
+    }
+  }
+  
+  showMessage(text, type) {
+    const messageDiv = this.querySelector('#form-message');
+    const icon = messageDiv.querySelector('i');
+    const title = messageDiv.querySelector('h4');
+    const description = messageDiv.querySelector('p');
+    
+    if (type === 'success') {
+      messageDiv.className = 'mt-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl';
+      icon.className = 'fas fa-check-circle text-green-500 mr-3';
+      title.className = 'text-green-800 dark:text-green-300 font-semibold text-sm';
+      description.className = 'text-green-600 dark:text-green-400 text-xs';
+      title.textContent = 'Messaggio inviato!';
+      description.textContent = text;
+    } else {
+      messageDiv.className = 'mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl';
+      icon.className = 'fas fa-exclamation-triangle text-red-500 mr-3';
+      title.className = 'text-red-800 dark:text-red-300 font-semibold text-sm';
+      description.className = 'text-red-600 dark:text-red-400 text-xs';
+      title.textContent = 'Errore';
+      description.textContent = text;
+    }
+    
+    messageDiv.classList.remove('hidden');
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      messageDiv.classList.add('hidden');
+    }, 5000);
   }
 }
 
