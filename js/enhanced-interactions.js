@@ -18,7 +18,6 @@ class EnhancedInteractions {
 
   init() {
     this.setupSmoothScrolling();
-    this.setupMagneticHover();
     this.setupIntersectionObserver();
     this.setupPageTransitions();
     this.setupMicroInteractions();
@@ -62,33 +61,6 @@ class EnhancedInteractions {
 
           requestAnimationFrame(animation);
         }
-      });
-    });
-  }
-
-  /**
-   * Magnetic Hover Effects
-   */
-  setupMagneticHover() {
-    document.querySelectorAll('.magnetic-hover').forEach(element => {
-      element.addEventListener('mouseenter', (e) => {
-        e.target.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-      });
-
-      element.addEventListener('mousemove', (e) => {
-        const rect = e.target.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        const moveX = x * 0.1;
-        const moveY = y * 0.1;
-        
-        e.target.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
-      });
-
-      element.addEventListener('mouseleave', (e) => {
-        e.target.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        e.target.style.transform = 'translate(0px, 0px) scale(1)';
       });
     });
   }
@@ -268,7 +240,7 @@ class EnhancedInteractions {
 
     // Apply to interactive elements (disabled by default)
     if (localStorage.getItem('ui-sounds') === 'enabled') {
-      document.querySelectorAll('button, a, .magnetic-hover').forEach(el => {
+      document.querySelectorAll('button, a').forEach(el => {
         el.addEventListener('mouseenter', () => playHoverSound(600, 50));
       });
     }

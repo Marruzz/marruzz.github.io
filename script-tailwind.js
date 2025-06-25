@@ -189,7 +189,6 @@ tailwind.config = {
         
         // Interactive Animations
         "tilt": "tilt 0.3s ease-out",
-        "magnetic": "magnetic 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       },
       
       keyframes: {
@@ -281,10 +280,6 @@ tailwind.config = {
           "25%": { transform: "rotate(1deg)" },
           "75%": { transform: "rotate(-1deg)" },
           "100%": { transform: "rotate(0deg)" },
-        },
-        magnetic: {
-          "0%": { transform: "translate(0, 0)" },
-          "100%": { transform: "translate(var(--x, 0), var(--y, 0))" },
         },
         
         // Utility Keyframes

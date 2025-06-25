@@ -19,7 +19,7 @@ class HeroComponent extends HTMLElement {
           <div class="grid lg:grid-cols-2 gap-12 items-center">            
             <div class="text-center lg:text-left animate-fade-in">
               <div class="mb-6 animate-slide-down">
-                <span class="inline-block glass-card bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-4 pulse-animation magnetic-hover"
+                <span class="inline-block glass-card bg-primary/10 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-4 pulse-animation"
                       role="presentation"
                       aria-label="Messaggio di benvenuto">
                   <i class="fas fa-hand-wave mr-2" aria-hidden="true"></i>
@@ -45,13 +45,13 @@ class HeroComponent extends HTMLElement {
               
               <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-slide-up animate-stagger-3">
                 <a href="#projects" 
-                   class="group magnetic-hover tilt-card glass-card bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-primary/25 hover:shadow-xl transform focus:ring-4 focus:ring-primary/50"
+                   class="group tilt-card glass-card bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-primary/25 hover:shadow-xl transform focus:ring-4 focus:ring-primary/50"
                    aria-label="Scopri i miei progetti - Vai alla sezione progetti">
                   <i class="fas fa-rocket mr-2 group-hover:animate-bounce" aria-hidden="true"></i>
                   Scopri i miei progetti
                 </a>
                 <a href="#contact" 
-                   class="group magnetic-hover tilt-card glass-border border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 transform focus:ring-4 focus:ring-primary/50"
+                   class="group tilt-card glass-border border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 transform focus:ring-4 focus:ring-primary/50"
                    aria-label="Contattami - Vai alla sezione contatti">
                   <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
                   Contattami
@@ -62,7 +62,7 @@ class HeroComponent extends HTMLElement {
                 <a href="https://github.com/Marruzz/" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   class="magnetic-hover text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
+                   class="text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
                    aria-label="Profilo GitHub di Luca Marroni - Si apre in una nuova finestra"
                    role="listitem">
                   <i class="fab fa-github text-2xl" aria-hidden="true"></i>
@@ -71,7 +71,7 @@ class HeroComponent extends HTMLElement {
                 <a href="https://www.linkedin.com/in/lucamarroni" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   class="magnetic-hover text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
+                   class="text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
                    aria-label="Profilo LinkedIn di Luca Marroni - Si apre in una nuova finestra"
                    role="listitem">
                   <i class="fab fa-linkedin text-2xl" aria-hidden="true"></i>
@@ -80,14 +80,14 @@ class HeroComponent extends HTMLElement {
                 <a href="https://www.instagram.com/luca.marroni._/" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   class="magnetic-hover text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
+                   class="text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
                    aria-label="Profilo Instagram di Luca Marroni - Si apre in una nuova finestra"
                    role="listitem">
                   <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
                   <span class="sr-only">Instagram</span>
                 </a>
                 <a href="mailto:luca.marroni@hotmail.com" 
-                   class="magnetic-hover text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
+                   class="text-gray-400 dark:text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
                    aria-label="Invia email a Luca Marroni"
                    role="listitem">
                   <i class="fas fa-envelope text-2xl" aria-hidden="true"></i>
@@ -112,12 +112,12 @@ class HeroComponent extends HTMLElement {
                   </div>
                   
                   <!-- Floating Status Indicators -->
-                  <div class="absolute -top-4 -right-4 glass-card bg-primary text-white p-3 rounded-full shadow-lg animate-bounce magnetic-hover"
+                  <div class="absolute -top-4 -right-4 glass-card bg-primary text-white p-3 rounded-full shadow-lg animate-bounce"
                        role="status"
                        aria-label="Indicatore: Developer Full-Stack">
                     <i class="fas fa-code text-lg" aria-hidden="true"></i>
                   </div>
-                  <div class="absolute -bottom-4 -left-4 glass-card bg-accent text-white p-3 rounded-full shadow-lg animate-bounce-slow magnetic-hover"
+                  <div class="absolute -bottom-4 -left-4 glass-card bg-accent text-white p-3 rounded-full shadow-lg animate-bounce-slow"
                        role="status"
                        aria-label="Indicatore: Studente">
                     <i class="fas fa-graduation-cap text-lg" aria-hidden="true"></i>
@@ -127,19 +127,19 @@ class HeroComponent extends HTMLElement {
               
               <!-- Enhanced Stats Cards -->
               <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
-                <div class="glass-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300 magnetic-hover"
+                <div class="glass-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300"
                      role="img"
                      aria-label="Statistica: 17 anni">
                   <div class="text-2xl font-bold text-primary">17</div>
                   <div class="text-sm text-gray-600 dark:text-gray-400">Anni</div>
                 </div>
-                <div class="glass-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300 magnetic-hover"
+                <div class="glass-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300"
                      role="img"
                      aria-label="Statistica: 8+ linguaggi di programmazione">
                   <div class="text-2xl font-bold text-primary">8+</div>
                   <div class="text-sm text-gray-600 dark:text-gray-400">Linguaggi</div>
                 </div>
-                <div class="glass-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300 magnetic-hover"
+                <div class="glass-card bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300"
                      role="img"
                      aria-label="Statistica: 15+ progetti completati">
                   <div class="text-2xl font-bold text-primary">15+</div>
@@ -153,7 +153,7 @@ class HeroComponent extends HTMLElement {
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#about" 
-             class="magnetic-hover block text-gray-400 hover:text-primary transition-colors duration-300 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
+             class="block text-gray-400 hover:text-primary transition-colors duration-300 focus:ring-4 focus:ring-primary/50 rounded-lg p-2"
              aria-label="Scorri per vedere di più - Vai alla sezione Chi Sono">
             <i class="fas fa-chevron-down text-2xl" aria-hidden="true"></i>
             <span class="sr-only">Scorri verso il basso</span>

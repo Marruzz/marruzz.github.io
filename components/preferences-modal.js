@@ -28,7 +28,7 @@ class PreferencesModal extends HTMLElement {
               Preferenze
             </h2>
             <button id="close-preferences" 
-                    class="magnetic-hover p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                    class="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                     aria-label="Chiudi preferenze">
               <i class="fas fa-times text-xl" aria-hidden="true"></i>
             </button>
@@ -111,21 +111,6 @@ class PreferencesModal extends HTMLElement {
                   </div>
                   <label class="relative inline-flex items-center cursor-pointer">
                     <input id="particles-toggle" type="checkbox" class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/25 dark:peer-focus:ring-primary/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-                  </label>
-                </div>
-                
-                <div class="flex items-center justify-between">
-                  <div>
-                    <label for="magnetic-hover-toggle" class="text-sm font-medium text-gray-900 dark:text-white">
-                      Effetti Magnetici
-                    </label>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">
-                      Elementi che seguono il cursore al hover
-                    </p>
-                  </div>
-                  <label class="relative inline-flex items-center cursor-pointer">
-                    <input id="magnetic-hover-toggle" type="checkbox" class="sr-only peer">
                     <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/25 dark:peer-focus:ring-primary/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                   </label>
                 </div>
@@ -229,18 +214,18 @@ class PreferencesModal extends HTMLElement {
           <!-- Modal Footer -->
           <div class="flex items-center justify-between p-6 border-t border-gray-200 dark:border-gray-700">
             <button id="reset-preferences" 
-                    class="magnetic-hover px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all">
+                    class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all">
               <i class="fas fa-undo mr-2" aria-hidden="true"></i>
               Ripristina Default
             </button>
             
             <div class="flex space-x-3">
               <button id="cancel-preferences" 
-                      class="magnetic-hover px-6 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all">
+                      class="px-6 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all">
                 Annulla
               </button>
               <button id="save-preferences" 
-                      class="magnetic-hover px-6 py-2 text-sm font-medium text-white bg-primary hover:bg-secondary rounded-lg transition-all shadow-lg hover:shadow-primary/25">
+                      class="px-6 py-2 text-sm font-medium text-white bg-primary hover:bg-secondary rounded-lg transition-all shadow-lg hover:shadow-primary/25">
                 <i class="fas fa-save mr-2" aria-hidden="true"></i>
                 Salva Preferenze
               </button>
@@ -260,7 +245,6 @@ class PreferencesModal extends HTMLElement {
       theme: 'auto',
       animations: true,
       particles: true,
-      magneticHover: true,
       highContrast: false,
       screenReader: false,
       fontSize: 100,
@@ -291,7 +275,7 @@ class PreferencesModal extends HTMLElement {
 
   // Applica le preferenze all'interfaccia
   applyPreferences() {
-    const { theme, animations, particles, magneticHover, highContrast, fontSize, gpuAcceleration } = this.preferences;
+    const { theme, animations, particles, highContrast, fontSize, gpuAcceleration } = this.preferences;
 
     // Applica tema
     if (theme === 'dark') {
@@ -310,7 +294,6 @@ class PreferencesModal extends HTMLElement {
     // Gestisci animazioni
     document.body.classList.toggle('no-animations', !animations);
     document.body.classList.toggle('no-particles', !particles);
-    document.body.classList.toggle('no-magnetic', !magneticHover);
     document.body.classList.toggle('high-contrast', highContrast);
     document.body.classList.toggle('gpu-accelerated', gpuAcceleration);
 
@@ -355,15 +338,6 @@ class PreferencesModal extends HTMLElement {
       `;
     }
 
-    // Stili per effetti magnetici disabilitati
-    if (!this.preferences.magneticHover) {
-      css += `
-        .no-magnetic .magnetic-hover:hover {
-          transform: none !important;
-        }
-      `;
-    }
-
     // Stili per alto contrasto
     if (this.preferences.highContrast) {
       css += `
@@ -379,7 +353,6 @@ class PreferencesModal extends HTMLElement {
     // Stili per accelerazione GPU
     if (this.preferences.gpuAcceleration) {
       css += `
-        .gpu-accelerated .magnetic-hover,
         .gpu-accelerated .project-card,
         .gpu-accelerated .skill-card,
         .gpu-accelerated .particle {
@@ -408,7 +381,6 @@ class PreferencesModal extends HTMLElement {
     // Toggles
     modal.querySelector('#animations-toggle').checked = this.preferences.animations;
     modal.querySelector('#particles-toggle').checked = this.preferences.particles;
-    modal.querySelector('#magnetic-hover-toggle').checked = this.preferences.magneticHover;
     modal.querySelector('#high-contrast-toggle').checked = this.preferences.highContrast;
     modal.querySelector('#screen-reader-toggle').checked = this.preferences.screenReader;
     modal.querySelector('#gpu-acceleration-toggle').checked = this.preferences.gpuAcceleration;
@@ -499,7 +471,6 @@ class PreferencesModal extends HTMLElement {
       theme: modal.querySelector('input[name="theme"]:checked').value,
       animations: modal.querySelector('#animations-toggle').checked,
       particles: modal.querySelector('#particles-toggle').checked,
-      magneticHover: modal.querySelector('#magnetic-hover-toggle').checked,
       highContrast: modal.querySelector('#high-contrast-toggle').checked,
       screenReader: modal.querySelector('#screen-reader-toggle').checked,
       fontSize: parseInt(modal.querySelector('#font-size-slider').value),
@@ -519,7 +490,6 @@ class PreferencesModal extends HTMLElement {
       theme: 'auto',
       animations: true,
       particles: true,
-      magneticHover: true,
       highContrast: false,
       screenReader: false,
       fontSize: 100,

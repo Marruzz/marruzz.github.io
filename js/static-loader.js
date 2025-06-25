@@ -1,5 +1,6 @@
 /**
- * Static Component Loader for GitHub Pages
+ * Unified Static Component Loader for GitHub Pages  
+ * Combines static-loader.js and component-loader.js functionality
  * Modern component system without Node.js dependencies
  */
 
@@ -14,16 +15,17 @@ class StaticComponentLoader {
    * Register component paths
    */
   registerComponents() {
-    this.componentPaths.set('app-navigation', './components/navigation-component.js');
-    this.componentPaths.set('app-hero', './components/hero-component.js');
     this.componentPaths.set('app-about', './components/about-component.js');
-    this.componentPaths.set('app-skills', './components/skills-component.js');
     this.componentPaths.set('app-certifications', './components/certifications-component.js');
-    this.componentPaths.set('app-projects', './components/projects-component.js');
     this.componentPaths.set('app-contact', './components/contact-component.js');
     this.componentPaths.set('app-cv', './components/cv-component.js');
+    this.componentPaths.set('app-hero', './components/hero-component.js');
+    this.componentPaths.set('app-navigation', './components/navigation-component.js');
     this.componentPaths.set('app-pcto', './components/pcto-component.js');
+    this.componentPaths.set('app-preferences', './components/preferences-modal.js');
     this.componentPaths.set('app-project-card', './components/project-card-component.js');
+    this.componentPaths.set('app-projects', './components/projects-component.js');
+    this.componentPaths.set('app-skills', './components/skills-component.js');
   }
 
   /**
@@ -41,6 +43,7 @@ class StaticComponentLoader {
       // Load components sequentially to avoid conflicts
       for (const [componentName, path] of this.componentPaths) {
         await this.loadComponent(componentName, path);
+        this.updateLoadingCounter();
       }
       
       this.hideLoadingIndicator();
@@ -85,6 +88,16 @@ class StaticComponentLoader {
     } catch (error) {
       console.error(`Error loading component ${componentName}:`, error);
       throw error;
+    }
+  }
+
+  /**
+   * Update loading counter
+   */
+  updateLoadingCounter() {
+    const counter = document.getElementById('component-counter');
+    if (counter) {
+      counter.textContent = this.loadedComponents.size;
     }
   }
 

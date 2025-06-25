@@ -85,16 +85,6 @@ body {
   color: var(--brand-primary);
 }
 
-.magnetic-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.magnetic-hover:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: var(--shadow-glow);
-}
-
 .tilt-card {
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -286,10 +276,6 @@ body {
 @media (max-width: 768px) {
   .tilt-card:hover {
     transform: translateY(-3px) scale(1.02);
-  }
-
-  .magnetic-hover:hover {
-    transform: translateY(-1px) scale(1.01);
   }
 }
 
@@ -552,10 +538,6 @@ nav[role="navigation"]:before {
   display: none !important;
 }
 
-.no-magnetic .magnetic-hover:hover {
-  transform: none !important;
-}
-
 .high-contrast {
   filter: contrast(1.8) saturate(1.3) !important;
 }
@@ -578,7 +560,6 @@ nav[role="navigation"]:before {
   border: 2px solid var(--brand-accent) !important;
 }
 
-.gpu-accelerated .magnetic-hover,
 .gpu-accelerated .project-card,
 .gpu-accelerated .skill-card,
 .gpu-accelerated .particle,

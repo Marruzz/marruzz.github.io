@@ -49,13 +49,13 @@ class NavigationComponent extends HTMLElement {
                    <i class="fas fa-briefcase mr-1" aria-hidden="true"></i>PCTO
                 </a>
                 <a href="#cv" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione CV">
                    <i class="fas fa-file-alt mr-1" aria-hidden="true"></i>CV
                 </a>
                 <a href="#contact" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione Contatti">
                    <i class="fas fa-envelope mr-1" aria-hidden="true"></i>Contatti
