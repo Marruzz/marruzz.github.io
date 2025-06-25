@@ -1,0 +1,72 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Build static site
+        run: |
+          echo "🚀 Building static portfolio for GitHub Pages"
+          
+          # Create build directory
+          mkdir -p _site
+          
+          # Copy all necessary files
+          cp -r *.html _site/ 2>/dev/null || true
+          cp -r *.css _site/ 2>/dev/null || true
+          cp -r *.js _site/ 2>/dev/null || true
+          cp -r *.txt _site/ 2>/dev/null || true
+          cp -r *.xml _site/ 2>/dev/null || true
+          cp -r components/ _site/ 2>/dev/null || true
+          cp -r js/ _site/ 2>/dev/null || true
+          cp -r css/ _site/ 2>/dev/null || true
+          cp -r CV/ _site/ 2>/dev/null || true
+          cp -r ForzaQuattroJS/ _site/ 2>/dev/null || true
+          cp -r ScacchiJS/ _site/ 2>/dev/null || true
+          
+          # Create build info
+          echo "Build Date: $(date)" > _site/build-info.txt
+          echo "Build Type: GitHub Actions" >> _site/build-info.txt
+          echo "Commit: ${{ github.sha }}" >> _site/build-info.txt
+          
+          echo "✅ Build completed"
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+      
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

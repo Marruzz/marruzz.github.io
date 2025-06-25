@@ -4,8 +4,7 @@ class NavigationComponent extends HTMLElement {
     this.innerHTML = `
       <nav class="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-gray-700/50 transition-all duration-300" 
            role="navigation" 
-           aria-label="Navigazione principale"
-           style="transform: translateY(0); opacity: 1; visibility: visible;">
+           aria-label="Navigazione principale">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16">
             <div class="flex-shrink-0">
@@ -14,37 +13,37 @@ class NavigationComponent extends HTMLElement {
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4" role="menubar">
                 <a href="#home" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione Home">
                    <i class="fas fa-home mr-1" aria-hidden="true"></i>Home
                 </a>
                 <a href="#about" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione Chi Sono">
                    <i class="fas fa-user mr-1" aria-hidden="true"></i>Chi Sono
                 </a>
                 <a href="#skills" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione Competenze">
                    <i class="fas fa-code mr-1" aria-hidden="true"></i>Competenze
                 </a>
                 <a href="#certifications" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione Certificazioni">
                    <i class="fas fa-certificate mr-1" aria-hidden="true"></i>Certificazioni
                 </a>
                 <a href="#projects" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione Progetti">
                    <i class="fas fa-folder-open mr-1" aria-hidden="true"></i>Progetti
                 </a>
                 <a href="#pcto" 
-                   class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10"
                    role="menuitem"
                    aria-label="Vai alla sezione PCTO">
                    <i class="fas fa-briefcase mr-1" aria-hidden="true"></i>PCTO
@@ -65,13 +64,13 @@ class NavigationComponent extends HTMLElement {
             </div>
             <div class="flex items-center space-x-2">
               <button id="preferences-toggle" 
-                      class="magnetic-hover p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+                      class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
                       aria-label="Apri preferenze"
                       title="Preferenze">
                 <i class="fas fa-cog text-lg" aria-hidden="true"></i>
               </button>
               <button id="dark-mode-toggle" 
-                      class="magnetic-hover p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+                      class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
                       aria-label="Attiva/Disattiva modalità scura"
                       title="Cambia tema">
                 <i class="fas fa-moon dark:hidden text-lg" aria-hidden="true"></i>
@@ -79,7 +78,7 @@ class NavigationComponent extends HTMLElement {
               </button>
               <div class="md:hidden">
                 <button id="mobile-menu-button" 
-                        class="magnetic-hover text-gray-600 dark:text-gray-300 hover:text-primary p-2 rounded-lg transition-colors"
+                        class="text-gray-600 dark:text-gray-300 hover:text-primary p-2 rounded-lg transition-colors"
                         aria-label="Apri menu mobile"
                         aria-expanded="false"
                         aria-controls="mobile-menu">
@@ -96,49 +95,49 @@ class NavigationComponent extends HTMLElement {
              aria-labelledby="mobile-menu-button">
           <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#home" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione Home">
                <i class="fas fa-home mr-2" aria-hidden="true"></i>Home
             </a>
             <a href="#about" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione Chi Sono">
                <i class="fas fa-user mr-2" aria-hidden="true"></i>Chi Sono
             </a>
             <a href="#skills" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione Competenze">
                <i class="fas fa-code mr-2" aria-hidden="true"></i>Competenze
             </a>
             <a href="#certifications" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione Certificazioni">
                <i class="fas fa-certificate mr-2" aria-hidden="true"></i>Certificazioni
             </a>
             <a href="#projects" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione Progetti">
                <i class="fas fa-folder-open mr-2" aria-hidden="true"></i>Progetti
             </a>
             <a href="#pcto" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione PCTO">
                <i class="fas fa-briefcase mr-2" aria-hidden="true"></i>PCTO
             </a>
             <a href="#cv" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione CV">
                <i class="fas fa-file-alt mr-2" aria-hidden="true"></i>CV
             </a>
             <a href="#contact" 
-               class="magnetic-hover block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all"
                role="menuitem"
                aria-label="Vai alla sezione Contatti">
                <i class="fas fa-envelope mr-2" aria-hidden="true"></i>Contatti
@@ -157,19 +156,61 @@ class NavigationComponent extends HTMLElement {
     const mobileMenu = this.querySelector('#mobile-menu');
     const darkModeToggle = this.querySelector('#dark-mode-toggle');
 
+    // Mobile menu toggle
     if (mobileButton && mobileMenu) {
       mobileButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     }
+
+    // Dark mode toggle
     if (darkModeToggle) {
       darkModeToggle.addEventListener('click', () => {
-
         if (window.portfolioManager) {
           window.portfolioManager.toggleDarkMode();
         }
       });
     }
+
+    // Custom smooth scroll with 1 second duration
+    const smoothScrollLinks = this.querySelectorAll('a[href^="#"]');
+    smoothScrollLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const startPosition = window.pageYOffset;
+          const targetPosition = targetElement.offsetTop; // No offset
+          const distance = targetPosition - startPosition;
+          const duration = 1000; // 1 second
+          let start = null;
+
+          function animation(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+          }
+
+          function easeInOutQuad(t, b, c, d) {
+            t /= d/2;
+            if (t < 1) return c/2*t*t + b;
+            t--;
+            return -c/2 * (t*(t-2) - 1) + b;
+          }
+
+          requestAnimationFrame(animation);
+          
+          // Close mobile menu if open
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
   }
 }
 
