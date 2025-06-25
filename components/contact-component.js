@@ -1,21 +1,21 @@
 class ContactComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section id="contact" class="py-20 bg-white relative overflow-hidden">
+      <section id="contact" class="py-20 bg-white relative overflow-hidden transition-colors duration-300">
         
         <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-accent/10 to-pink-500/10 rounded-full blur-3xl"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div class="text-center mb-16 animate-fade-in">
+          <div class="text-center mb-16 ">
             <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <i class="fas fa-envelope mr-2"></i>Parliamo insieme
             </span>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 transition-colors duration-300">
               Contattami
             </h2>
             <div class="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full mb-6"></div>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto transition-colors duration-300">
               Hai un progetto in mente? Vuoi collaborare? Sono sempre interessato
               a nuove opportunità e sfide creative. Non esitare a scrivermi!
             </p>
@@ -24,7 +24,7 @@ class ContactComponent extends HTMLElement {
           <div class="grid lg:grid-cols-2 gap-16">
             
             <div class="animate-slide-right">
-              <h3 class="text-3xl font-bold text-gray-900 mb-8">
+              <h3 class="text-3xl font-bold text-gray-900 mb-8 transition-colors duration-300">
                 Informazioni di Contatto
               </h3>
               <div class="space-y-6">
@@ -96,27 +96,29 @@ class ContactComponent extends HTMLElement {
                 </div>
               </div>
 
-            </div>                        <div class="animate-slide-left h-full">
-              <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-600 h-full flex flex-col transition-colors duration-300">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Invia un messaggio</h3>
+            </div>
+            
+            <div class="animate-slide-left h-full">
+              <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl shadow-xl border border-gray-100 h-full flex flex-col transition-colors duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 transition-colors duration-300">Invia un messaggio</h3>
                 <form class="space-y-4 flex-grow flex flex-col" id="contact-form" action="https://formspree.io/f/mnnvovdk" method="POST">                  <div class="grid md:grid-cols-2 gap-4">
 
                     <div>
-                      <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nome</label>
-                      <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                      <label for="name" class="block text-sm font-semibold text-gray-700 transition-colors duration-300">Nome</label>
+                      <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
                     </div>
                     <div>
-                      <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                      <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                      <label for="email" class="block text-sm font-semibold text-gray-700 transition-colors duration-300">Email</label>
+                      <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
                     </div>
                   </div>
                   <div>
-                    <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Oggetto</label>
-                    <input type="text" autocomplete="off" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                    <label for="subject" class="block text-sm font-semibold text-gray-700 transition-colors duration-300">Oggetto</label>
+                    <input type="text" autocomplete="off" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
                   </div>
                   <div>
-                    <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Messaggio</label>
-                    <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"></textarea>
+                    <label for="message" class="block text-sm font-semibold text-gray-700 transition-colors duration-300">Messaggio</label>
+                    <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"></textarea>
                   </div>
 
                   <div class="mt-auto pt-4">
@@ -140,12 +142,12 @@ class ContactComponent extends HTMLElement {
                       </div>
                     </div>
                     
-                    <div class="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl">
+                    <div class="mt-4 p-3 bg-blue-50 rounded-xl">
                       <div class="flex items-center">
                         <i class="fas fa-info-circle text-blue-500 mr-3"></i>
                         <div>
-                          <h4 class="text-blue-800 dark:text-blue-300 font-semibold text-sm">Contatto diretto</h4>
-                          <p class="text-blue-600 dark:text-blue-400 text-xs">Il form invia direttamente il messaggio alla mia email.</p>
+                          <h4 class="text-blue-800 font-semibold text-sm">Contatto diretto</h4>
+                          <p class="text-blue-600 text-xs">Il form invia direttamente il messaggio alla mia email.</p>
                         </div>
                       </div>
 
@@ -249,17 +251,17 @@ class ContactComponent extends HTMLElement {
     const description = messageDiv.querySelector('p');
     
     if (type === 'success') {
-      messageDiv.className = 'mt-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl';
+      messageDiv.className = 'mt-4 p-3 bg-green-50  border border-green-200 rounded-xl';
       icon.className = 'fas fa-check-circle text-green-500 mr-3';
-      title.className = 'text-green-800 dark:text-green-300 font-semibold text-sm';
-      description.className = 'text-green-600 dark:text-green-400 text-xs';
+      title.className = 'text-green-800 font-semibold text-sm';
+      description.className = 'text-green-600 text-xs';
       title.textContent = 'Messaggio inviato!';
       description.textContent = text;
     } else {
-      messageDiv.className = 'mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl';
+      messageDiv.className = 'mt-4 p-3 bg-red-50 border border-red-200 rounded-xl';
       icon.className = 'fas fa-exclamation-triangle text-red-500 mr-3';
-      title.className = 'text-red-800 dark:text-red-300 font-semibold text-sm';
-      description.className = 'text-red-600 dark:text-red-400 text-xs';
+      title.className = 'text-red-800 font-semibold text-sm';
+      description.className = 'text-red-600 text-xs';
       title.textContent = 'Errore';
       description.textContent = text;
     }
@@ -271,6 +273,38 @@ class ContactComponent extends HTMLElement {
       messageDiv.classList.add('hidden');
     }, 5000);
 
+  }
+
+  saveFormData() {
+    const form = this.querySelector('#contact-form');
+    if (!form) return;
+    
+    const formData = {
+      name: form.querySelector('#name').value,
+      email: form.querySelector('#email').value,
+      subject: form.querySelector('#subject').value,
+      message: form.querySelector('#message').value
+    };
+    
+    localStorage.setItem('contactFormData', JSON.stringify(formData));
+  }
+
+  loadFormData() {
+    const form = this.querySelector('#contact-form');
+    if (!form) return;
+    
+    try {
+      const savedData = localStorage.getItem('contactFormData');
+      if (savedData) {
+        const formData = JSON.parse(savedData);
+        if (formData.name) form.querySelector('#name').value = formData.name;
+        if (formData.email) form.querySelector('#email').value = formData.email;
+        if (formData.subject) form.querySelector('#subject').value = formData.subject;
+        if (formData.message) form.querySelector('#message').value = formData.message;
+      }
+    } catch (error) {
+      console.warn('Errore nel caricamento dei dati salvati:', error);
+    }
   }
 }
 

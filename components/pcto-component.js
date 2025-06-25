@@ -48,66 +48,66 @@ class PCTOComponent extends HTMLElement {  connectedCallback() {
     ];
 
     this.innerHTML = `
-      <section id="pcto" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden transition-colors duration-300">
+      <section id="pcto" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 transition-colors duration-300">
         <!-- Background decorations -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-indigo-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div class="text-center mb-16 animate-fade-in">
-            <span class="inline-block bg-blue-600/10 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div class="text-center mb-16 ">
+            <span class="inline-block bg-blue-600/10 text-blue-600 text-sm font-semibold mb-4">
               <i class="fas fa-briefcase mr-2"></i>Percorso Formativo
             </span>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 transition-colors duration-300">
               PCTO - Competenze Trasversali
             </h2>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
-            <p class="text-xl text-gray-600 dark:text-gray-100 mt-6 max-w-3xl mx-auto transition-colors duration-300">
+            <p class="text-xl text-gray-600 transition-colors duration-300">
               Il mio percorso di alternanza scuola-lavoro con esperienze formative, progetti innovativi e competenze acquisite sul campo.
             </p>
           </div>          <!-- Dashboard Statistiche -->
           <div class="grid md:grid-cols-4 gap-6 mb-16 animate-slide-up">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-all duration-300">
+            <div class="bg-white shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300">
               <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <i class="fas fa-clock text-white text-2xl"></i>
               </div>
               <h3 class="text-3xl font-bold text-blue-600 mb-2">${pctoData.totaleOreContate}</h3>
-              <p class="text-gray-600 dark:text-gray-300 font-medium">Ore Totali Svolte</p>
+              <p class="text-gray-600 Svolte</p>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-all duration-300">
+            <div class="bg-white shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300">
               <div class="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <i class="fas fa-check-circle text-white text-2xl"></i>
               </div>
               <h3 class="text-3xl font-bold text-green-600 mb-2">${pctoData.totaleOreRiconosciute}</h3>
-              <p class="text-gray-600 dark:text-gray-300 font-medium">Ore Riconosciute</p>
+              <p class="text-gray-600 Riconosciute</p>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-all duration-300">
+            <div class="bg-white shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300">
               <div class="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <i class="fas fa-project-diagram text-white text-2xl"></i>
               </div>
               <h3 class="text-3xl font-bold text-purple-600 mb-2">${Object.values(pctoData.attivitaPerAnno).reduce((sum, anno) => sum + anno.length, 0)}</h3>
-              <p class="text-gray-600 dark:text-gray-300 font-medium">Attività Completate</p>
+              <p class="text-gray-600 Completate</p>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 text-center group hover:scale-105 transition-all duration-300">
+            <div class="bg-white shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300">
               <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <i class="fas fa-graduation-cap text-white text-2xl"></i>
               </div>
               <h3 class="text-3xl font-bold text-orange-600 mb-2">${Object.keys(pctoData.attivitaPerAnno).length}</h3>
-              <p class="text-gray-600 dark:text-gray-300 font-medium">Anni Scolastici</p>
+              <p class="text-gray-600 Scolastici</p>
             </div>
           </div>          <!-- Progress Bar Generale -->
           <div class="mb-16 animate-slide-right">
-            <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+            <div class="bg-white shadow-xl border border-gray-100 dark:border-gray-700">
               <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Progresso PCTO</h3>
-                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-sm font-semibold">
+                <span class="bg-green-100 text-sm font-semibold">
                   ${pctoData.totaleOreRiconosciute}/150 ore richieste
                 </span>
               </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 mb-4">
+              <div class="w-full bg-gray-200 mb-4">
                 <div class="bg-gradient-to-r from-blue-500 to-green-500 h-4 rounded-full transition-all duration-1000 ease-out animate-pulse" 
                      style="width: ${Math.min(100, pctoData.percentualeCompletamento)}%"></div>
               </div>
@@ -121,99 +121,99 @@ class PCTOComponent extends HTMLElement {  connectedCallback() {
           <div class="grid lg:grid-cols-2 gap-8 mb-16">
             <!-- Anno Scolastico 3° -->
             <div class="animate-slide-left">
-              <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+              <div class="bg-white shadow-xl border border-gray-100 dark:border-gray-700">
                 <div class="flex items-center mb-6">
                   <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                     <span class="text-white font-bold text-lg">3°</span>
                   </div>
                   <div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Terzo Anno</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Fondamenti e Prime Esperienze</p>
+                    <h3 class="text-2xl font-bold text-gray-900 Anno</h3>
+                    <p class="text-gray-600 Esperienze</p>
                   </div>
                 </div>
 
                 <div class="space-y-4">
-                  <div class="pcto-activity-card bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 p-4 rounded-xl border border-red-200 dark:border-red-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-red-50 to-orange-50 dark:border-red-800">
                     <div class="flex justify-between items-center">
                       <div>
                         <h4 class="font-semibold text-gray-900 dark:text-white">Corso Sicurezza</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Formazione base sulla sicurezza</p>
+                        <p class="text-sm text-gray-600 base sulla sicurezza</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-red-600">12</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-4 rounded-xl border border-purple-200 dark:border-purple-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-purple-50 to-pink-50 dark:border-purple-800">
                     <div class="flex justify-between items-center">
                       <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">Coding nelle Scuole Primarie</h4>
+                        <h4 class="font-semibold text-gray-900 Scuole Primarie</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300">Insegnamento programmazione base</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-purple-600">16</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-blue-50 to-cyan-50 dark:border-blue-800">
                     <div class="flex justify-between items-center">
                       <div>
                         <h4 class="font-semibold text-gray-900 dark:text-white">Cisco IT Essential</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Certificazione networking</p>
+                        <p class="text-sm text-gray-600 networking</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-blue-600">30</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-4 rounded-xl border border-green-200 dark:border-green-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-green-50 to-emerald-50 dark:border-green-800">
                     <div class="flex justify-between items-center">
                       <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">Olimpiadi CyberSecurity</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Competizione sicurezza informatica</p>
+                        <h4 class="font-semibold text-gray-900 CyberSecurity</h4>
+                        <p class="text-sm text-gray-600 sicurezza informatica</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-green-600">20</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 p-4 rounded-xl border border-yellow-200 dark:border-yellow-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-yellow-50 to-orange-50 dark:border-yellow-800">
                     <div class="flex justify-between items-center">
                       <div>
                         <h4 class="font-semibold text-gray-900 dark:text-white">Debate</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Competenze comunicative</p>
+                        <p class="text-sm text-gray-600 comunicative</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-yellow-600">40</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
                   <div class="grid grid-cols-2 gap-4">
-                    <div class="pcto-activity-card bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 p-3 rounded-xl border border-indigo-200 dark:border-indigo-800">
-                      <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Open Days</h4>
+                    <div class="pcto-activity-card bg-gradient-to-r from-indigo-50 to-blue-50 dark:border-indigo-800">
+                      <h4 class="font-semibold text-gray-900 text-sm">Open Days</h4>
                       <span class="text-xl font-bold text-indigo-600">20</span>
                       <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                     </div>
-                    <div class="pcto-activity-card bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-900/20 dark:to-slate-900/20 p-3 rounded-xl border border-gray-200 dark:border-gray-800">
-                      <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Altri Progetti</h4>
+                    <div class="pcto-activity-card bg-gradient-to-r from-gray-50 to-slate-50 dark:to-slate-900/20 p-3 rounded-xl border border-gray-200 dark:border-gray-800">
+                      <h4 class="font-semibold text-gray-900 text-sm">Altri Progetti</h4>
                       <span class="text-xl font-bold text-gray-600">2</span>
                       <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
-                  <p class="text-sm text-blue-800 dark:text-blue-200 font-medium">
+                <div class="mt-6 p-4 bg-blue-50 rounded-xl">
+                  <p class="text-sm text-blue-800 font-medium">
                     <i class="fas fa-info-circle mr-2"></i>
                     Totale 3° Anno: <strong>160 ore</strong>
                   </p>
@@ -223,19 +223,19 @@ class PCTOComponent extends HTMLElement {  connectedCallback() {
 
             <!-- Anno Scolastico 4° -->
             <div class="animate-slide-right">
-              <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+              <div class="bg-white shadow-xl border border-gray-100 dark:border-gray-700">
                 <div class="flex items-center mb-6">
                   <div class="bg-gradient-to-br from-green-500 to-green-600 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                     <span class="text-white font-bold text-lg">4°</span>
                   </div>
                   <div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Quarto Anno</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 Anno</h3>
                     <p class="text-gray-600 dark:text-gray-300">Esperienze Avanzate e Internazionali</p>
                   </div>
                 </div>
 
                 <div class="space-y-4">
-                  <div class="pcto-activity-card bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 p-4 rounded-xl border border-red-200 dark:border-red-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-red-50 to-pink-50 dark:border-red-800">
                     <div class="flex justify-between items-center">
                       <div>
                         <h4 class="font-semibold text-gray-900 dark:text-white">Madrid</h4>
@@ -243,72 +243,72 @@ class PCTOComponent extends HTMLElement {  connectedCallback() {
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-red-600">60</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-blue-50 to-indigo-50 dark:border-blue-800">
                     <div class="flex justify-between items-center">
                       <div>
                         <h4 class="font-semibold text-gray-900 dark:text-white">MonitoraTo</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Progetto sviluppo software</p>
+                        <p class="text-sm text-gray-600 sviluppo software</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-blue-600">120</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 p-4 rounded-xl border border-yellow-200 dark:border-yellow-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-yellow-50 to-orange-50 dark:border-yellow-800">
                     <div class="flex justify-between items-center">
                       <div>
                         <h4 class="font-semibold text-gray-900 dark:text-white">Debate</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Competenze comunicative avanzate</p>
+                        <p class="text-sm text-gray-600 avanzate</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-yellow-600">40</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 p-4 rounded-xl border border-purple-200 dark:border-purple-800">
+                  <div class="pcto-activity-card bg-gradient-to-r from-purple-50 to-violet-50 dark:border-purple-800">
                     <div class="flex justify-between items-center">
                       <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">C1 Certification</h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Certificazione linguistica</p>
+                        <h4 class="font-semibold text-gray-900 Certification</h4>
+                        <p class="text-sm text-gray-600 linguistica</p>
                       </div>
                       <div class="text-right">
                         <span class="text-2xl font-bold text-purple-600">30</span>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                        <p class="text-xs text-gray-500 svolte</p>
                       </div>
                     </div>
                   </div>
 
                   <div class="grid grid-cols-2 gap-4">
-                    <div class="pcto-activity-card bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-3 rounded-xl border border-green-200 dark:border-green-800">
-                      <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Irlanda</h4>
+                    <div class="pcto-activity-card bg-gradient-to-r from-green-50 to-emerald-50 dark:border-green-800">
+                      <h4 class="font-semibold text-gray-900 text-sm">Irlanda</h4>
                       <span class="text-xl font-bold text-green-600">20</span>
                       <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                     </div>
-                    <div class="pcto-activity-card bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 p-3 rounded-xl border border-indigo-200 dark:border-indigo-800">
-                      <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Open Days</h4>
+                    <div class="pcto-activity-card bg-gradient-to-r from-indigo-50 to-blue-50 dark:border-indigo-800">
+                      <h4 class="font-semibold text-gray-900 text-sm">Open Days</h4>
                       <span class="text-xl font-bold text-indigo-600">20</span>
                       <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                     </div>
                   </div>
 
-                  <div class="pcto-activity-card bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-3 rounded-xl border border-orange-200 dark:border-orange-800">
-                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">PoliTo - Corso di "Leadership Digitale"</h4>
+                  <div class="pcto-activity-card bg-gradient-to-r from-orange-50 to-red-50 dark:border-orange-800">
+                    <h4 class="font-semibold text-gray-900 text-sm">PoliTo - Corso di "Leadership Digitale"</h4>
                     <span class="text-xl font-bold text-orange-600">15</span>
                     <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                   </div>
                 </div>
 
-                <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/30 rounded-xl">
-                  <p class="text-sm text-green-800 dark:text-green-200 font-medium">
+                <div class="mt-6 p-4 bg-green-50 rounded-xl">
+                  <p class="text-sm text-green-800 font-medium">
                     <i class="fas fa-info-circle mr-2"></i>
                     Totale 4° Anno: <strong>275 ore</strong>
                   </p>
@@ -318,9 +318,9 @@ class PCTOComponent extends HTMLElement {  connectedCallback() {
           </div>
 
           <!-- Competenze Acquisite -->
-          <div class="mb-16 animate-fade-in">
-            <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
-              <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+          <div class="mb-16 ">
+            <div class="bg-white shadow-xl border border-gray-100 dark:border-gray-700">
+              <h3 class="text-3xl font-bold text-gray-900 text-center">
                 <i class="fas fa-star text-yellow-500 mr-2"></i>
                 Competenze Acquisite
               </h3>
@@ -330,37 +330,37 @@ class PCTOComponent extends HTMLElement {  connectedCallback() {
                   <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-code text-blue-500 text-2xl"></i>
                   </div>
-                  <h4 class="font-bold text-gray-900 dark:text-white mb-2">Programmazione</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm">Coding e sviluppo software</p>
+                  <h4 class="font-bold text-gray-900 mb-2">Programmazione</h4>
+                  <p class="text-gray-600 text-sm">Coding e sviluppo software</p>
                 </div>
 
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-shield-alt text-green-500 text-2xl"></i>
                   </div>
-                  <h4 class="font-bold text-gray-900 dark:text-white mb-2">Cybersecurity</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm">Sicurezza informatica</p>
+                  <h4 class="font-bold text-gray-900 mb-2">Cybersecurity</h4>
+                  <p class="text-gray-600 text-sm">Sicurezza informatica</p>
                 </div>
 
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-comments text-purple-500 text-2xl"></i>
                   </div>
-                  <h4 class="font-bold text-gray-900 dark:text-white mb-2">Comunicazione</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm">Public speaking e debate</p>
+                  <h4 class="font-bold text-gray-900 mb-2">Comunicazione</h4>
+                  <p class="text-gray-600 text-sm">Public speaking e debate</p>
                 </div>
 
                 <div class="text-center group">
                   <div class="bg-gradient-to-br from-orange-500/10 to-red-500/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <i class="fas fa-globe text-orange-500 text-2xl"></i>
                   </div>
-                  <h4 class="font-bold text-gray-900 dark:text-white mb-2">Internazionale</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm">Esperienze all'estero</p>
+                  <h4 class="font-bold text-gray-900 mb-2">Internazionale</h4>
+                  <p class="text-gray-600 text-sm">Esperienze all'estero</p>
                 </div>
               </div>
             </div>
           </div>          <!-- Call to Action -->
-          <div class="text-center animate-fade-in">
+          <div class="text-center ">
             <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 text-white">
               <h3 class="text-3xl font-bold mb-4">Percorso PCTO Completato con Successo</h3>
               <p class="text-xl mb-6 opacity-90">

@@ -4,7 +4,7 @@ class CertificationsComponent extends HTMLElement {
     this.innerHTML = `
       <section id="certifications" class="py-20 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16 animate-fade-in">
+          <div class="text-center mb-16 ">
             <span class="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <i class="fas fa-certificate mr-2"></i>Riconoscimenti
             </span>

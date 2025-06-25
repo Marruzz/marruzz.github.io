@@ -7,7 +7,7 @@ class SkillsComponent extends HTMLElement {
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-accent/10 to-pink-500/10 rounded-full blur-3xl"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div class="text-center mb-16 animate-fade-in">
+          <div class="text-center mb-16 ">
             <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <i class="fas fa-code mr-2"></i>Le mie competenze
             </span>

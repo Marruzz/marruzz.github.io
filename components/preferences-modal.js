@@ -20,7 +20,7 @@ class PreferencesModal extends HTMLElement {
            aria-hidden="true"
            style="display: none;">
         
-        <div class="glass-card bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden border border-gray-200 dark:border-gray-700">
+        <div class="glass-card bg-white shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden border border-gray-200 dark:border-gray-700">
           <!-- Modal Header -->
           <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
             <h2 id="preferences-title" class="text-2xl font-bold text-gray-900 dark:text-white">
@@ -28,7 +28,7 @@ class PreferencesModal extends HTMLElement {
               Preferenze
             </h2>
             <button id="close-preferences" 
-                    class="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                    class="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-all"
                     aria-label="Chiudi preferenze">
               <i class="fas fa-times text-xl" aria-hidden="true"></i>
             </button>
@@ -39,47 +39,18 @@ class PreferencesModal extends HTMLElement {
             
             <!-- Tema Section -->
             <div class="space-y-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
+              <h3 class="text-lg font-semibold text-gray-900 items-center">
                 <i class="fas fa-palette mr-2 text-primary" aria-hidden="true"></i>
-                Tema e Aspetto
+                Personalizzazione
               </h3>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <label class="preference-option cursor-pointer">
-                  <input type="radio" name="theme" value="light" class="sr-only">
-                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all bg-gray-50 dark:bg-gray-700">
-                    <div class="flex flex-col items-center space-y-2">
-                      <i class="fas fa-sun text-2xl text-yellow-500" aria-hidden="true"></i>
-                      <span class="text-sm font-medium text-gray-900 dark:text-white">Chiaro</span>
-                    </div>
-                  </div>
-                </label>
-                
-                <label class="preference-option cursor-pointer">
-                  <input type="radio" name="theme" value="dark" class="sr-only">
-                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all bg-gray-50 dark:bg-gray-700">
-                    <div class="flex flex-col items-center space-y-2">
-                      <i class="fas fa-moon text-2xl text-blue-500" aria-hidden="true"></i>
-                      <span class="text-sm font-medium text-gray-900 dark:text-white">Scuro</span>
-                    </div>
-                  </div>
-                </label>
-                
-                <label class="preference-option cursor-pointer">
-                  <input type="radio" name="theme" value="auto" class="sr-only">
-                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all bg-gray-50 dark:bg-gray-700">
-                    <div class="flex flex-col items-center space-y-2">
-                      <i class="fas fa-adjust text-2xl text-gray-500 dark:text-gray-300" aria-hidden="true"></i>
-                      <span class="text-sm font-medium text-gray-900 dark:text-white">Auto</span>
-                    </div>
-                  </div>
-                </label>
-              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Il sito utilizza sempre il tema chiaro per un'esperienza ottimale
+              </p>
             </div>
 
             <!-- Animazioni Section -->
             <div class="space-y-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
+              <h3 class="text-lg font-semibold text-gray-900 items-center">
                 <i class="fas fa-magic mr-2 text-primary" aria-hidden="true"></i>
                 Animazioni ed Effetti
               </h3>
@@ -119,7 +90,7 @@ class PreferencesModal extends HTMLElement {
 
             <!-- Accessibilità Section -->
             <div class="space-y-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
+              <h3 class="text-lg font-semibold text-gray-900 items-center">
                 <i class="fas fa-universal-access mr-2 text-primary" aria-hidden="true"></i>
                 Accessibilità
               </h3>
@@ -172,7 +143,7 @@ class PreferencesModal extends HTMLElement {
 
             <!-- Performance Section -->
             <div class="space-y-4">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
+              <h3 class="text-lg font-semibold text-gray-900 items-center">
                 <i class="fas fa-tachometer-alt mr-2 text-primary" aria-hidden="true"></i>
                 Performance
               </h3>
@@ -242,7 +213,6 @@ class PreferencesModal extends HTMLElement {
   // Carica le preferenze da localStorage
   loadPreferences() {
     const defaultPreferences = {
-      theme: 'auto',
       animations: true,
       particles: true,
       highContrast: false,
@@ -275,18 +245,10 @@ class PreferencesModal extends HTMLElement {
 
   // Applica le preferenze all'interfaccia
   applyPreferences() {
-    const { theme, animations, particles, highContrast, fontSize, gpuAcceleration } = this.preferences;
+    const { animations, particles, highContrast, fontSize, gpuAcceleration } = this.preferences;
 
-    // Applica tema
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      // Auto: segue le preferenze di sistema
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.classList.toggle('dark', prefersDark);
-    }
+    // Forza sempre la modalità chiara
+    document.documentElement.classList.remove('dark');
 
     // Applica dimensione font
     document.documentElement.style.fontSize = `${fontSize}%`;
@@ -370,13 +332,6 @@ class PreferencesModal extends HTMLElement {
   loadCurrentPreferences() {
     const modal = this.querySelector('#preferences-modal');
     if (!modal) return;
-
-    // Theme
-    const themeRadio = modal.querySelector(`input[name="theme"][value="${this.preferences.theme}"]`);
-    if (themeRadio) {
-      themeRadio.checked = true;
-      themeRadio.closest('.preference-option').classList.add('selected');
-    }
 
     // Toggles
     modal.querySelector('#animations-toggle').checked = this.preferences.animations;
@@ -468,7 +423,6 @@ class PreferencesModal extends HTMLElement {
     const modal = this.querySelector('#preferences-modal');
     
     const newPreferences = {
-      theme: modal.querySelector('input[name="theme"]:checked').value,
       animations: modal.querySelector('#animations-toggle').checked,
       particles: modal.querySelector('#particles-toggle').checked,
       highContrast: modal.querySelector('#high-contrast-toggle').checked,
@@ -487,7 +441,6 @@ class PreferencesModal extends HTMLElement {
   // Ripristina le impostazioni predefinite
   resetToDefaults() {
     const defaultPreferences = {
-      theme: 'auto',
       animations: true,
       particles: true,
       highContrast: false,
