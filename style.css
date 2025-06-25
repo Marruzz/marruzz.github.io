@@ -1,28 +1,21 @@
-/* ================================ */
-/* CUSTOM PORTFOLIO THEME - LUCA MARRONI */
-/* ================================ */
 
 :root {
-  /* Custom Brand Colors - Unique Palette */
-  --brand-primary: #6366f1;
+    --brand-primary: #6366f1;
   --brand-secondary: #8b5cf6;
   --brand-accent: #ec4899;
   --brand-success: #10b981;
   --brand-warning: #f59e0b;
   --brand-danger: #ef4444;
   
-  /* Custom Shadows */
-  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+    --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
   --shadow-elegant: 0 8px 32px rgba(0, 0, 0, 0.1);
   --shadow-lifted: 0 20px 60px rgba(0, 0, 0, 0.15);
   
-  /* Custom Gradients */
-  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    --gradient-brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
   --gradient-subtle: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   
-  /* Custom Border Radius */
-  --radius-elegant: 1.5rem;
+    --radius-elegant: 1.5rem;
   --radius-card: 1.25rem;
   --radius-button: 0.875rem;
 }
@@ -34,9 +27,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ================================ */
-/* UNIQUE GLASS MORPHISM EFFECTS */
-/* ================================ */
 
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
@@ -66,9 +56,6 @@ body {
   opacity: 0.6;
 }
 
-/* ================================ */
-/* ADVANCED GRADIENT EFFECTS */
-/* ================================ */
 
 .gradient-text {
   background: var(--gradient-brand);
@@ -93,9 +80,6 @@ body {
   width: 100%;
 }
 
-/* ================================ */
-/* UNIQUE ANIMATIONS & MICRO-INTERACTIONS */
-/* ================================ */
 
 .typing-cursor::after {
   content: "|";
@@ -124,9 +108,6 @@ body {
   box-shadow: var(--shadow-lifted);
 }
 
-/* ================================ */
-/* ENHANCED PARTICLE SYSTEM */
-/* ================================ */
 
 .particle {
   position: absolute;
@@ -159,9 +140,6 @@ body {
   opacity: 0.6;
 }
 
-/* ================================ */
-/* ADVANCED CARD EFFECTS */
-/* ================================ */
 
 .skill-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -218,9 +196,6 @@ body {
   opacity: 0.1;
 }
 
-/* ================================ */
-/* CUSTOM KEYFRAME ANIMATIONS */
-/* ================================ */
 
 @keyframes blink {
   0%, 50% { opacity: 1; }
@@ -260,9 +235,6 @@ body {
   }
 }
 
-/* ================================ */
-/* CUSTOM SCROLLBAR STYLING */
-/* ================================ */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -281,9 +253,6 @@ body {
   background: var(--brand-secondary);
 }
 
-/* ================================ */
-/* RESPONSIVE DESIGN ENHANCEMENTS */
-/* ================================ */
 
 @media (max-width: 768px) {
   .tilt-card:hover {
@@ -302,9 +271,6 @@ body {
   }
 }
 
-/* ================================ */
-/* FOCUS INDICATORS FOR ACCESSIBILITY */
-/* ================================ */
 
 a:focus,
 button:focus,
@@ -315,9 +281,6 @@ textarea:focus {
   border-radius: var(--radius-button);
 }
 
-/* ================================ */
-/* LOADING STATES & SKELETON */
-/* ================================ */
 
 .skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -330,9 +293,6 @@ textarea:focus {
   100% { background-position: -200% 0; }
 }
 
-/* ================================ */
-/* PREFERENCES MODAL STYLES */
-/* ================================ */
 
 .preference-option input:checked + div {
   border-color: var(--brand-primary) !important;
@@ -346,7 +306,6 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-/* Custom Slider Styles */
 .slider {
   -webkit-appearance: none;
   appearance: none;
@@ -388,7 +347,6 @@ textarea:focus {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
 
-/* Modal Animation */
 #preferences-modal {
   animation: modalFadeIn 0.3s ease-out;
   display: flex !important;
@@ -404,29 +362,22 @@ textarea:focus {
   z-index: 9999 !important;
 }
 
-/* ================================ */
-/* MODAL IMPROVEMENTS */
-/* ================================ */
 
-/* Better modal backdrop */
 #preferences-modal {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Improve modal content positioning */
 #preferences-modal > div {
   transform-origin: center;
   will-change: transform, opacity;
 }
 
-/* Modal content scrolling */
 #preferences-modal .max-h-\[70vh\] {
   max-height: 70vh !important;
   overflow-y: auto !important;
 }
 
-/* Fix for modal positioning */
 #preferences-modal {
   pointer-events: auto !important;
 }
@@ -436,7 +387,6 @@ textarea:focus {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Smooth scroll inside modal */
 #preferences-modal .max-h-\[70vh\] {
   scrollbar-width: thin;
   scrollbar-color: rgba(99, 102, 241, 0.3) transparent;
@@ -523,26 +473,21 @@ textarea:focus {
   }
 }
 
-/* ================================ */
-/* NAVBAR ALWAYS VISIBLE STYLES */
-/* ================================ */
 
 nav {
   will-change: transform, opacity;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ensure navbar is always visible */
 nav[role="navigation"] {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  position: fixed !important;
-  top: 0 !important;
-  z-index: 50 !important;
+  transform: translateY(0) ;
+  opacity: 1 ;
+  visibility: visible ;
+  position: fixed ;
+  top: 0 ;
+  z-index: 50 ;
 }
 
-/* Enhanced navbar backdrop */
 nav[role="navigation"]:before {
   content: '';
   position: absolute;
@@ -555,11 +500,7 @@ nav[role="navigation"]:before {
   z-index: -1;
 }
 
-/* ================================ */
-/* PREFERENCES BASED STYLES */
-/* ================================ */
 
-/* No animations class */
 .no-animations *,
 .no-animations *::before,
 .no-animations *::after {
@@ -569,17 +510,14 @@ nav[role="navigation"]:before {
   scroll-behavior: auto !important;
 }
 
-/* No particles class */
 .no-particles .particle {
   display: none !important;
 }
 
-/* No magnetic hover class */
 .no-magnetic .magnetic-hover:hover {
   transform: none !important;
 }
 
-/* High contrast mode */
 .high-contrast {
   filter: contrast(1.8) saturate(1.3) !important;
 }
@@ -602,7 +540,6 @@ nav[role="navigation"]:before {
   border: 2px solid var(--brand-accent) !important;
 }
 
-/* GPU acceleration */
 .gpu-accelerated .magnetic-hover,
 .gpu-accelerated .project-card,
 .gpu-accelerated .skill-card,
@@ -613,9 +550,6 @@ nav[role="navigation"]:before {
   backface-visibility: hidden;
 }
 
-/* ================================ */
-/* NOTIFICATION STYLES */
-/* ================================ */
 
 .notification {
   backdrop-filter: blur(10px);
@@ -623,7 +557,6 @@ nav[role="navigation"]:before {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Dark mode adjustments for preferences modal */
 .dark #preferences-modal .glass-card {
   background: rgba(15, 23, 42, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -638,9 +571,6 @@ nav[role="navigation"]:before {
   background-color: rgba(99, 102, 241, 0.2);
 }
 
-/* ================================ */
-/* RESPONSIVE ADJUSTMENTS */
-/* ================================ */
 
 @media (max-width: 768px) {
   #preferences-modal {
@@ -674,9 +604,6 @@ nav[role="navigation"]:before {
   }
 }
 
-/* ================================ */
-/* FOCUS STATES FOR ACCESSIBILITY */
-/* ================================ */
 
 .preference-option:focus-within div {
   outline: 2px solid var(--brand-primary);
@@ -688,7 +615,6 @@ nav[role="navigation"]:before {
   outline-offset: 2px;
 }
 
-/* Toggle switches focus */
 input[type="checkbox"]:focus + div {
   outline: 2px solid var(--brand-primary);
   outline-offset: 2px;

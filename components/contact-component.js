@@ -101,7 +101,7 @@ class ContactComponent extends HTMLElement {
             <div class="animate-slide-left">
               <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl shadow-xl border border-gray-100">
                 <h3 class="text-2xl font-bold text-gray-900 mb-6">Invia un messaggio</h3>
-                <form class="space-y-6" id="contact-form" action="https://formspree.io/f/xpwwvwgr" method="POST">
+                <form class="space-y-6" id="contact-form" action="https://formspree.io/f/mnnvovdk" method="POST">
                   <div class="grid md:grid-cols-2 gap-6">
                     <div>
                       <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nome</label>
@@ -114,7 +114,7 @@ class ContactComponent extends HTMLElement {
                   </div>
                   <div>
                     <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Oggetto</label>
-                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                    <input type="text" autocomplete="off" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
                   </div>
                   <div>
                     <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Messaggio</label>
@@ -217,7 +217,7 @@ class ContactComponent extends HTMLElement {
       });
 
       if (response.ok) {
-        this.showStatus('✅ Messaggio inviato con successo! Ti risponderò presto.', 'success');
+        this.showStatus('Messaggio inviato con successo! Ti risponderò presto.', 'success');
         form.reset();
         this.clearSavedData(); // Clear saved form data after successful submission
       } else {
