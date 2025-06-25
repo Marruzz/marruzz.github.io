@@ -47,28 +47,29 @@ class NavigationComponent extends HTMLElement {
         </div>
       </nav>
     `;
-    
+
 
     this.setupEventListeners();
   }
-  
+
   setupEventListeners() {
     const mobileButton = this.querySelector('#mobile-menu-button');
     const mobileMenu = this.querySelector('#mobile-menu');
     const darkModeToggle = this.querySelector('#dark-mode-toggle');
-    
+
     if (mobileButton && mobileMenu) {
       mobileButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     }
-      if (darkModeToggle) {
+    if (darkModeToggle) {
       darkModeToggle.addEventListener('click', () => {
 
         if (window.portfolioManager) {
           window.portfolioManager.toggleDarkMode();
         }
-      });    }
+      });
+    }
   }
 }
 

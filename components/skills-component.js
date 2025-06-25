@@ -244,22 +244,19 @@ class SkillsComponent extends HTMLElement {
   }
   
   setupEventListeners() {
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const progressBars = this.querySelectorAll('.skill-card .bg-gradient-to-r');
           progressBars.forEach(bar => {
             bar.style.animation = 'none';
-            bar.offsetHeight; // trigger reflow
+            bar.offsetHeight; 
             bar.style.animation = null;
           });
         }
       });
-    });
-    
+    });   
     observer.observe(this);
-    console.log('Skills component loaded');
   }
 }
 

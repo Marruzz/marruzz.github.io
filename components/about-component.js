@@ -134,12 +134,6 @@ class AboutComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
-    this.setupEventListeners();
-  }
-  
-  setupEventListeners() {
-    console.log('About component loaded');
   }
 }
 

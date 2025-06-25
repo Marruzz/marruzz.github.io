@@ -31,7 +31,8 @@ tailwind.config = {
         "float": "float 3s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite alternate",
         "float-gentle": "floatGentle 6s ease-in-out infinite",
-        "gradient-shift": "gradientShift 4s ease-in-out infinite",        "loading": "loading 1.5s infinite",
+        "gradient-shift": "gradientShift 4s ease-in-out infinite",
+        "loading": "loading 1.5s infinite",
         "blink": "blink 1s infinite",
       },
       keyframes: {
@@ -54,11 +55,10 @@ tailwind.config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
-        },
-        floatGentle: {
-          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "33%": { transform: "translateY(-10px) rotate(1deg)" },
-          "66%": { transform: "translateY(5px) rotate(-1deg)" },
+        }, floatGentle: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "33%": { transform: "translateY(-10px)" },
+          "66%": { transform: "translateY(5px)" },
         },
         bounceSlow: {
           "0%, 100%": {
@@ -85,7 +85,7 @@ tailwind.config = {
         blink: {
           "0%, 50%": { opacity: "1" },
           "51%, 100%": { opacity: "0" },
-        },        glow: {
+        }, glow: {
           "0%": {
             boxShadow: "0 0 5px #6366F1, 0 0 10px #6366F1, 0 0 15px #6366F1",
           },

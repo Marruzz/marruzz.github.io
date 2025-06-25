@@ -37,8 +37,8 @@
     "url": "https://github.com/Marruzz/marruzz.github.io/issues"
   },
   "devDependencies": {
-    "live-server": "^1.2.2",
     "lighthouse": "^10.4.0",
+    "live-server": "^1.2.2",
     "serve": "^14.2.1"
   },
   "engines": {

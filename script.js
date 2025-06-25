@@ -1,5 +1,6 @@
 
-class PortfolioManager {  constructor() {
+class PortfolioManager {
+  constructor() {
     this.isLoading = true;
     this.darkMode = this.initializeDarkMode();
     this.init();
@@ -17,21 +18,15 @@ class PortfolioManager {  constructor() {
       this.setupParticleSystem();
       this.setupPerformanceOptimizations();
       this.setupDarkModeToggle();
-      
-      console.log('✅ Portfolio inizializzato con successo!');
       this.hideLoader();
     });
   }
-
-  // Setup del toggle dark mode migliorato
   setupDarkModeToggle() {
     setTimeout(() => {
       const darkModeToggle = document.getElementById('dark-mode-toggle');
       if (darkModeToggle) {
         darkModeToggle.addEventListener('click', () => {
           this.toggleDarkMode();
-          
-          // Animazione di feedback
           darkModeToggle.style.transform = 'scale(0.95)';
           setTimeout(() => {
             darkModeToggle.style.transform = 'scale(1)';
@@ -67,18 +62,18 @@ class PortfolioManager {  constructor() {
 
             const offset = 80;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            
+
             window.scrollTo({
               top: targetPosition,
               behavior: "smooth",
             });
-            
+
 
             const mobileMenu = document.getElementById("mobile-menu");
             if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
               mobileMenu.classList.add("hidden");
             }
-            
+
 
             history.pushState(null, null, anchor.getAttribute("href"));
           }
@@ -94,7 +89,7 @@ class PortfolioManager {  constructor() {
       if (contactForm) {
         contactForm.addEventListener("submit", (e) => this.handleFormSubmission(e));
       }
-      
+
 
       const newsletterBtn = document.querySelector("footer button");
       if (newsletterBtn) {
@@ -105,7 +100,7 @@ class PortfolioManager {  constructor() {
 
   async handleFormSubmission(e) {
     e.preventDefault();
-    
+
     const formData = new FormData(e.target);
     const data = {
       name: formData.get("name"),
@@ -146,40 +141,17 @@ class PortfolioManager {  constructor() {
     if (!data.email?.trim()) return { isValid: false, message: "L'email è obbligatoria" };
     if (!data.subject?.trim()) return { isValid: false, message: "L'oggetto è obbligatorio" };
     if (!data.message?.trim()) return { isValid: false, message: "Il messaggio è obbligatorio" };
-    if (!data.privacy) return { isValid: false, message: "Devi accettare la privacy policy" };
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
       return { isValid: false, message: "Formato email non valido" };
     }
-    
+
     if (data.message.length < 10) {
       return { isValid: false, message: "Il messaggio deve essere di almeno 10 caratteri" };
     }
-    
+
     return { isValid: true };
-  }
-
-  async simulateFormSubmission(data) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log('📧 Form data:', data);
-        resolve();
-      }, 2000);
-    });
-  }
-
-  handleNewsletterSignup(e) {
-    e.preventDefault();
-    const emailInput = e.target.previousElementSibling;
-    const email = emailInput?.value?.trim();
-
-    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      this.showNotification("📬 Grazie per esserti iscritto alla newsletter!", "success");
-      emailInput.value = "";
-    } else {
-      this.showNotification("📧 Per favore, inserisci un indirizzo email valido.", "error");
-    }
   }
 
 
@@ -237,7 +209,7 @@ class PortfolioManager {  constructor() {
     const updateNavbar = () => {
       const nav = document.querySelector("nav");
       if (!nav) return;
-      
+
       const scrollTop = window.pageYOffset;
 
 
@@ -255,7 +227,7 @@ class PortfolioManager {  constructor() {
       } else {
         nav.style.transform = "translateY(0)";
       }
-      
+
       lastScrollTop = scrollTop;
       ticking = false;
     };
@@ -280,13 +252,13 @@ class PortfolioManager {  constructor() {
         if (entry.isIntersecting) {
           entry.target.style.opacity = "1";
           entry.target.style.transform = "translateY(0)";
-          
+
 
           this.animateSkillBars(entry.target);
-          
+
 
           this.animateCounters(entry.target);
-          
+
 
           observer.unobserve(entry.target);
         }
@@ -431,7 +403,7 @@ class PortfolioManager {  constructor() {
   initializeDarkMode() {
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
       document.documentElement.classList.add('dark');
       return true;
@@ -441,11 +413,10 @@ class PortfolioManager {  constructor() {
     }
   }
   toggleDarkMode() {
-    // Aggiungi classe per animazione smooth
     document.documentElement.classList.add('theme-transition');
-    
+
     this.darkMode = !this.darkMode;
-    
+
     if (this.darkMode) {
       document.documentElement.classList.add('dark');
       document.body.classList.add('dark');
@@ -455,26 +426,17 @@ class PortfolioManager {  constructor() {
       document.body.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
-    
-    // Aggiorna il colore del tema meta
     this.updateMetaThemeColor();
-    
-    // Aggiorna tutti i componenti che hanno stato interno
     this.updateComponentsTheme();
-    
-    // Emit evento personalizzato per i componenti
-    document.dispatchEvent(new CustomEvent('themeChanged', { 
-      detail: { darkMode: this.darkMode } 
+    document.dispatchEvent(new CustomEvent('themeChanged', {
+      detail: { darkMode: this.darkMode }
     }));
-    
-    // Rimuovi classe animazione dopo il cambio
     setTimeout(() => {
       document.documentElement.classList.remove('theme-transition');
     }, 400);
   }
 
   updateComponentsTheme() {
-    // Forza il re-render dei componenti che potrebbero avere cache
     const components = document.querySelectorAll('app-navigation, app-hero, app-about, app-skills, app-certifications, app-projects, app-pcto, app-cv, app-contact');
     components.forEach(component => {
       if (component.updateTheme && typeof component.updateTheme === 'function') {
@@ -491,18 +453,17 @@ class PortfolioManager {  constructor() {
       metaThemeColor.name = "theme-color";
       document.head.appendChild(metaThemeColor);
     }
-    
+
     metaThemeColor.content = this.darkMode ? "#1f2937" : "#ffffff";
   }
 }
 
 
-const dynamicStyles = `
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-20px) rotate(90deg); }
-    50% { transform: translateY(-40px) rotate(180deg); }
-    75% { transform: translateY(-20px) rotate(270deg); }
+const dynamicStyles = `  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    25% { transform: translateY(-20px); }
+    50% { transform: translateY(-30px); }
+    75% { transform: translateY(-15px); }
   }
   
   .portfolio-loader {

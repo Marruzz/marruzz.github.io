@@ -182,23 +182,16 @@ class CVComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
+
     this.setupEventListeners();
   }
-  
+
   setupEventListeners() {
 
     const downloadLinks = this.querySelectorAll('a[download]');
     downloadLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const fileName = e.target.closest('a').getAttribute('download');
-        console.log(`CV Download: ${fileName}`);
-        
-
-
-
-
-
       });
     });
 
@@ -217,8 +210,6 @@ class CVComponent extends HTMLElement {
         }
       });
     });
-
-    console.log('CV component loaded');
   }
 }
 

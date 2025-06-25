@@ -1,11 +1,7 @@
-// Componente PCTO come Web Component con dati reali
-class PCTOComponent extends HTMLElement {
-  connectedCallback() {
-    // Dati reali delle attività PCTO di Luca Marroni
+class PCTOComponent extends HTMLElement {  connectedCallback() {
     const pctoData = {
       totaleOreContate: 445,
       totaleOreRiconosciute: 280,
-      percentualeCompletamento: 112, // 280/250 * 100
       attivitaPerAnno: {
         "A.S. 2022-2023 (Classe 3°)": [
           { nome: "Corso Sicurezza", ore: 8, oreRiconosciute: 8, descrizione: "Formazione base sulla sicurezza nei luoghi di lavoro" },
@@ -24,12 +20,12 @@ class PCTOComponent extends HTMLElement {
           { nome: "Debate", ore: 40, oreRiconosciute: 40, descrizione: "Approfondimento tecniche di dibattito" },
           { nome: "PoliTO", ore: 15, oreRiconosciute: 0, descrizione: "Orientamento Politecnico di Torino" },
           { nome: "Irlanda", ore: 20, oreRiconosciute: 20, descrizione: "Esperienza formativa internazionale" },
-          { nome: "MonitoraTo", ore: 120, oreRiconosciute: 0, descrizione: "Sviluppo applicazione per monitoraggio urbano" }
-        ]
+          { nome: "MonitoraTo", ore: 120, oreRiconosciute: 0, descrizione: "Sviluppo applicazione per monitoraggio urbano" }        ]
       }
     };
-
-    // Calcolo totali per anno
+    
+    pctoData.percentualeCompletamento = Math.round((pctoData.totaleOreRiconosciute / 150) * 100);
+    
     const totaliPerAnno = {};
     Object.keys(pctoData.attivitaPerAnno).forEach(anno => {
       const attivita = pctoData.attivitaPerAnno[anno];
@@ -39,8 +35,6 @@ class PCTOComponent extends HTMLElement {
         numeroAttivita: attivita.length
       };
     });
-
-    // Competenze acquisite
     const competenze = [
       { nome: "Sicurezza sul Lavoro", icona: "fa-shield-alt", colore: "red" },
       { nome: "Programmazione e Coding", icona: "fa-code", colore: "blue" },
@@ -118,8 +112,7 @@ class PCTOComponent extends HTMLElement {
                      style="width: ${Math.min(100, pctoData.percentualeCompletamento)}%"></div>
               </div>
               <div class="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-                <span>Completato al ${pctoData.percentualeCompletamento}%</span>
-                <span class="text-green-600 dark:text-green-400 font-semibold">Obiettivo Superato! 🎉</span>
+                <span class="text-gradient-to-r from-blue-500 to-green-500 font-semibold">Completato al ${pctoData.percentualeCompletamento}%</span>
               </div>
             </div>
           </div>
@@ -222,7 +215,7 @@ class PCTOComponent extends HTMLElement {
                 <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
                   <p class="text-sm text-blue-800 dark:text-blue-200 font-medium">
                     <i class="fas fa-info-circle mr-2"></i>
-                    Totale 3° Anno: <strong>160 ore svolte</strong> • <strong>140 ore riconosciute</strong>
+                    Totale 3° Anno: <strong>160 ore</strong>
                   </p>
                 </div>
               </div>
@@ -245,7 +238,7 @@ class PCTOComponent extends HTMLElement {
                   <div class="pcto-activity-card bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 p-4 rounded-xl border border-red-200 dark:border-red-800">
                     <div class="flex justify-between items-center">
                       <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">🇪🇸 Madrid</h4>
+                        <h4 class="font-semibold text-gray-900 dark:text-white">Madrid</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300">Esperienza internazionale</p>
                       </div>
                       <div class="text-right">
@@ -258,7 +251,7 @@ class PCTOComponent extends HTMLElement {
                   <div class="pcto-activity-card bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800">
                     <div class="flex justify-between items-center">
                       <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">💻 MonitoraTo</h4>
+                        <h4 class="font-semibold text-gray-900 dark:text-white">MonitoraTo</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300">Progetto sviluppo software</p>
                       </div>
                       <div class="text-right">
@@ -284,7 +277,7 @@ class PCTOComponent extends HTMLElement {
                   <div class="pcto-activity-card bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 p-4 rounded-xl border border-purple-200 dark:border-purple-800">
                     <div class="flex justify-between items-center">
                       <div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white">🇬🇧 C1 Certification</h4>
+                        <h4 class="font-semibold text-gray-900 dark:text-white">C1 Certification</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300">Certificazione linguistica</p>
                       </div>
                       <div class="text-right">
@@ -296,7 +289,7 @@ class PCTOComponent extends HTMLElement {
 
                   <div class="grid grid-cols-2 gap-4">
                     <div class="pcto-activity-card bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-3 rounded-xl border border-green-200 dark:border-green-800">
-                      <h4 class="font-semibold text-gray-900 dark:text-white text-sm">🇮🇪 Irlanda</h4>
+                      <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Irlanda</h4>
                       <span class="text-xl font-bold text-green-600">20</span>
                       <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                     </div>
@@ -308,16 +301,16 @@ class PCTOComponent extends HTMLElement {
                   </div>
 
                   <div class="pcto-activity-card bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-3 rounded-xl border border-orange-200 dark:border-orange-800">
-                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">🏛️ PoliTO</h4>
+                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">PoliTo - Corso di "Leadership Digitale"</h4>
                     <span class="text-xl font-bold text-orange-600">15</span>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">ore svolte</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">ore</p>
                   </div>
                 </div>
 
                 <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/30 rounded-xl">
                   <p class="text-sm text-green-800 dark:text-green-200 font-medium">
                     <i class="fas fa-info-circle mr-2"></i>
-                    Totale 4° Anno: <strong>275 ore svolte</strong> • <strong>120 ore riconosciute</strong>
+                    Totale 4° Anno: <strong>275 ore</strong>
                   </p>
                 </div>
               </div>
@@ -388,13 +381,10 @@ class PCTOComponent extends HTMLElement {
         </div>
       </section>
     `;
-
-    // Inizializza le animazioni
     this.initializeAnimations();
   }
 
   initializeAnimations() {
-    // Osservatore per le animazioni al scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -408,27 +398,22 @@ class PCTOComponent extends HTMLElement {
   }
 
   setupEventListeners() {
-    // Animazione progress bar
     const progressBar = this.querySelector('.bg-gradient-to-r.from-blue-500.to-green-500');
     if (progressBar) {
       setTimeout(() => {
         progressBar.style.width = '100%';
       }, 500);
     }
-
-    // Hover effects per le activity cards
     const activityCards = this.querySelectorAll('.pcto-activity-card');
     activityCards.forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.style.transform = 'scale(1.02)';
       });
-      
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'scale(1)';
       });
     });
-
-    // Smooth scroll per i link interni
     const internalLinks = this.querySelectorAll('a[href^="#"]');
     internalLinks.forEach(link => {
       link.addEventListener('click', (e) => {
@@ -438,7 +423,7 @@ class PCTOComponent extends HTMLElement {
         if (targetElement) {
           const offset = 80;
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-          
+
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -446,10 +431,6 @@ class PCTOComponent extends HTMLElement {
         }
       });
     });
-
-    console.log('PCTO component loaded');
   }
 }
-
-// Registra il componente
 customElements.define('app-pcto', PCTOComponent);
