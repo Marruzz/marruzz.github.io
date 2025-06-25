@@ -4,7 +4,7 @@
  * Modern component system without Node.js dependencies
  */
 
-class StaticComponentLoader {
+export class StaticComponentLoader {
   constructor() {
     this.loadedComponents = new Set();
     this.componentPaths = new Map();
@@ -251,17 +251,6 @@ class StaticComponentLoader {
   }
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const loader = new StaticComponentLoader();
-    loader.loadAllComponents();
-  });
-} else {
-  // DOM already loaded
-  const loader = new StaticComponentLoader();
-  loader.loadAllComponents();
-}
-
+// Auto-initialization removed - will be handled by main app
 // Make available globally for debugging
 window.StaticComponentLoader = StaticComponentLoader;

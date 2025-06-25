@@ -3,17 +3,9 @@
  * Addresses UI/UX feedback for more dynamic and engaging experiences
  */
 
-class EnhancedInteractions {
+export class EnhancedInteractions {
   constructor() {
-    this.initializeOnLoad();
-  }
-
-  initializeOnLoad() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => this.init());
-    } else {
-      this.init();
-    }
+    // Remove auto-initialization - will be handled by main app
   }
 
   init() {
@@ -371,10 +363,6 @@ class EnhancedInteractions {
   }
 }
 
-// Initialize Enhanced Interactions
-const enhancedInteractions = new EnhancedInteractions();
-
-// Export for module use
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = EnhancedInteractions;
-}
+// Auto-initialization removed - will be handled by main app
+// Make available globally for debugging
+window.EnhancedInteractions = EnhancedInteractions;

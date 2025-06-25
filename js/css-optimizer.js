@@ -3,7 +3,7 @@
  * Minifies and optimizes CSS without Node.js
  */
 
-class StaticCSSOptimizer {
+export class CSSOptimizer {
   constructor() {
     this.cssRules = [];
     this.unusedSelectors = new Set();
@@ -229,14 +229,6 @@ class StaticCSSOptimizer {
   }
 }
 
-// Auto-optimize on load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('🎨 CSS optimization ready');
-  });
-} else {
-  console.log('🎨 CSS optimization ready');
-}
-
-// Make available globally
-window.StaticCSSOptimizer = StaticCSSOptimizer;
+// Auto-initialization removed - will be handled by main app
+// Make available globally for debugging
+window.CSSOptimizer = CSSOptimizer;
