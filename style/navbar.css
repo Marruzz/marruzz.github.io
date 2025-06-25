@@ -1,0 +1,30 @@
+/* Navbar scroll animations */
+.navbar-hide-show {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-visible {
+  transform: translateY(0) !important;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%) !important;
+}
+
+/* Smooth scroll with 1 second duration */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0px; /* No offset */
+}
+
+/* Custom smooth scroll override for 1 second duration */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: auto;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -21,10 +21,10 @@ class ProjectsComponent extends HTMLElement {
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto stagger-group">
               <project-card
               title="ScacchiJS"
-              description="Webapp completa per giocare a scacchi online. Include motore di gioco, validazione delle mosse, cronometro, modalità PvP e analisi partite con notazione algebrica."
+              description="Engine scacchistico completo sviluppato in JavaScript vanilla. Implementa validazione avanzata delle mosse (castling, en passant, promozione), algoritmo minimax per l'AI, sistema di notazione algebrica e timer personalizzabile. Gestione completa dello stato di gioco con pattern observer."
               icon="fas fa-chess"
               bg-gradient="from-amber-600 to-yellow-700"
-              tech-stack="JavaScript, Chess Engine, WebApp"
+              tech-stack="JavaScript ES6+, Canvas API, Game Logic, AI Algorithms"
               github-url="https://github.com/Marruzz/ScacchiJS"
               live-url="https://marruzz.github.io/ScacchiJS/scacchi.html"
               license="MIT License"
@@ -36,10 +36,10 @@ class ProjectsComponent extends HTMLElement {
             
             <project-card
               title="Investment Calculator"
-              description="Applicazione Angular per calcoli di investimento avanzati. Include grafici interattivi e simulazioni di portafoglio finanziario."
+              description="SPA Angular per analisi finanziarie avanzate. Implementa calcoli composti, simulazioni Monte Carlo, diversi modelli di interesse e visualizzazioni dinamiche con Chart.js. Architettura modulare con servizi dedicati per calcoli matematici e gestione stato reattiva."
               icon="fas fa-calculator"
               bg-gradient="from-red-500 to-pink-600"
-              tech-stack="Angular, TypeScript, Charts"
+              tech-stack="Angular 15+, TypeScript, Chart.js, RxJS, SCSS"
               github-url="https://github.com/Marruzz/AngularInvestmentCalculatorApp"
               license="Angular"
               status="Angular"
@@ -61,10 +61,10 @@ class ProjectsComponent extends HTMLElement {
             
             <project-card
               title="MajoContinentalMAUI"
-              description="App mobile per hotel sviluppata in .NET MAUI. Gestione prenotazioni, check-in/out, servizi in camera e comunicazione staff-clienti."
+              description="App multipiattaforma per gestione alberghiera sviluppata con .NET MAUI. Sistema completo di prenotazioni con database SQLite, autenticazione JWT, sincronizzazione offline-first, push notifications e integrazione API RESTful. Interfaccia nativa per iOS/Android."
               icon="fas fa-hotel"
               bg-gradient="from-blue-600 to-cyan-700"
-              tech-stack=".NET MAUI, C#, Hotel, Mobile"
+              tech-stack=".NET MAUI, C#, SQLite, JWT Auth, REST APIs"
               github-url="https://github.com/Marruzz/majoContinentalMAUI"
               license="MAUI"
               status="Starred">
@@ -73,10 +73,10 @@ class ProjectsComponent extends HTMLElement {
             
             <project-card
               title="Connect Four"
-              description="Implementazione del classico gioco Forza 4 con interfaccia moderna e intelligenza artificiale. Include modalità single-player e multiplayer locale."
+              description="Implementazione del gioco Forza 4 con AI minimax ottimizzata (depth 7 levels). Sistema di validazione mosse, rilevamento vittorie con pattern matching, animazioni CSS3 fluide e modalità multiplayer locale. Architettura MVC pulita e performance ottimizzate."
               icon="fas fa-gamepad"
               bg-gradient="from-blue-500 to-cyan-600"
-              tech-stack="JavaScript, Game, WebApp"
+              tech-stack="JavaScript ES6+, CSS3 Animations, Minimax AI, MVC"
               github-url="https://github.com/Marruzz/ForzaQuattroJS"
               live-url="https://marruzz.github.io/ForzaQuattroJS/index.html"
               license="MIT License"

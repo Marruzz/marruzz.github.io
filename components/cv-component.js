@@ -24,7 +24,7 @@ class CVComponent extends HTMLElement {
           <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">            
             <div class="animate-slide-right">
               <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="bg-gradient-to-r from-green-500 to-red-500 p-6">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
                   <div class="flex items-center justify-between">
                     <div class="flex items-center">
                       <img src="https://flagcdn.com/w40/it.png" alt="Italiano" class="w-10 h-7 rounded mr-4" />
@@ -57,7 +57,9 @@ class CVComponent extends HTMLElement {
                   <div class="space-y-4">                    
                   <a href="CV/Luca Marroni - CV Ita.pdf" 
                        target="_blank" 
+
                         class="w-full bg-gradient-to-r from-green-500 to-red-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-red-500 hover:to-green-500 transform hover:scale-105 flex items-center justify-center group">
+
 
                       <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
                       Visualizza CV
@@ -65,7 +67,9 @@ class CVComponent extends HTMLElement {
                     
                     <a href="CV/Luca Marroni - CV Ita.pdf" 
                        download="Luca_Marroni_CV_Italiano.pdf"
+
                        class="w-full border-2 border-green-600 text-green-600 dark:text-green-400 dark:border-green-400 py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:bg-green-600 hover:text-white dark:hover:bg-green-400 dark:hover:text-gray-900 flex items-center justify-center group">
+
                       <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
                       Scarica PDF
                     </a>
@@ -194,12 +198,6 @@ class CVComponent extends HTMLElement {
     downloadLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         const fileName = e.target.closest('a').getAttribute('download');
-        console.log(`CV Download: ${fileName}`);
-
-
-
-
-
 
       });
     });
@@ -219,8 +217,6 @@ class CVComponent extends HTMLElement {
         }
       });
     });
-
-    console.log('CV component loaded');
   }
 }
 

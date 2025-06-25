@@ -1,8 +1,4 @@
-/* ===============================================
-   SCACCHIERA MODERNA - CSS ELEGANTE
-   =============================================== */
 
-/* Reset e configurazione base */
 #scacchieraMobile,
 #scacchieraDesktop,
 #scacchieraMobile *,
@@ -10,7 +6,6 @@
     box-sizing: border-box !important;
 }
 
-/* Configurazione principale scacchiere */
 #scacchieraMobile,
 #scacchieraDesktop {
     width: 480px !important;
@@ -33,7 +28,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Effetto bordo dorato elegante */
 #scacchieraMobile::before,
 #scacchieraDesktop::before {
     content: '';
@@ -49,7 +43,6 @@
     z-index: -1;
 }
 
-/* Righe della scacchiera */
 #scacchieraMobile tr,
 #scacchieraDesktop tr {
     display: table-row !important;
@@ -57,7 +50,6 @@
     width: 100% !important;
 }
 
-/* Celle base della scacchiera */
 #scacchieraMobile td,
 #scacchieraDesktop td,
 .casella {
@@ -72,7 +64,6 @@
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
-/* Caselle bianche con eleganza */
 .casellaBianca {
     background: linear-gradient(135deg, 
         #f5f5dc 0%, 
@@ -96,7 +87,6 @@
     pointer-events: none;
 }
 
-/* Caselle nere con eleganza */
 .casellaNera {
     background: linear-gradient(135deg, 
         #8b4513 0%, 
@@ -122,7 +112,6 @@
 
 
 
-/* Pedine eleganti con animazioni */
 .pedina {
     width: 48px !important;
     height: 48px !important;
@@ -136,7 +125,6 @@
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) !important;
     border-radius: 8px !important;
 }
-/* Animazioni spettacolari per le pedine */
 .pedina:hover {
     transform: scale(1.15) translateY(-3px) !important;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4)) 
@@ -150,7 +138,6 @@
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5)) !important;
 }
 
-/* Effetti speciali per caselle selezionate */
 .casella.selected {
     background: radial-gradient(circle, 
         rgba(59, 130, 246, 0.3) 0%, 
@@ -184,7 +171,6 @@
     animation: bounce-dot 1.5s infinite;
 }
 
-/* Effetto speciale per cattura */
 .casella.capture-move {
     background: radial-gradient(circle, 
         rgba(239, 68, 68, 0.4) 0%, 
@@ -204,7 +190,6 @@
     animation: flash 1s infinite;
 }
 
-/* Container elegante */
 .chess-board-container {
     display: flex !important;
     justify-content: center !important;
@@ -237,7 +222,6 @@
     display: table-cell !important;
 }
 
-/* Animazioni personalizzate */
 @keyframes pulse-glow {
     0%, 100% { 
         box-shadow: 
@@ -276,7 +260,6 @@
     }
 }
 
-/* Responsive design migliorato */
 @media (max-width: 1024px) {
     #scacchieraMobile {
         width: 90vw !important;
@@ -372,7 +355,6 @@
     }
 }
 
-/* Fix per schermi grandi */
 @media (min-width: 1025px) {
     #scacchieraDesktop {
         width: 480px !important;
@@ -394,7 +376,6 @@
     }
 }
 
-/* Effetti speciali per il drag and drop */
 .pedina {
     pointer-events: auto !important;
     -webkit-user-select: none !important;
@@ -403,7 +384,6 @@
     user-select: none !important;
 }
 
-/* Sovrascrivi completamente i conflitti Tailwind */
 .chessboard-override {
     display: block !important;
     visibility: visible !important;
@@ -412,7 +392,6 @@
     z-index: 50 !important;
 }
 
-/* Effetto luce ambiente per l'area di gioco */
 #gameArea, #gameAreaMobile {
     background: linear-gradient(145deg, 
         rgba(55, 65, 81, 0.3) 0%, 
@@ -424,7 +403,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Effetto hover per l'intera scacchiera */
 #scacchieraMobile:hover,
 #scacchieraDesktop:hover {
     box-shadow: 
@@ -434,14 +412,12 @@
         0 0 50px rgba(212, 165, 116, 0.2) !important;
 }
 
-/* Aggiunge un effetto scintillio alle caselle */
 .casellaBianca, .casellaNera {
     background-image: 
         radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%) !important;
 }
 
-/* Migliora la leggibilità delle coordinate */
 .casellaInfo {
     position: relative !important;
     overflow: hidden !important;

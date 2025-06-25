@@ -1,4 +1,3 @@
-
 class HTMLComponentExtractor {
   constructor(htmlContent) {
     this.htmlContent = htmlContent;
@@ -23,11 +22,6 @@ class ${className} extends HTMLElement {
   connectedCallback() {
     this.innerHTML = \`${html.replace(/`/g, '\\`')}\`;
     this.setupEventListeners();
-  }
-  
-  setupEventListeners() {
-
-    console.log('${componentName} component loaded');
   }
 }
 
