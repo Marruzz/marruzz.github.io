@@ -13,14 +13,14 @@ class PreferencesModal extends HTMLElement {
     this.innerHTML = `
       <!-- Preferences Modal -->
       <div id="preferences-modal" 
-           class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] hidden"
+           class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4"
            role="dialog"
            aria-modal="true"
            aria-labelledby="preferences-title"
            aria-hidden="true"
            style="display: none;">
         
-        <div class="glass-card bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full my-8 mx-auto">
+        <div class="glass-card bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden border border-gray-200 dark:border-gray-700">
           <!-- Modal Header -->
           <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
             <h2 id="preferences-title" class="text-2xl font-bold text-gray-900 dark:text-white">
@@ -47,30 +47,30 @@ class PreferencesModal extends HTMLElement {
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <label class="preference-option cursor-pointer">
                   <input type="radio" name="theme" value="light" class="sr-only">
-                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all">
+                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all bg-gray-50 dark:bg-gray-700">
                     <div class="flex flex-col items-center space-y-2">
                       <i class="fas fa-sun text-2xl text-yellow-500" aria-hidden="true"></i>
-                      <span class="text-sm font-medium">Chiaro</span>
+                      <span class="text-sm font-medium text-gray-900 dark:text-white">Chiaro</span>
                     </div>
                   </div>
                 </label>
                 
                 <label class="preference-option cursor-pointer">
                   <input type="radio" name="theme" value="dark" class="sr-only">
-                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all">
+                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all bg-gray-50 dark:bg-gray-700">
                     <div class="flex flex-col items-center space-y-2">
                       <i class="fas fa-moon text-2xl text-blue-500" aria-hidden="true"></i>
-                      <span class="text-sm font-medium">Scuro</span>
+                      <span class="text-sm font-medium text-gray-900 dark:text-white">Scuro</span>
                     </div>
                   </div>
                 </label>
                 
                 <label class="preference-option cursor-pointer">
                   <input type="radio" name="theme" value="auto" class="sr-only">
-                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all">
+                  <div class="glass-card p-4 rounded-xl border-2 border-transparent hover:border-primary/30 transition-all bg-gray-50 dark:bg-gray-700">
                     <div class="flex flex-col items-center space-y-2">
-                      <i class="fas fa-adjust text-2xl text-gray-500" aria-hidden="true"></i>
-                      <span class="text-sm font-medium">Auto</span>
+                      <i class="fas fa-adjust text-2xl text-gray-500 dark:text-gray-300" aria-hidden="true"></i>
+                      <span class="text-sm font-medium text-gray-900 dark:text-white">Auto</span>
                     </div>
                   </div>
                 </label>
