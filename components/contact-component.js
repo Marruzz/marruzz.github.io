@@ -101,7 +101,7 @@ class ContactComponent extends HTMLElement {
             <div class="animate-slide-left">
               <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl shadow-xl border border-gray-100">
                 <h3 class="text-2xl font-bold text-gray-900 mb-6">Invia un messaggio</h3>
-                <form class="space-y-6" id="contact-form">
+                <form class="space-y-6" id="contact-form" action="https://formspree.io/f/mnnvovdk" method="POST">
                   <div class="grid md:grid-cols-2 gap-6">
                     <div>
                       <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nome</label>
@@ -114,25 +114,35 @@ class ContactComponent extends HTMLElement {
                   </div>
                   <div>
                     <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Oggetto</label>
-                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                    <input type="text" autocomplete="off" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
                   </div>
                   <div>
                     <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Messaggio</label>
                     <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"></textarea>
                   </div>
-                  <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    Invia Messaggio
+                  
+                  <!-- Status messages -->
+                  <div id="form-status" class="hidden"></div>
+                  
+                  <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-dark hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                    <span id="btn-text">
+                      <i class="fas fa-paper-plane mr-2"></i>
+                      Invia Messaggio
+                    </span>
+                    <span id="btn-loading" class="hidden">
+                      <i class="fas fa-spinner fa-spin mr-2"></i>
+                      Invio in corso...
+                    </span>
                   </button>
                 </form>
                 
                 
                 <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                   <div class="flex items-center">
-                    <i class="fas fa-info-circle text-blue-500 mr-3"></i>
+                    <i class="fas fa-rocket text-blue-500 mr-3"></i>
                     <div>
-                      <h4 class="text-blue-800 font-semibold">Come contattarmi</h4>
-                      <p class="text-blue-600 text-sm">Il form aprirà il tuo client email predefinito per inviare il messaggio.</p>
+                      <h4 class="text-blue-800 font-semibold">Form Potenziato & Sicuro</h4>
+                      <p class="text-blue-600 text-sm">Validazione avanzata, stati di caricamento e conferme immediate. Implementazione professionale con Formspree.</p>
                     </div>
                   </div>
                 </div>
@@ -153,36 +163,131 @@ class ContactComponent extends HTMLElement {
         e.preventDefault();
         this.handleFormSubmit(e);
       });
+
+      // Auto-save form data as user types
+      const inputs = form.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          this.saveFormData();
+        });
+      });
+
+      // Load saved data on component load
+      this.loadFormData();
     }
   }
 
-  handleFormSubmit(e) {
-    const formData = new FormData(e.target);
+  async handleFormSubmit(e) {
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitBtn = this.querySelector('#submit-btn');
+    const btnText = this.querySelector('#btn-text');
+    const btnLoading = this.querySelector('#btn-loading');
+    const statusDiv = this.querySelector('#form-status');
+
+    // Validate form
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
 
-
     if (!name || !email || !subject || !message) {
-      alert('Tutti i campi sono obbligatori!');
+      this.showStatus('Tutti i campi sono obbligatori!', 'error');
       return;
     }
-
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert('Inserisci un indirizzo email valido!');
+      this.showStatus('Inserisci un indirizzo email valido!', 'error');
       return;
     }
 
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.classList.add('hidden');
+    btnLoading.classList.remove('hidden');
 
-    const mailtoLink = `mailto:luca.marroni@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
-    )}`;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
+      if (response.ok) {
+        this.showStatus('Messaggio inviato con successo! Ti risponderò presto.', 'success');
+        form.reset();
+        this.clearSavedData(); // Clear saved form data after successful submission
+      } else {
+        throw new Error('Errore durante l\'invio');
+      }
+    } catch (error) {
+      this.showStatus('❌ Errore durante l\'invio. Riprova più tardi o contattami direttamente via email.', 'error');
+    } finally {
+      // Reset button state
+      submitBtn.disabled = false;
+      btnText.classList.remove('hidden');
+      btnLoading.classList.add('hidden');
+    }
+  }
 
-    window.location.href = mailtoLink;
+  showStatus(message, type) {
+    const statusDiv = this.querySelector('#form-status');
+    statusDiv.classList.remove('hidden');
+    
+    if (type === 'success') {
+      statusDiv.className = 'p-4 bg-green-50 border border-green-200 rounded-xl text-green-800';
+    } else {
+      statusDiv.className = 'p-4 bg-red-50 border border-red-200 rounded-xl text-red-800';
+    }
+    
+    statusDiv.innerHTML = `
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}"></i>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium">${message}</p>
+        </div>
+      </div>
+    `;
+
+    // Auto-hide success messages after 5 seconds
+    if (type === 'success') {
+      setTimeout(() => {
+        statusDiv.classList.add('hidden');
+      }, 5000);
+    }
+  }
+
+  saveFormData() {
+    const form = this.querySelector('#contact-form');
+    const formData = {
+      name: form.querySelector('#name').value,
+      email: form.querySelector('#email').value,
+      subject: form.querySelector('#subject').value,
+      message: form.querySelector('#message').value
+    };
+    localStorage.setItem('portfolio-contact-form', JSON.stringify(formData));
+  }
+
+  loadFormData() {
+    const savedData = localStorage.getItem('portfolio-contact-form');
+    if (savedData) {
+      const formData = JSON.parse(savedData);
+      const form = this.querySelector('#contact-form');
+      
+      if (formData.name) form.querySelector('#name').value = formData.name;
+      if (formData.email) form.querySelector('#email').value = formData.email;
+      if (formData.subject) form.querySelector('#subject').value = formData.subject;
+      if (formData.message) form.querySelector('#message').value = formData.message;
+    }
+  }
+
+  clearSavedData() {
+    localStorage.removeItem('portfolio-contact-form');
   }
 }
 

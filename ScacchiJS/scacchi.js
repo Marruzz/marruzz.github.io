@@ -815,3 +815,33 @@ function getPieceName(pedina) {
     
     return '?';
 }
+
+// Instructions Modal Functions
+function toggleInstructions() {
+    const modal = document.getElementById('instructions-modal');
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('instructions-modal');
+        if (!modal.classList.contains('hidden')) {
+            toggleInstructions();
+        }
+    }
+});
+
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('instructions-modal');
+    if (e.target === modal) {
+        toggleInstructions();
+    }
+});

@@ -28,13 +28,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">HTML5</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">Semantic HTML, Accessibility</div>
+                <div class="text-sm text-gray-500 mt-1">Semantic HTML, Accessibility, SEO</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 65%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Solido</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">65%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• HTML5 semantico e accessibilità</li>
+                  <li>• Form validation e API moderne</li>
+                  <li>• Web Components e Custom Elements</li>
+                </ul>
               </div>
             </div>            
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group animate-slide-up animate-stagger-2">
@@ -44,13 +49,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">CSS3</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">Flexbox, Grid, Animations</div>
+                <div class="text-sm text-gray-500 mt-1">Modern CSS, Frameworks</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 67%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Solido</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">67%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Flexbox, Grid Layout, Animations</li>
+                  <li>• Tailwind CSS, SCSS, BEM</li>
+                  <li>• Responsive Design, Mobile-first</li>
+                </ul>
               </div>
             </div>
 
@@ -62,13 +72,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">JavaScript</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">ES6+, DOM, Async/Await</div>
+                <div class="text-sm text-gray-500 mt-1">Modern JavaScript, APIs</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 62%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Intermedio</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">62%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• ES6+, Async/Await, Promises</li>
+                  <li>• DOM manipulation, Web APIs</li>
+                  <li>• Web Components, Event handling</li>
+                </ul>
               </div>
             </div>
 
@@ -80,13 +95,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Node.js</h3>
                 <p class="text-primary font-semibold text-lg">Livello Base</p>
-                <div class="text-sm text-gray-500 mt-1">Express, NPM, REST APIs</div>
+                <div class="text-sm text-gray-500 mt-1">Backend, APIs, Tools</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 41%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">In studio</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">41%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Express.js, REST APIs, NPM</li>
+                  <li>• File system, Path manipulation</li>
+                  <li>• Basic server-side development</li>
+                </ul>
               </div>
             </div>
 
@@ -98,13 +118,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Angular</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">Components, Services, RxJS</div>
+                <div class="text-sm text-gray-500 mt-1">SPA, Framework moderno</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-red-500 to-pink-600 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 56%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Intermedio</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">56%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• Components, Services, Routing</li>
+                  <li>• RxJS, Observables, HTTP Client</li>
+                  <li>• TypeScript, Dependency Injection</li>
+                </ul>
               </div>
             </div>
 
@@ -116,13 +141,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">Python</h3>
                 <p class="text-primary font-semibold text-lg">Livello Base</p>
-                <div class="text-sm text-gray-500 mt-1">OOP, Libraries, Automation</div>
+                <div class="text-sm text-gray-500 mt-1">Scripting, Automazione</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-blue-600 to-indigo-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 48%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Base</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">48%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• OOP, Functions, Data structures</li>
+                  <li>• File handling, Error management</li>
+                  <li>• Basic automation scripts</li>
+                </ul>
               </div>
             </div>
 
@@ -134,13 +164,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">C#</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">OOP, LINQ, Async/Await</div>
+                <div class="text-sm text-gray-500 mt-1">OOP, .NET Framework</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-purple-600 to-blue-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 70%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Solido</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">70%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• OOP, LINQ, Collections</li>
+                  <li>• Async/Await, Task programming</li>
+                  <li>• .NET Framework, Entity Framework</li>
+                </ul>
               </div>
             </div>
 
@@ -152,13 +187,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">WPF</h3>
                 <p class="text-primary font-semibold text-lg">Livello Base</p>
-                <div class="text-sm text-gray-500 mt-1">XAML, MVVM, Data Binding</div>
+                <div class="text-sm text-gray-500 mt-1">Desktop Applications</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-indigo-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 44%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Base</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">44%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• XAML UI design, Controls</li>
+                  <li>• MVVM pattern, Data binding</li>
+                  <li>• Event handling, Commands</li>
+                </ul>
               </div>
             </div>
 
@@ -169,13 +209,18 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">.NET MAUI</h3>
                 <p class="text-primary font-semibold text-lg">Livello Intermedio</p>
-                <div class="text-sm text-gray-500 mt-1">Cross-platform, Mobile Apps</div>
+                <div class="text-sm text-gray-500 mt-1">Cross-platform Mobile</div>
               </div>
-              <div class="relative">
-                <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-pink-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out" style="width: 74%"></div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium text-gray-700">Competenze:</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Avanzato</span>
                 </div>
-                <span class="absolute right-0 top-4 text-sm font-semibold text-gray-600">74%</span>
+                <ul class="text-xs text-gray-600 space-y-1">
+                  <li>• iOS/Android native development</li>
+                  <li>• MVVM, Data binding, Navigation</li>
+                  <li>• SQLite, REST APIs, Push notifications</li>
+                </ul>
               </div>
             </div>
 
