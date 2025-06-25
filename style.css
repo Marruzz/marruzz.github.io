@@ -329,3 +329,336 @@ textarea:focus {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+/* ================================ */
+/* PREFERENCES MODAL STYLES */
+/* ================================ */
+
+.preference-option input:checked + div {
+  border-color: var(--brand-primary) !important;
+  background-color: rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.preference-option.selected div {
+  border-color: var(--brand-primary) !important;
+  background-color: rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Custom Slider Styles */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e2e8f0;
+  outline: none;
+  border-radius: 50px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Modal Animation */
+#preferences-modal {
+  animation: modalFadeIn 0.3s ease-out;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+#preferences-modal.hidden {
+  animation: modalFadeOut 0.3s ease-in;
+  display: none !important;
+}
+
+#preferences-modal > div {
+  position: relative;
+  max-height: calc(100vh - 4rem);
+  max-height: calc(100dvh - 4rem);
+  overflow-y: auto;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 42rem; /* max-w-2xl equivalent */
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+}
+
+#preferences-modal > div {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+#preferences-modal.hidden > div {
+  animation: modalSlideOut 0.3s ease-in;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideOut {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* ================================ */
+/* NAVBAR ALWAYS VISIBLE STYLES */
+/* ================================ */
+
+nav {
+  will-change: transform, opacity;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Ensure navbar is always visible */
+nav[role="navigation"] {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 50 !important;
+}
+
+/* Enhanced navbar backdrop */
+nav[role="navigation"]:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  backdrop-filter: blur(20px);
+  z-index: -1;
+}
+
+/* ================================ */
+/* PREFERENCES BASED STYLES */
+/* ================================ */
+
+/* No animations class */
+.no-animations *,
+.no-animations *::before,
+.no-animations *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* No particles class */
+.no-particles .particle {
+  display: none !important;
+}
+
+/* No magnetic hover class */
+.no-magnetic .magnetic-hover:hover {
+  transform: none !important;
+}
+
+/* High contrast mode */
+.high-contrast {
+  filter: contrast(1.8) saturate(1.3) !important;
+}
+
+.high-contrast a,
+.high-contrast button {
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast .glass-card,
+.high-contrast .glass-effect {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid var(--brand-primary) !important;
+}
+
+.high-contrast.dark .glass-card,
+.high-contrast.dark .glass-effect {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 2px solid var(--brand-accent) !important;
+}
+
+/* GPU acceleration */
+.gpu-accelerated .magnetic-hover,
+.gpu-accelerated .project-card,
+.gpu-accelerated .skill-card,
+.gpu-accelerated .particle,
+.gpu-accelerated .tilt-card {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ================================ */
+/* NOTIFICATION STYLES */
+/* ================================ */
+
+.notification {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode adjustments for preferences modal */
+.dark #preferences-modal .glass-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .slider {
+  background: #374151;
+}
+
+.dark .preference-option input:checked + div,
+.dark .preference-option.selected div {
+  background-color: rgba(99, 102, 241, 0.2);
+}
+
+/* ================================ */
+/* RESPONSIVE ADJUSTMENTS */
+/* ================================ */
+
+@media (max-width: 768px) {
+  #preferences-modal {
+    padding: 1rem;
+  }
+  
+  #preferences-modal > div {
+    margin: 0;
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+    width: 100%;
+  }
+  
+  .preference-option {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-height: 600px) {
+  #preferences-modal > div {
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+    margin: 0.5rem auto;
+  }
+}
+
+/* ================================ */
+/* FOCUS STATES FOR ACCESSIBILITY */
+/* ================================ */
+
+.preference-option:focus-within div {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.slider:focus {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* Toggle switches focus */
+input[type="checkbox"]:focus + div {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ================================ */
+/* CV BUTTON CONSISTENCY */
+/* ================================ */
+
+/* Ensure CV buttons have consistent colors in both light and dark mode */
+.cv-download-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cv-download-btn:hover::before {
+  left: 100%;
+}
+
+/* Dark mode CV button adjustments */
+.dark .cv-download-btn {
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.dark .cv-download-btn:hover {
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}

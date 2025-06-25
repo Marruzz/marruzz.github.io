@@ -2,9 +2,10 @@
 class NavigationComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <nav class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100 dark:border-gray-800 transition-colors duration-300" 
+      <nav class="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-gray-700/50 transition-all duration-300" 
            role="navigation" 
-           aria-label="Navigazione principale">
+           aria-label="Navigazione principale"
+           style="transform: translateY(0); opacity: 1; visibility: visible;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16">
             <div class="flex-shrink-0">
@@ -62,7 +63,13 @@ class NavigationComponent extends HTMLElement {
                 </a>
               </div>
             </div>
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+              <button id="preferences-toggle" 
+                      class="magnetic-hover p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+                      aria-label="Apri preferenze"
+                      title="Preferenze">
+                <i class="fas fa-cog text-lg" aria-hidden="true"></i>
+              </button>
               <button id="dark-mode-toggle" 
                       class="magnetic-hover p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
                       aria-label="Attiva/Disattiva modalità scura"

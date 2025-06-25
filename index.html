@@ -88,6 +88,7 @@
 
     <!-- Component Scripts -->
     <script src="components/navigation-component.js"></script>
+    <script src="components/preferences-modal.js"></script>
     <script src="components/hero-component.js"></script>
     <script src="components/about-component.js"></script>
     <script src="components/skills-component.js"></script>
@@ -100,6 +101,9 @@
 
     <!-- Main Navigation -->
     <app-navigation></app-navigation>
+
+    <!-- Preferences Modal -->
+    <preferences-modal></preferences-modal>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
@@ -140,6 +144,19 @@
                     const announcement = !isExpanded ? 'Menu aperto' : 'Menu chiuso';
                     announceToScreenReader(announcement);
                 });
+            }
+
+            // Preferences Modal Functionality
+            const preferencesButton = document.getElementById('preferences-toggle');
+            const preferencesModal = document.querySelector('preferences-modal');
+
+            if (preferencesButton && preferencesModal) {
+                preferencesButton.addEventListener('click', () => {
+                    preferencesModal.openModal();
+                });
+
+                // Carica e applica le preferenze salvate all'avvio
+                preferencesModal.applyPreferences();
             }
 
             // Dark Mode Toggle with System Preference
