@@ -30,8 +30,23 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style/navbar.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Carica tutti i componenti -->
+    <script src="components/navigation-component.js"></script>
+    <script src="components/hero-component.js"></script>
+    <script src="components/about-component.js"></script>
+    <script src="components/skills-component.js"></script>
+    <script src="components/certifications-component.js"></script>
+    <script src="components/projects-component.js"></script>
+    <script src="components/contact-component.js"></script>
+    <script src="components/pcto-component.js"></script>
+    <script src="components/projects-component.js"></script>
+    <script src="components/project-card-component.js"></script>
+    <script src="components/cv-component.js"></script>
+
     
     <!-- Accessibility Styles -->
     <style>
@@ -81,34 +96,30 @@
     <!-- Skip to Content Link -->
     <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
     
-    <!-- Page Loading Indicator -->
-    <div id="loading-indicator" class="fixed inset-0 bg-white z-50 flex items-center justify-center" aria-hidden="true">
-        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-        <span class="sr-only">Caricamento in corso...</span>
-    </div>
 
-    <!-- Main Application Script -->
-    <script type="module" src="js/app.js"></script>
+    <!-- Navigazione come Web Component -->
+    <app-navigation/>
+    
+    <!-- Hero Section come Web Component -->
+    <app-hero/>
+    
+    <!-- About Section come Web Component -->
+    <app-about/>
+    <!-- Skills Section come Web Component -->
+    <app-skills/>
+    
+    <!-- Certifications Section come Web Component -->
+    <app-certifications/>
+    
+    <app-pcto/>
+    <!-- Projects Section come Web Component -->
+    <app-projects/>
+    <app-cv/>
+    <!-- Contact Section come Web Component -->
+    <app-contact/>
+    
+    <!-- Script di inizializzazione -->
 
-    <!-- Main Navigation -->
-    <app-navigation></app-navigation>
-
-    <!-- Preferences Modal -->
-    <preferences-modal></preferences-modal>
-
-    <!-- Main Content -->
-    <main id="main-content" role="main">
-        <app-hero></app-hero>
-        <app-about></app-about>
-        <app-skills></app-skills>
-        <app-certifications></app-certifications>
-        <app-pcto></app-pcto>
-        <app-projects></app-projects>
-        <app-cv></app-cv>
-        <app-contact></app-contact>
-    </main>
-
-    <!-- Scripts -->
     <script>
         // Enhanced Mobile Menu and Dark Mode Toggle
         document.addEventListener('DOMContentLoaded', function () {
