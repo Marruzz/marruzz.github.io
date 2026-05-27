@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luca Marroni - Developer Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Applica il tema salvato il più presto possibile per evitare flash di stile chiaro
+            try {
+                // Usa la chiave unificata 'theme' (valori: 'dark'|'light') per coerenza
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) { /* ignore */ }
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
     <script src="script-tailwind.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/components.css" />
+    <link rel="stylesheet" href="style/dark-mode.css" />
+    <link rel="stylesheet" href="style/effects.css" />
+    <link rel="stylesheet" href="style/scrollbar.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     
@@ -23,9 +36,9 @@
     <script defer src="components/projects-component.js"></script>
     <script defer src="components/project-card-component.js"></script>
     <script defer src="components/contact-component.js"></script>
-    <script defer src="components/pcto-component.js"></script>
+    
     <script defer src="components/cv-component.js"></script>
-    <script defer src="components/preferences-modal.js"></script>
+    
     
     
 
@@ -35,11 +48,11 @@
     <app-projects></app-projects>
     <app-skills></app-skills>
     <app-certifications></app-certifications>    
-    <app-pcto></app-pcto>
+    
     <app-cv></app-cv>
     <app-contact></app-contact>
 
-    <preferences-modal></preferences-modal>
+    
     
     <!-- Script di inizializzazione -->
     <script>

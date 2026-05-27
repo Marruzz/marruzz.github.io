@@ -2,7 +2,7 @@
 class CertificationsComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section id="certifications" class="py-20 bg-white relative">
+    <section id="certifications" class="py-20 bg-white dark:bg-gray-900 relative transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 animate-fade-in">
             <span class="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -108,29 +108,7 @@ class CertificationsComponent extends HTMLElement {
         </div>
 
 
-        <div class="mt-16 text-center">
-            <h3 class="text-2xl font-bold text-gray-900 mb-8">Prossimi Obiettivi</h3>
-            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div
-                    class="bg-gray-50 p-6 rounded-2xl border-2 border-dashed border-gray-300 hover:border-primary transition-colors">
-                    <i class="fab fa-aws text-orange-500 text-4xl mb-4"></i>
-                    <h4 class="font-bold text-gray-900 mb-2">AWS Cloud Practitioner</h4>
-                    <p class="text-sm text-gray-600">Certificazione cloud computing</p>
-                </div>
-                <div
-                    class="bg-gray-50 p-6 rounded-2xl border-2 border-dashed border-gray-300 hover:border-primary transition-colors">
-                    <i class="fab fa-google text-blue-500 text-4xl mb-4"></i>
-                    <h4 class="font-bold text-gray-900 mb-2">Google IT Support</h4>
-                    <p class="text-sm text-gray-600">Supporto tecnico professionale</p>
-                </div>
-                <div
-                    class="bg-gray-50 p-6 rounded-2xl border-2 border-dashed border-gray-300 hover:border-primary transition-colors">
-                    <i class="fab fa-microsoft text-blue-600 text-4xl mb-4"></i>
-                    <h4 class="font-bold text-gray-900 mb-2">Microsoft Azure Fundamentals</h4>
-                    <p class="text-sm text-gray-600">Cloud platform Microsoft</p>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </section>
     `;

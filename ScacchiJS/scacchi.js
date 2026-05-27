@@ -885,7 +885,7 @@ function updateCapturedPieces() {
             whiteCapturedContainer.innerHTML = '<span class="text-gray-500 text-xs">Nessuno</span>';
         } else {
             whiteCapturedContainer.innerHTML = capturedPieces.white.map(piece => 
-                `<img src="${piece.imgSrc}" class="w-6 h-6" title="${piece.name}">`
+                `<img src="${piece.imgSrc}" class="w-6 h-6" data-invert-dark title="${piece.name}">`
             ).join('');
         }
     }
@@ -895,7 +895,7 @@ function updateCapturedPieces() {
             blackCapturedContainer.innerHTML = '<span class="text-gray-500 text-xs">Nessuno</span>';
         } else {
             blackCapturedContainer.innerHTML = capturedPieces.black.map(piece => 
-                `<img src="${piece.imgSrc}" class="w-6 h-6" title="${piece.name}">`
+                `<img src="${piece.imgSrc}" class="w-6 h-6" data-invert-dark title="${piece.name}">`
             ).join('');
         }
     }

@@ -22,7 +22,7 @@ class HeroComponent extends HTMLElement {
                 Developer Full-Stack & Studente
               </p>
               <p class="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl lg:max-w-none leading-relaxed transition-colors duration-300 animate-fade-in animate-stagger-2">
-                17 anni, studente dell'ITIS E.Majorana di Grugliasco con la
+                18 anni, studente dell'ITIS E.Majorana di Grugliasco con la
                 passione per lo sviluppo web, le tecnologie moderne e
                 l'innovazione digitale. Certificato CISCO IT Essentials.
               </p>
@@ -59,7 +59,7 @@ class HeroComponent extends HTMLElement {
                   
                   <div class="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-full animate-pulse-slow opacity-20"></div>
                   
-                  <img src="https://placehold.co/400x400/png?text=Luca+Marroni" alt="Luca Marroni" class="w-full h-full rounded-full object-cover border-8 border-white shadow-2xl relative z-10 animate-float" />
+                  <img src="https://placehold.co/400x400/png?text=Luca+Marroni" alt="Luca Marroni" class="w-full h-full rounded-full object-cover border-8 border-white dark:border-gray-800 shadow-2xl relative z-10 animate-float" />
                   
                   <div class="absolute -top-4 -right-4 bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
                     <i class="fas fa-code text-lg"></i>
@@ -71,7 +71,7 @@ class HeroComponent extends HTMLElement {
               </div>
               
               <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">                <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300">
-                  <div class="text-2xl font-bold text-primary">17</div>
+                  <div class="text-2xl font-bold text-primary">18</div>
                   <div class="text-sm text-gray-600 dark:text-gray-400">Anni</div>
                 </div>
                 <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl shadow-lg text-center border border-gray-100 dark:border-gray-700 transition-colors duration-300">

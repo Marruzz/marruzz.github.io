@@ -17,7 +17,7 @@ class CVComponent extends HTMLElement {
                     </span>
                     <h2
                         class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
-                        Il Mio CV
+                        I miei CV
                     </h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full"></div>
                     <p class="text-xl text-gray-600 dark:text-gray-100 mt-6 max-w-3xl mx-auto transition-colors duration-300">
@@ -34,7 +34,7 @@ class CVComponent extends HTMLElement {
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <img src="https://flagcdn.com/w40/it.png" alt="Italiano"
-                                            class="w-10 h-7 rounded mr-4" />
+                                            class="w-10 h-7 rounded mr-4 border border-gray-200 dark:border-gray-700" />
                                         <div>
                                             <h3 class="text-2xl font-bold text-white">CV Italiano</h3>
                                             <p class="text-white/90">Curriculum Vitae Completo</p>
@@ -66,14 +66,14 @@ class CVComponent extends HTMLElement {
                                 </div>
 
                                 <div class="space-y-4">
-                                    <!-- View CV Button (prominente come quello inglese) -->
+                                    
                                     <a href="CV/Luca Marroni - CV Ita.pdf" target="_blank"
                                         class="cv-download-btn w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-purple-600 hover:to-blue-600 transform hover:scale-105 flex items-center justify-center group">
                                         <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
                                         Visualizza CV
                                     </a>
 
-                                    <!-- Download PDF Button (outline come quello inglese) -->
+                                    
                                     <a href="CV/Luca Marroni - CV Ita.pdf" download="Luca_Marroni_CV_Italiano.pdf"
                                         class="cv-download-btn w-full border-2 border-blue-600 text-blue-600 py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white flex items-center justify-center group">
                                         <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
@@ -89,7 +89,7 @@ class CVComponent extends HTMLElement {
                             <div class="bg-gradient-to-r from-blue-600 to-red-600 p-6">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
-                                        <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-10 h-7 rounded mr-4" />
+                                        <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-10 h-7 rounded mr-4 border border-gray-200 dark:border-gray-700" />
                                         <div>
                                             <h3 class="text-2xl font-bold text-white">English CV</h3>
                                             <p class="text-white/90">Complete Curriculum Vitae</p>
@@ -120,13 +120,13 @@ class CVComponent extends HTMLElement {
                                     </div>
                                 </div>
 
-                                <div class="space-y-4"> <a href="CV/LucaMarroni_CV_Eng.pdf" target="_blank"
+                                <div class="space-y-4"> <a href="CV/Luca Marroni - CV Eng.pdf" target="_blank"
                                         class="cv-download-btn w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:from-purple-600 hover:to-blue-600 transform hover:scale-105 flex items-center justify-center group">
                                         <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>
                                         View CV
                                     </a>
 
-                                    <a href="CV/LucaMarroni_CV_Eng.pdf" download="Luca_Marroni_CV_English.pdf"
+                                    <a href="CV/Luca Marroni - CV Eng.pdf" download="Luca Marroni - CV Eng.pdf"
                                         class="cv-download-btn w-full border-2 border-blue-600 text-blue-600 py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-600 hover:text-white flex items-center justify-center group">
                                         <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
                                         Download PDF
@@ -230,10 +230,9 @@ class CVComponent extends HTMLElement {
       });
     });
 
-    // Re-initialize smooth scroll for this component's links
-    if (window.reinitializeSmoothScroll) {
-      window.reinitializeSmoothScroll();
-    }
+        if (window.reinitializeSmoothScroll) {
+            window.reinitializeSmoothScroll();
+        }
   }
 }
 

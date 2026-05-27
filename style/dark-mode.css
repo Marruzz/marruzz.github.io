@@ -15,49 +15,45 @@
 }
 
 .dark body {
-  background-color: #0a0f1c;
+  background-color: #071026;
   background-image: 
     radial-gradient(at 47% 33%, hsl(220, 91%, 3%) 0, transparent 59%), 
     radial-gradient(at 82% 65%, hsl(215, 45%, 7%) 0, transparent 55%),
     radial-gradient(at 25% 75%, hsl(240, 30%, 5%) 0, transparent 35%);
-  color: #f8fafc;
+  /* Main readable text color in dark mode: brighter for stronger contrast */
+  color: #e6eef8;
   min-height: 100vh;
 }
 
 /* Migliori contrasti per la dark mode */
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-  color: #f1f5f9;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
-.dark p, .dark span, .dark div {
-  color: #e2e8f0;
+/* Ensure body text and common inline elements are highly readable */
+.dark p,
+.dark span,
+.dark div,
+.dark li,
+.dark label,
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #e6eef8;
 }
 
-.dark .text-gray-600 {
-  color: #cbd5e1 !important;
-}
+/* Stronger mappings for common Tailwind text utility classes in dark mode */
+.dark .text-gray-600 { color: #d1dbe6 !important; }
+.dark .text-gray-500 { color: #cbd5e1 !important; }
+.dark .text-gray-400 { color: #9fb0c3 !important; }
+.dark .text-gray-300 { color: #cbd5e1 !important; }
+.dark .text-gray-800 { color: #ffffff !important; }
+.dark .text-gray-900 { color: #ffffff !important; }
 
-.dark .text-gray-500 {
-  color: #94a3b8 !important;
-}
-
-.dark .text-gray-400 {
-  color: #64748b !important;
-}
-
-.dark .text-gray-300 {
-  color: #cbd5e1 !important;
-}
-
-.dark .text-gray-800 {
-  color: #f1f5f9 !important;
-}
-
-.dark .text-gray-900 {
-  color: #f8fafc !important;
-}
+/* Links should stand out but keep them accessible */
+.dark a { color: #a5b4fc !important; }
+.dark a:hover { color: #c7b8ff !important; text-decoration: underline; }
 
 /* Dark mode cards migliorati */
 .dark .skill-card,
@@ -148,6 +144,11 @@
   background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899) !important;
   opacity: 0.7;
   box-shadow: 0 0 12px rgba(99, 102, 241, 0.5), 0 0 24px rgba(139, 92, 246, 0.3);
+}
+
+/* Utility: invert images safely in dark mode when marked */
+.invert-for-dark {
+  filter: invert(1) hue-rotate(180deg) saturate(0.95) brightness(0.95);
 }
 
 /* Dark mode preferences button */
@@ -352,3 +353,110 @@
     opacity: 0.7;
   }
 }
+
+/* Sezioni specifiche: migliora contrasto e leggibilità per About/Skills/Certifications */
+.dark #about,
+.dark #skills,
+.dark #certifications {
+  background-color: #071026 !important;
+  color: #f8fafc !important;
+}
+
+.dark #about h2,
+.dark #skills h2,
+.dark #certifications h2,
+.dark #about h3,
+.dark #skills h3,
+.dark #certifications h3 {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+/* Ensure section headings are visible and above decorative gradients */
+.dark #skills h2,
+.dark #about h2,
+.dark #certifications h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: transparent !important;
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+.dark #about p,
+.dark #skills p,
+.dark #certifications p,
+.dark #about .text-sm,
+.dark #skills .text-sm,
+.dark #certifications .text-sm {
+  color: #e6eef8 !important;
+}
+
+/* Card contrast adjustments inside those sections */
+.dark #skills .skill-card,
+.dark #about .bg-white,
+.dark #certifications .group {
+  background-color: #0b1220 !important;
+  border-color: #263243 !important;
+  color: #eef6ff !important;
+}
+
+.dark #skills .skill-card .text-sm,
+.dark #about .text-sm,
+.dark #certifications .text-sm {
+  color: #cbd7ea !important;
+}
+
+/* Ensure links and primary buttons are readable */
+.dark #about a,
+.dark #skills a,
+.dark #certifications a,
+.dark #about .bg-primary,
+.dark #skills .bg-primary,
+.dark #certifications .bg-primary {
+  color: #ffffff !important;
+}
+
+/* Reduce heavy gradients that can obscure text */
+.dark #about .absolute,
+.dark #skills .absolute,
+.dark #certifications .absolute {
+  opacity: 0.25 !important;
+}
+
+/* Hero section: force high-contrast text and readable UI elements */
+.dark #home {
+  color: #e6eef8 !important;
+}
+
+.dark #home h1,
+.dark #home h2,
+.dark #home h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45) !important;
+}
+
+.dark #home p,
+.dark #home span,
+.dark #home li,
+.dark #home .text-sm,
+.dark #home .text-base,
+.dark #home .text-xl,
+.dark #home .text-lg {
+  color: #e6eef8 !important;
+}
+
+/* Override common utility text colors inside hero to be brighter */
+.dark #home .text-gray-600 { color: #d1dbe6 !important; }
+.dark #home .text-gray-500 { color: #c9d6e4 !important; }
+.dark #home .text-gray-400 { color: #b9c7d8 !important; }
+.dark #home .text-gray-300 { color: #cbdbe9 !important; }
+
+/* Make small meta and social icons clearer */
+.dark #home a, .dark #home .fab, .dark #home .fas { color: #e6eef8 !important; }
+.dark #home a:hover { color: #a5b4fc !important; }
+
+/* Ensure the overlay gradient in hero doesn't dim text excessively */
+.dark #home > .absolute { opacity: 0.4 !important; }
+

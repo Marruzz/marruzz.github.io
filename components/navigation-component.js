@@ -15,15 +15,15 @@ class NavigationComponent extends HTMLElement {
                 <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Progetti</a>
                 <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Competenze</a>                
                 <a href="#certifications" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Certificazioni</a>
-                <a href="#pcto" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">PCTO</a>
+                
                 <a href="#cv" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">CV</a>
                 <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary/10">Contatti</a>
               </div>
             </div>
             <div class="flex items-center space-x-4">
               
-              <button id="preferences-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300" title="Apri Preferenze">
-                <i class="fas fa-sun text-lg"></i>
+              <button id="preferences-toggle" aria-pressed="false" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300" title="Toggle tema chiaro/scuro">
+                <i class="fas fa-sun text-lg text-current"></i>
               </button>
               <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 hover:text-primary p-2 rounded-lg transition-colors">
@@ -41,7 +41,7 @@ class NavigationComponent extends HTMLElement {
             <a href="#projects" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Progetti</a>
             <a href="#skills" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Competenze</a>            
             <a href="#certifications" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Certificazioni</a>
-            <a href="#pcto" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">PCTO</a>
+            
             <a href="#cv" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">CV</a>
             <a href="#contact" class="block text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/10 px-3 py-2 rounded-lg text-base font-medium transition-all">Contatti</a>
           </div>
@@ -51,6 +51,7 @@ class NavigationComponent extends HTMLElement {
     
 
     this.setupEventListeners();
+    this.updateThemeIcon();
   }
   
   setupEventListeners() {
@@ -66,12 +67,47 @@ class NavigationComponent extends HTMLElement {
     
     if (preferencesToggle) {
       preferencesToggle.addEventListener('click', () => {
-        const preferencesModal = document.querySelector('preferences-modal');
-        if (preferencesModal) {
-          preferencesModal.openModal();
+        // Prefer using the global manager if available to keep theme state consistent
+        if (window.portfolioManager && typeof window.portfolioManager.toggleDarkMode === 'function') {
+          window.portfolioManager.toggleDarkMode();
+          return;
         }
+
+        const isDark = document.documentElement.classList.toggle('dark');
+        // Align with PortfolioManager: store 'theme' as 'dark'|'light'
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        preferencesToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        const icon = preferencesToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-sun', 'fa-moon');
+          icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+        }
+        // Dispatch the unified event name used in script.js
+        document.dispatchEvent(new CustomEvent('themeChanged', { detail: { darkMode: isDark } }));
+        // adjust image/icon filters globally when theme changes
+        document.querySelectorAll('img[data-invert-dark]').forEach(img => {
+          if (isDark) img.classList.add('invert-for-dark'); else img.classList.remove('invert-for-dark');
+        });
       });
     }
+  }
+
+  updateThemeIcon() {
+    const preferencesToggle = this.querySelector('#preferences-toggle');
+    if (!preferencesToggle) return;
+    const icon = preferencesToggle.querySelector('i');
+    const darkPref = localStorage.getItem('theme');
+    const isDark = darkPref === 'dark' || document.documentElement.classList.contains('dark');
+    if (isDark) document.documentElement.classList.add('dark');
+    if (icon) {
+      icon.classList.remove('fa-sun', 'fa-moon');
+      icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+    }
+    if (preferencesToggle) preferencesToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    // apply invert class to marked images on load
+    document.querySelectorAll('img[data-invert-dark]').forEach(img => {
+      if (isDark) img.classList.add('invert-for-dark'); else img.classList.remove('invert-for-dark');
+    });
   }
 }
 

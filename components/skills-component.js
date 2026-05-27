@@ -1,7 +1,7 @@
 class SkillsComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section id="skills" class="py-20 bg-gray-50 relative overflow-hidden">
+      <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden transition-colors duration-300">
         
         <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-accent/10 to-pink-500/10 rounded-full blur-3xl"></div>
@@ -16,8 +16,7 @@ class SkillsComponent extends HTMLElement {
             </h2>
             <div class="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full mb-6"></div>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              Tecnologie e linguaggi con cui lavoro quotidianamente per creare
-              soluzioni innovative
+              Tecnologie e linguaggi con cui lavoro 
             </p>
           </div>          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
             
@@ -89,7 +88,7 @@ class SkillsComponent extends HTMLElement {
                 <div class="text-sm text-gray-500 mt-1">Components, Services, RxJS</div>
               </div>
               <div class="bg-gray-50 p-4 rounded-xl">
-                <p class="text-sm text-gray-700">Sviluppo di applicazioni SPA complesse con architettura a componenti, gestione stato e servizi. Usato in Investment Calculator e LuxtorAngular.</p>
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni con architettura a componenti, gestione di servizi e RxJS. Usato in Investment Calculator.</p>
               </div>
             </div>
 
@@ -148,11 +147,10 @@ class SkillsComponent extends HTMLElement {
                 <div class="text-sm text-gray-500 mt-1">Cross-platform, Mobile Apps</div>
               </div>
               <div class="bg-gray-50 p-4 rounded-xl">
-                <p class="text-sm text-gray-700">Sviluppo di applicazioni mobile cross-platform per Android e iOS. Competenza avanzata dimostrata nel progetto MajoContinentalMAUI per la gestione alberghiera.</p>
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni mobile cross-platform per Android e iOS. Esperienza in progetti di gestione alberghiera.</p>
               </div>
             </div>
 
-            <!-- PHP Skill Card -->
             <div class="skill-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
               <div class="text-center mb-6">
                 <div class="bg-gradient-to-br from-indigo-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -160,10 +158,10 @@ class SkillsComponent extends HTMLElement {
                 </div>
                 <h3 class="text-xl font-bold text-gray-900">PHP</h3>
                 <p class="text-primary font-semibold text-lg">6 mesi di esperienza</p>
-                <div class="text-sm text-gray-500 mt-1">OOP, Laravel, MySQL</div>
+                <div class="text-sm text-gray-500 mt-1">OOP, MySQL</div>
               </div>
               <div class="bg-gray-50 p-4 rounded-xl">
-                <p class="text-sm text-gray-700">Sviluppo di applicazioni web server-side con PHP moderno, gestione database MySQL e prime esperienze con framework Laravel.</p>
+                <p class="text-sm text-gray-700">Sviluppo di applicazioni web server-side con PHP moderno, gestione database MySQL e best practice per backend.</p>
               </div>
             </div>
           </div>
@@ -209,9 +207,6 @@ class SkillsComponent extends HTMLElement {
         </div>
       </section>
     `;
-    
-    
-    // Non più necessario gestire le animazioni delle progress bar
     console.log('Skills component loaded successfully');
   }
 }

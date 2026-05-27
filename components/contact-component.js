@@ -56,7 +56,7 @@ class ContactComponent extends HTMLElement {
                         <div class="flex-grow">
                             <h4 class="font-bold text-gray-900 text-lg">Località</h4>
                             <p class="text-gray-600">Torino, Piemonte</p>
-                            <p class="text-sm text-green-600 font-medium">Disponibile per incontri locali</p>
+                            
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@ class ContactComponent extends HTMLElement {
                         <div class="flex-grow">
                             <h4 class="font-bold text-gray-900 text-lg">Disponibilità</h4>
                             <p class="text-gray-600">Lun-Ven: 09:00 - 18:00 </p>
-                            <p class="text-sm text-orange-600 font-medium">Weekend su appuntamento</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@ class ContactComponent extends HTMLElement {
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
                         Invia un messaggio</h3>
                     <form class="space-y-4 flex-grow flex flex-col" id="contact-form"
-                        action="https://formspree.io/f/mnnvovdk" method="POST">
+                        action="/api/send-email" method="POST">
                         <div class="grid md:grid-cols-2 gap-4">
                             <div>
                                 <label for="name"
@@ -189,13 +189,22 @@ class ContactComponent extends HTMLElement {
     try {
       const formData = new FormData(form);
 
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+            let response;
+            // If posting to our API endpoint, send JSON
+            if (form.action && form.action.includes('/api')) {
+                const payload = {};
+                formData.forEach((v, k) => payload[k] = v);
+                response = await fetch(form.action, {
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } else {
+                response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+            }
 
       if (response.ok) {
         // Success
@@ -221,7 +230,6 @@ class ContactComponent extends HTMLElement {
     } catch (error) {
       // Error
       console.error('Error:', error);
-      statusDiv.className = 'mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl';
       statusIcon.className = 'fas fa-exclamation-triangle text-red-500 mr-3';
       statusTitle.className = 'text-red-800 dark:text-red-200 font-semibold text-sm';
       statusTitle.textContent = 'Errore nell\'invio';
@@ -232,7 +240,6 @@ class ContactComponent extends HTMLElement {
       buttonText.textContent = 'Riprova';
     }
 
-    statusDiv.classList.remove('hidden');
   }
 }
 

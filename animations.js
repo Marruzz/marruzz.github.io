@@ -1,20 +1,16 @@
-// ===== SISTEMA ANIMAZIONI AVANZATO =====
-// Gestione completa delle animazioni e effetti del portfolio
+
 
 class AnimationManager {
   constructor() {
     this.observers = new Map();
     this.animatedElements = new Set();
     this.isInitialized = false;
-    
-    // Configurazione animazioni
     this.config = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px',
       staggerDelay: 100,
       particleCount: 20
     };
-    
     this.init();
   }
 
@@ -22,8 +18,6 @@ class AnimationManager {
     if (this.isInitialized) return;
     
     console.log('🎬 Inizializzazione sistema animazioni...');
-    
-    // Aspetta che il DOM sia pronto
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => this.setup());
     } else {
@@ -39,19 +33,14 @@ class AnimationManager {
       this.setupTypewriterEffect();
       this.setupStaggeredAnimations();
       this.setupFloatingElements();
-      
       this.isInitialized = true;
       console.log('✅ Sistema animazioni inizializzato con successo');
-      
-      // Attiva animazioni iniziali
       setTimeout(() => this.triggerInitialAnimations(), 500);
-      
     } catch (error) {
       console.error('❌ Errore inizializzazione animazioni:', error);
     }
   }
 
-  // ===== SCROLL ANIMATIONS =====
   setupScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -65,7 +54,6 @@ class AnimationManager {
       rootMargin: this.config.rootMargin
     });
 
-    // Selettori per elementi da animare
     const selectors = [
       '.animate-fade-in',
       '.animate-slide-up',
@@ -89,7 +77,6 @@ class AnimationManager {
   }
 
   animateElement(element) {
-    // Determina il tipo di animazione
     const classes = element.classList;
     
     if (classes.contains('animate-fade-in')) {
@@ -111,13 +98,10 @@ class AnimationManager {
       element.classList.add('hover-lift');
     }
 
-    // Attiva animazioni speciali
     this.activateSpecialEffects(element);
   }
 
-  // ===== HOVER EFFECTS =====
   setupHoverEffects() {
-    // Cards hover effects
     document.querySelectorAll('.skill-card, .project-card, .contact-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.classList.add('hover-lift', 'glow-animation');
@@ -128,7 +112,6 @@ class AnimationManager {
       });
     });
 
-    // Buttons hover effects
     document.querySelectorAll('button, .btn, a[href]').forEach(btn => {
       btn.addEventListener('mouseenter', () => {
         btn.classList.add('hover-grow');
@@ -139,7 +122,6 @@ class AnimationManager {
       });
     });
 
-    // Navigation links
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('mouseenter', () => {
         link.classList.add('hover-glow');
@@ -171,7 +153,6 @@ class AnimationManager {
     hero.style.position = 'relative';
     hero.appendChild(particlesContainer);
 
-    // Crea particelle
     for (let i = 0; i < this.config.particleCount; i++) {
       this.createParticle(particlesContainer, i);
     }
@@ -222,7 +203,6 @@ class AnimationManager {
     });
   }
 
-  // ===== STAGGERED ANIMATIONS =====
   setupStaggeredAnimations() {
     const staggerGroups = document.querySelectorAll('.stagger-group');
     
@@ -237,7 +217,6 @@ class AnimationManager {
     });
   }
 
-  // ===== FLOATING ELEMENTS =====
   setupFloatingElements() {
     const floatingElements = document.querySelectorAll('.float, .floating');
     
@@ -247,15 +226,12 @@ class AnimationManager {
     });
   }
 
-  // ===== SPECIAL EFFECTS =====
   activateSpecialEffects(element) {
-    // Gradient text animation
     const gradientTexts = element.querySelectorAll('.gradient-text');
     gradientTexts.forEach(text => {
       text.classList.add('gradient-text');
     });
 
-    // Skill bars animation
     const skillBars = element.querySelectorAll('.skill-bar');
     skillBars.forEach(bar => {
       const percentage = bar.dataset.percentage || '0';
@@ -267,14 +243,12 @@ class AnimationManager {
       }
     });
 
-    // Counter animation
     const counters = element.querySelectorAll('.counter');
     counters.forEach(counter => {
       this.animateCounter(counter);
     });
   }
 
-  // ===== COUNTER ANIMATION =====
   animateCounter(element) {
     const target = parseInt(element.dataset.target) || 0;
     const duration = 2000;
@@ -294,21 +268,17 @@ class AnimationManager {
     updateCounter();
   }
 
-  // ===== INITIAL ANIMATIONS =====
   triggerInitialAnimations() {
-    // Anima il logo/brand
     const logo = document.querySelector('.logo, .brand');
     if (logo) {
       logo.classList.add('animate-zoom-in');
     }
 
-    // Anima il titolo principale
     const mainTitle = document.querySelector('h1');
     if (mainTitle) {
       mainTitle.classList.add('animate-fade-in');
     }
 
-    // Anima la navigazione
     const navItems = document.querySelectorAll('nav a');
     navItems.forEach((item, index) => {
       setTimeout(() => {
@@ -317,7 +287,6 @@ class AnimationManager {
     });
   }
 
-  // ===== UTILITY METHODS =====
   addAnimation(element, animationClass, delay = 0) {
     setTimeout(() => {
       element.classList.add(animationClass);
@@ -332,7 +301,6 @@ class AnimationManager {
     element.classList.toggle(animationClass);
   }
 
-  // Cleanup
   destroy() {
     this.observers.forEach(observer => observer.disconnect());
     this.observers.clear();
@@ -341,7 +309,6 @@ class AnimationManager {
   }
 }
 
-// ===== ANIMATION UTILITIES =====
 class AnimationUtils {
   static createRipple(element, event) {
     const rect = element.getBoundingClientRect();
@@ -391,7 +358,6 @@ class AnimationUtils {
   }
 }
 
-// CSS per effetti aggiuntivi
 const additionalStyles = `
   .ripple {
     pointer-events: none;
@@ -421,12 +387,13 @@ const additionalStyles = `
   }
 `;
 
-// Aggiungi stili al documento
+const styleSheet = document.createElement('style');
+styleSheet.textContent = additionalStyles;
+document.head.appendChild(styleSheet);
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
 
-// Inizializza il sistema quando il DOM è pronto
 let animationManager;
 
 if (document.readyState === 'loading') {
@@ -437,7 +404,6 @@ if (document.readyState === 'loading') {
   animationManager = new AnimationManager();
 }
 
-// Esporta per uso globale
 window.AnimationManager = AnimationManager;
 window.AnimationUtils = AnimationUtils;
 window.animationManager = animationManager;

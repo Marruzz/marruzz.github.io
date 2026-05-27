@@ -2,7 +2,7 @@
 class AboutComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section id="about" class="py-20 bg-white relative">
+    <section id="about" class="py-20 bg-white dark:bg-gray-900 relative transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 animate-fade-in">
             <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -18,11 +18,10 @@ class AboutComponent extends HTMLElement {
 
             <div class="animate-slide-right">
                 <h3 class="text-3xl font-bold text-gray-900 mb-6 gradient-text">
-                    Studente, Developer & Innovatore
+                    Studente
                 </h3>
                 <p class="text-gray-600 mb-6 leading-relaxed text-lg">
-                    Sono <strong>Luca Marroni</strong>, ho 17 anni e sono nato nel
-                    2007. Studio all'<strong>ITIS E.Majorana di Grugliasco</strong>,
+                    Sono <strong>Luca Marroni</strong>, ho 18 anni. Studio all'<strong>ITIS E.Majorana di Grugliasco</strong>,
                     dove sto approfondendo le mie conoscenze nel campo
                     dell'informatica, delle telecomunicazioni e dell'elettronica.
                 </p>
@@ -66,7 +65,7 @@ class AboutComponent extends HTMLElement {
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900">Età</h4>
-                            <p class="text-sm text-gray-600">17 anni (nato nel 2007)</p>
+                            <p class="text-sm text-gray-600">18 anni</p>
                         </div>
                     </div>
                     <div
@@ -97,7 +96,7 @@ class AboutComponent extends HTMLElement {
                     <div class="space-y-6">
                         <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
                             <div class="flex items-center">
-                                <img src="https://flagcdn.com/w40/it.png" alt="Italiano" class="w-8 h-6 rounded mr-3" />
+                                <img src="https://flagcdn.com/w40/it.png" alt="Italiano" class="w-8 h-6 rounded mr-3 border border-gray-200 dark:border-gray-700" />
                                 <span class="font-semibold text-gray-900">Italiano</span>
                             </div>
                             <span
@@ -105,7 +104,7 @@ class AboutComponent extends HTMLElement {
                         </div>
                         <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
                             <div class="flex items-center">
-                                <img src="https://flagcdn.com/w40/gb.png" alt="Inglese" class="w-8 h-6 rounded mr-3" />
+                                <img src="https://flagcdn.com/w40/gb.png" alt="Inglese" class="w-8 h-6 rounded mr-3 border border-gray-200 dark:border-gray-700" />
                                 <span class="font-semibold text-gray-900">Inglese</span>
                             </div>
                             <span
@@ -113,7 +112,7 @@ class AboutComponent extends HTMLElement {
                         </div>
                         <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
                             <div class="flex items-center">
-                                <img src="https://flagcdn.com/w40/fr.png" alt="Francese" class="w-8 h-6 rounded mr-3" />
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Francese" class="w-8 h-6 rounded mr-3 border border-gray-200 dark:border-gray-700" />
                                 <span class="font-semibold text-gray-900">Francese</span>
                             </div>
                             <span
@@ -131,7 +130,8 @@ class AboutComponent extends HTMLElement {
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">💻 Coding</span>
                         <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">🎮 Gaming</span>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">🤖 AI/ML</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">⚽ Sport</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">💼 Economia & Finanza</span>
                         <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">🌐 Web3</span>
                         <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">📱 Mobile</span>
                         <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">🎵 Musica</span>

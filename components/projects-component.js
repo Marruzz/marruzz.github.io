@@ -47,29 +47,6 @@ class ProjectsComponent extends HTMLElement {
             </project-card>
 
             
-            <project-card
-              title="LuxtorAngular"
-              description="Sito web aziendale per Luxtor sviluppato in Angular. Include presentazione servizi, portfolio clienti, area contatti e dashboard amministrativa."
-              icon="fas fa-building"
-              bg-gradient="from-gray-700 to-gray-900"
-              tech-stack="Angular, TypeScript, Corporate"
-              github-url="https://github.com/Marruzz/LuxtorAngular"
-              license="Private"
-              status="Private">
-            </project-card>
-
-            
-            <project-card
-              title="MajoContinentalMAUI"
-              description="App mobile per hotel sviluppata in .NET MAUI. Gestione prenotazioni, check-in/out, servizi in camera e comunicazione staff-clienti."
-              icon="fas fa-hotel"
-              bg-gradient="from-blue-600 to-cyan-700"
-              tech-stack=".NET MAUI, C#, Hotel, Mobile"
-              github-url="https://github.com/Marruzz/majoContinentalMAUI"
-              license="MAUI"
-              status="Starred">
-            </project-card>
-
             
             <project-card
               title="Connect Four"
@@ -85,17 +62,7 @@ class ProjectsComponent extends HTMLElement {
             </project-card>
 
             
-            <project-card
-              title="Portfolio Website"
-              description="Questo stesso portfolio sviluppato con Web Components vanilla e Tailwind CSS. Architettura modulare, performance ottimizzate e design responsive moderno."
-              icon="fas fa-user-tie"
-              bg-gradient="from-purple-600 to-indigo-700"
-              tech-stack="JavaScript, Web Components, Tailwind CSS"
-              github-url="https://github.com/Marruzz/marruzz.github.io"
-              live-url="https://marruzz.github.io/"
-              license="MIT License"
-              status="MIT License">
-            </project-card>
+            
           </div>
         </div>
       </section>

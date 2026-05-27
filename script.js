@@ -3,7 +3,7 @@ class PortfolioManager {  constructor() {
     this.isLoading = true;
     this.darkMode = this.initializeDarkMode();
     this.init();
-    this.updateMetaThemeColor(); // Imposta subito il colore corretto
+    this.updateMetaThemeColor();
   }
 
   init() {
@@ -19,11 +19,9 @@ class PortfolioManager {  constructor() {
       this.setupDarkModeToggle();
       
       console.log('✅ Portfolio inizializzato con successo!');
-      this.hideLoader();
     });
   }
 
-  // Setup del toggle dark mode migliorato
   setupDarkModeToggle() {
     setTimeout(() => {
       const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -31,7 +29,7 @@ class PortfolioManager {  constructor() {
         darkModeToggle.addEventListener('click', () => {
           this.toggleDarkMode();
           
-          // Animazione di feedback
+          
           darkModeToggle.style.transform = 'scale(0.95)';
           setTimeout(() => {
             darkModeToggle.style.transform = 'scale(1)';
@@ -58,8 +56,6 @@ class PortfolioManager {  constructor() {
 
 
   setupSmoothScrolling() {
-    // The smooth scrolling is now handled by the global utility
-    // This method is kept for compatibility but functionality is delegated
     setTimeout(() => {
       if (window.reinitializeSmoothScroll) {
         window.reinitializeSmoothScroll();
@@ -140,12 +136,23 @@ class PortfolioManager {  constructor() {
   }
 
   async simulateFormSubmission(data) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log('📧 Form data:', data);
-        resolve();
-      }, 2000);
-    });
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => res.statusText);
+        throw new Error(text || 'Invio fallito');
+      }
+
+      return await res.json();
+    } catch (err) {
+      console.warn('Invio via endpoint fallito, uso simulazione. Errore:', err);
+      return new Promise((resolve) => setTimeout(resolve, 1000));
+    }
   }
 
   handleNewsletterSignup(e) {
@@ -359,7 +366,7 @@ class PortfolioManager {  constructor() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setInterval(createParticle, 4000);
-          createParticle(); // Prima particella immediata
+          createParticle();
         }
       });
     });
@@ -395,16 +402,7 @@ class PortfolioManager {  constructor() {
   }
 
 
-  hideLoader() {
-    setTimeout(() => {
-      const loader = document.querySelector('.portfolio-loader');
-      if (loader) {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.remove(), 500);
-      }
-      this.isLoading = false;
-    }, 1200);
-  }
+  
 
 
   initializeDarkMode() {
@@ -413,14 +411,15 @@ class PortfolioManager {  constructor() {
     
     if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
       document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
       return true;
     } else {
       document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
       return false;
     }
   }
   toggleDarkMode() {
-    // Aggiungi classe per animazione smooth
     document.documentElement.classList.add('theme-transition');
     
     this.darkMode = !this.darkMode;
@@ -435,18 +434,22 @@ class PortfolioManager {  constructor() {
       localStorage.setItem('theme', 'light');
     }
     
-    // Aggiorna il colore del tema meta
+    
     this.updateMetaThemeColor();
     
-    // Aggiorna tutti i componenti che hanno stato interno
+    
     this.updateComponentsTheme();
     
-    // Emit evento personalizzato per i componenti
+    
     document.dispatchEvent(new CustomEvent('themeChanged', { 
       detail: { darkMode: this.darkMode } 
     }));
+    // Sync image inversion for elements that request it
+    document.querySelectorAll('img[data-invert-dark]').forEach(img => {
+      if (this.darkMode) img.classList.add('invert-for-dark'); else img.classList.remove('invert-for-dark');
+    });
     
-    // Rimuovi classe animazione dopo il cambio
+    
     setTimeout(() => {
       document.documentElement.classList.remove('theme-transition');
     }, 400);
@@ -454,7 +457,7 @@ class PortfolioManager {  constructor() {
 
   updateComponentsTheme() {
     // Forza il re-render dei componenti che potrebbero avere cache
-    const components = document.querySelectorAll('app-navigation, app-hero, app-about, app-skills, app-certifications, app-projects, app-pcto, app-cv, app-contact');
+    const components = document.querySelectorAll('app-navigation, app-hero, app-about, app-skills, app-certifications, app-projects, app-cv, app-contact');
     components.forEach(component => {
       if (component.updateTheme && typeof component.updateTheme === 'function') {
         component.updateTheme(this.darkMode);
@@ -483,37 +486,6 @@ const dynamicStyles = `
     50% { transform: translateY(-40px) rotate(180deg); }
     75% { transform: translateY(-20px) rotate(270deg); }
   }
-  
-  .portfolio-loader {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.5s ease;
-  }
-  
-  .loader-content {
-    text-align: center;
-    color: white;
-  }
-  
-  .loader-spinner {
-    width: 60px;
-    height: 60px;
-    border: 4px solid rgba(255,255,255,0.3);
-    border-top: 4px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 `;
 
 
@@ -522,15 +494,7 @@ styleSheet.textContent = dynamicStyles;
 document.head.appendChild(styleSheet);
 
 
-document.body.insertAdjacentHTML('afterbegin', `
-  <div class="portfolio-loader">
-    <div class="loader-content">
-      <div class="loader-spinner"></div>
-      <p class="text-lg font-semibold">Caricamento Portfolio...</p>
-      <p class="text-sm opacity-75">Preparando l'esperienza ottimale</p>
-    </div>
-  </div>
-`);
+// Loader HTML rimosso
 
 
 const portfolioManager = new PortfolioManager();
