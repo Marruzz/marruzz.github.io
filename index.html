@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Luca Marroni","url":"https://marruzz.github.io/","jobTitle":"Sviluppatore web","affiliation":{"@type":"CollegeOrUniversity","name":"Politecnico di Torino"},"email":"mailto:luca.marroni@hotmail.com","address":{"@type":"PostalAddress","addressLocality":"Torino","addressRegion":"Piemonte","addressCountry":"IT"},"sameAs":["https://github.com/marruzz","https://linkedin.com/in/luca-marroni"],"knowsLanguage":["it","en","fr"]}
+{"@context":"https://schema.org","@type":"Person","name":"Luca Marroni","url":"https://marruzz.github.io/","jobTitle":"Sviluppatore web","affiliation":{"@type":"CollegeOrUniversity","name":"Politecnico di Torino"},"email":"mailto:luca.marroni.07@outlook.com","address":{"@type":"PostalAddress","addressLocality":"Torino","addressRegion":"Piemonte","addressCountry":"IT"},"sameAs":["https://github.com/marruzz","https://linkedin.com/in/luca-marroni"],"knowsLanguage":["it","en","fr"]}
 </script>
 <script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch(e){}</script>
 <link rel="stylesheet" href="style.css">
@@ -34,6 +34,7 @@
     <li><a href="#progetti">Progetti</a></li>
     <li><a href="#competenze">Competenze</a></li>
     <li><a href="#percorso">Percorso</a></li>
+    <li><a href="#cv">CV</a></li>
     <li><a href="#contatti">Contatti</a></li>
    </ul>
   </nav>
@@ -97,7 +98,6 @@
 <section id="competenze">
  <div class="wrap">
   <h2 class="rv">Competenze</h2>
-  <p class="lead rv">Livelli dichiarati con onestà: so cosa so fare e cosa sto ancora imparando.</p>
   <div class="grid rv">
    <div class="box"><h3>Front-end</h3><dl><dt>HTML5</dt><dd>Intermedio</dd><dt>CSS3</dt><dd>Intermedio</dd><dt>JavaScript</dt><dd>Intermedio</dd><dt>Angular</dt><dd>Primi passi</dd></dl></div>
    <div class="box"><h3>Back-end</h3><dl><dt>C#</dt><dd>Base</dd><dt>Python</dt><dd>Base</dd><dt>MySQL</dt><dd>Base</dd><dt>Node.js</dt><dd>Primi passi</dd></dl></div>
@@ -123,13 +123,32 @@
  </div>
 </section>
 
+<section id="cv">
+ <div class="wrap">
+  <h2 class="rv">Curriculum</h2>
+  <p class="lead rv">Apri il CV nella lingua che ti serve. Sono due versioni dello stesso curriculum.</p>
+  <div class="grid cvs rv">
+   <div class="box">
+    <h3>CV in italiano</h3>
+    <p>Per aziende e selezioni in Italia.</p>
+    <a class="btn p" href="Luca Marroni - CV Ita.pdf" target="_blank" rel="noopener">Apri il PDF</a>
+   </div>
+   <div class="box" lang="en">
+    <h3>CV in English</h3>
+    <p>For international applications and exchanges.</p>
+    <a class="btn p" href="Luca Marroni - CV Eng.pdf" target="_blank" rel="noopener">Open the PDF</a>
+   </div>
+  </div>
+ </div>
+</section>
+
 <section id="contatti">
  <div class="wrap two">
   <div class="rv">
    <h2>Contatti</h2>
    <p class="lead" style="margin-bottom:0">Hai un sito da rifare o un'idea da sviluppare? Scrivimi in due righe cosa ti serve: rispondo via email.</p>
    <div class="links">
-    <a href="mailto:luca.marroni@hotmail.com">luca.marroni@hotmail.com</a>
+    <a href="mailto:luca.marroni.07@outlook.com">luca.marroni.07@outlook.com</a>
     <a href="https://github.com/marruzz" rel="noopener" target="_blank">GitHub: marruzz</a>
     <a href="https://linkedin.com/in/luca-marroni" rel="noopener" target="_blank">LinkedIn: luca-marroni</a>
    </div>
@@ -182,7 +201,7 @@
   e.preventDefault();
   var f=e.target,n=f.n.value.trim(),em=f.e.value.trim(),t=f.m.value.trim(),o=$('#msg');
   if(!n||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)||t.length<10){o.textContent='Controlla i campi: serve il nome, un\'email valida e un messaggio di almeno 10 caratteri.';return}
-  location.href='mailto:luca.marroni@hotmail.com?subject='+encodeURIComponent('Contatto dal sito: '+n)+'&body='+encodeURIComponent(t+'\n\n'+n+' ('+em+')');
+  location.href='mailto:luca.marroni.07@outlook.com?subject='+encodeURIComponent('Contatto dal sito: '+n)+'&body='+encodeURIComponent(t+'\n\n'+n+' ('+em+')');
   o.textContent='Ho aperto la tua app di posta. Premi Invia per mandare il messaggio.';
  });
  $('#y').textContent=new Date().getFullYear();

@@ -53,6 +53,9 @@ h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:12px}
 .box h3{font-size:1.2rem;margin-bottom:12px}
 .box dl{display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:.98rem}
 .box dd{color:var(--muted);text-align:right;margin:0}
+.cvs .box{display:grid;gap:10px;align-content:start}
+.cvs .box p{color:var(--muted);font-size:.98rem}
+.cvs .btn{justify-self:start;margin-top:6px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 @media(max-width:760px){.two{grid-template-columns:1fr;gap:32px}}
 .list{list-style:none;padding:0}
