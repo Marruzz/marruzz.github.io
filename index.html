@@ -1,84 +1,192 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luca Marroni - Developer Portfolio</title>
-        <script>
-            // Applica il tema salvato il più presto possibile per evitare flash di stile chiaro
-            try {
-                // Usa la chiave unificata 'theme' (valori: 'dark'|'light') per coerenza
-                if (localStorage.getItem('theme') === 'dark') {
-                    document.documentElement.classList.add('dark');
-                }
-            } catch (e) { /* ignore */ }
-        </script>
-        <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script-tailwind.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style/components.css" />
-    <link rel="stylesheet" href="style/dark-mode.css" />
-    <link rel="stylesheet" href="style/effects.css" />
-    <link rel="stylesheet" href="style/scrollbar.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    
-    <!-- Smooth Scroll Utility -->
-    <script src="utils/smooth-scroll.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luca Marroni – Sviluppatore web | Torino</title>
+<meta name="description" content="Portfolio di Luca Marroni, di Torino: siti web e progetti software. Studente al Politecnico di Torino.">
+<link rel="canonical" href="https://marruzz.github.io/">
+<meta name="theme-color" content="#E8EBEF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1218" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Luca Marroni – Sviluppatore web di Torino">
+<meta property="og:description" content="Studente al Politecnico di Torino. Progetti, competenze e contatti.">
+<meta property="og:url" content="https://marruzz.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F4BFF'/%3E%3Ctext x='32' y='44' font-size='34' font-weight='800' text-anchor='middle' fill='%23FFD23F' font-family='Arial'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Luca Marroni","url":"https://marruzz.github.io/","jobTitle":"Sviluppatore web","affiliation":{"@type":"CollegeOrUniversity","name":"Politecnico di Torino"},"email":"mailto:luca.marroni@hotmail.com","address":{"@type":"PostalAddress","addressLocality":"Torino","addressRegion":"Piemonte","addressCountry":"IT"},"sameAs":["https://github.com/marruzz","https://linkedin.com/in/luca-marroni"],"knowsLanguage":["it","en","fr"]}
+</script>
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.dataset.theme='dark'}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Carica tutti i componenti -->
-    <script defer src="components/about-component.js"></script>
-    <script defer src="components/certifications-component.js"></script>
-    <script defer src="components/navigation-component.js"></script>
-    <script defer src="components/hero-component.js"></script>
-    <script defer src="components/skills-component.js"></script>
-    <script defer src="components/projects-component.js"></script>
-    <script defer src="components/project-card-component.js"></script>
-    <script defer src="components/contact-component.js"></script>
-    
-    <script defer src="components/cv-component.js"></script>
-    
-    
-    
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header>
+ <div class="wrap">
+  <a class="brand" href="#top" aria-label="Luca Marroni, inizio pagina">Luca Marroni</a>
+  <nav id="nav" aria-label="Principale">
+   <ul>
+    <li><a href="#progetti">Progetti</a></li>
+    <li><a href="#competenze">Competenze</a></li>
+    <li><a href="#percorso">Percorso</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+   </ul>
+  </nav>
+  <div class="tools">
+   <button class="btn-i" id="theme" type="button" aria-label="Cambia tema chiaro/scuro" aria-pressed="false">◐</button>
+   <button class="btn-i" id="menu" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav">☰</button>
+  </div>
+ </div>
+</header>
 
-    <app-navigation></app-navigation>
-    <app-hero></app-hero>
-    <app-about></app-about>  
-    <app-projects></app-projects>
-    <app-skills></app-skills>
-    <app-certifications></app-certifications>    
-    
-    <app-cv></app-cv>
-    <app-contact></app-contact>
+<main id="main">
+<section class="hero" id="top">
+ <div class="wrap">
+  <div class="hero-grid">
+   <div>
+    <h1>Imparo a programmare costruendo <span class="mark">cose vere</span>.</h1>
+    <p>Sono Luca, di Torino, studente al Politecnico di Torino. Faccio siti web per persone e attività reali e imparo un progetto alla volta.</p>
+    <div class="cta">
+     <a class="btn p" href="#progetti">Guarda il progetto</a>
+     <a class="btn" href="#contatti">Scrivimi</a>
+    </div>
+   </div>
+   <!-- FOTO: sostituisci il valore di src con il percorso della tua foto, ad esempio "foto.jpg" (formato verticale 4:5) -->
+   <figure class="photo">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23C5CBD4'/%3E%3Ccircle cx='200' cy='190' r='72' fill='%238A94A4'/%3E%3Cpath d='M60 500c0-100 60-160 140-160s140 60 140 160z' fill='%238A94A4'/%3E%3C/svg%3E" width="400" height="500" alt="Foto di Luca Marroni (segnaposto)">
+   </figure>
+  </div>
+  <div class="facts">
+   <span><b>Città</b> Torino</span>
+   <span><b>Università</b> Politecnico di Torino</span>
+   <span><b>Lingue</b> italiano, inglese C1, francese A2</span>
+  </div>
+ </div>
+</section>
 
-    
-    
-    <!-- Script di inizializzazione -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Gestione del menu mobile
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-            
-            // The smooth scrolling is now handled by the global utility
-            
-            // Inizializza gli script esistenti se presenti
-            if (typeof initializePortfolio === 'function') {
-                initializePortfolio();
-            }
-            
-            console.log('Portfolio con componenti caricato con successo!');
-        });
-    </script>
-    
-    <!-- Carica lo script originale se necessario -->
-    <script src="script.js"></script>
+<section id="progetti">
+ <div class="wrap">
+  <h2 class="rv">Progetto</h2>
+  <p class="lead rv">Un sito vero, fatto per un'attività vera e già usato dai clienti.</p>
+  <div class="jobs">
+   <article class="job rv">
+    <div>
+     <p class="status"><i></i>Online e in uso</p>
+     <h3>Marroni Autoriparazioni</h3>
+     <p>Sito aziendale di un'officina: i clienti vedono i servizi e prenotano senza telefonare.</p>
+    </div>
+    <div>
+     <ul>
+      <li>Prenotazioni online</li>
+      <li>Galleria dei servizi</li>
+      <li>Contatto diretto via WhatsApp</li>
+     </ul>
+     <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li></ul>
+     <p style="margin-top:16px"><a href="https://marroniautoriparazioni.com" rel="noopener" target="_blank">Visita marroniautoriparazioni.com</a></p>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="competenze">
+ <div class="wrap">
+  <h2 class="rv">Competenze</h2>
+  <p class="lead rv">Livelli dichiarati con onestà: so cosa so fare e cosa sto ancora imparando.</p>
+  <div class="grid rv">
+   <div class="box"><h3>Front-end</h3><dl><dt>HTML5</dt><dd>Intermedio</dd><dt>CSS3</dt><dd>Intermedio</dd><dt>JavaScript</dt><dd>Intermedio</dd><dt>Angular</dt><dd>Primi passi</dd></dl></div>
+   <div class="box"><h3>Back-end</h3><dl><dt>C#</dt><dd>Base</dd><dt>Python</dt><dd>Base</dd><dt>MySQL</dt><dd>Base</dd><dt>Node.js</dt><dd>Primi passi</dd></dl></div>
+   <div class="box"><h3>Strumenti</h3><dl><dt>Git e GitHub</dt><dd>Base</dd><dt>VS Code, Visual Studio</dt><dd>Uso regolare</dd><dt>Responsive design</dt><dd>Intermedio</dd><dt>SEO di base</dt><dd>Base</dd></dl></div>
+  </div>
+ </div>
+</section>
+
+<section id="percorso">
+ <div class="wrap two">
+  <div class="rv">
+   <h2>Formazione</h2>
+   <p>Studio Ingegneria della Produzione Industriale al Politecnico di Torino. In precedenza ho frequentato l'ITIS E. Majorana di Grugliasco. Quello che imparo lo provo subito in progetti concreti.</p>
+  </div>
+  <div class="rv">
+   <h2>Certificazioni</h2>
+   <ul class="list">
+    <li>Cisco IT Essentials <span>2024</span></li>
+    <li>ECDL / ICDL Base <span>2023</span></li>
+    <li>Cambridge C1 Advanced <span>2025</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="contatti">
+ <div class="wrap two">
+  <div class="rv">
+   <h2>Contatti</h2>
+   <p class="lead" style="margin-bottom:0">Hai un sito da rifare o un'idea da sviluppare? Scrivimi in due righe cosa ti serve: rispondo via email.</p>
+   <div class="links">
+    <a href="mailto:luca.marroni@hotmail.com">luca.marroni@hotmail.com</a>
+    <a href="https://github.com/marruzz" rel="noopener" target="_blank">GitHub: marruzz</a>
+    <a href="https://linkedin.com/in/luca-marroni" rel="noopener" target="_blank">LinkedIn: luca-marroni</a>
+   </div>
+  </div>
+  <form id="f" class="rv" novalidate>
+   <label>Nome<input name="n" autocomplete="name" required></label>
+   <label>La tua email<input name="e" type="email" autocomplete="email" required></label>
+   <label>Messaggio<textarea name="m" required minlength="10"></textarea></label>
+   <button class="btn p" type="submit">Apri la mail con il messaggio</button>
+   <p class="hint" id="msg" role="status" aria-live="polite">Il messaggio si apre nel tuo programma di posta, pronto da inviare.</p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>© <span id="y">2026</span> Luca Marroni</span>
+  <span>Sito statico, senza cookie né tracciamenti.</span>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var d=document,r=d.documentElement,$=function(s){return d.querySelector(s)};
+ // Tema
+ var tb=$('#theme');
+ function sync(){tb.setAttribute('aria-pressed',r.dataset.theme==='dark')}
+ sync();
+ tb.onclick=function(){var n=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}sync()};
+ // Menu mobile
+ var m=$('#menu'),nav=$('#nav');
+ m.onclick=function(){var o=nav.classList.toggle('open');m.setAttribute('aria-expanded',o)};
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');m.setAttribute('aria-expanded','false')}});
+ d.addEventListener('keydown',function(e){if(e.key==='Escape'){nav.classList.remove('open');m.setAttribute('aria-expanded','false')}});
+ // Comparsa al scroll
+ var els=d.querySelectorAll('.rv');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+ }else els.forEach(function(el){el.classList.add('in')});
+ // Voce di menu attiva
+ var links=[].slice.call(d.querySelectorAll('nav a'));
+ if('IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){a.removeAttribute('aria-current')});var a=$('nav a[href="#'+x.target.id+'"]');if(a)a.setAttribute('aria-current','true')}})},{rootMargin:'-40% 0px -55% 0px'});
+  d.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)});
+ }
+ // Form: apre il client di posta (il sito è statico, nessun server)
+ $('#f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target,n=f.n.value.trim(),em=f.e.value.trim(),t=f.m.value.trim(),o=$('#msg');
+  if(!n||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)||t.length<10){o.textContent='Controlla i campi: serve il nome, un\'email valida e un messaggio di almeno 10 caratteri.';return}
+  location.href='mailto:luca.marroni@hotmail.com?subject='+encodeURIComponent('Contatto dal sito: '+n)+'&body='+encodeURIComponent(t+'\n\n'+n+' ('+em+')');
+  o.textContent='Ho aperto la tua app di posta. Premi Invia per mandare il messaggio.';
+ });
+ $('#y').textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
